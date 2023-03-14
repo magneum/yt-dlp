@@ -18,7 +18,6 @@
 - [@node-fetch](https://github.com/yt-dlp/yt-dlp)
 - [@progress-estimator](https://github.com/bvaughn/progress-estimator#readme)
 - [@spinnies](https://github.com/jcarpanelli/spinnies#readme)
-- [@youtube-dl-exec](https://nicedoc.io/microlinkhq/youtube-dl-exec)
 
 ## Module Usage and Parameter
 
