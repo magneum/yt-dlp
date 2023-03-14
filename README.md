@@ -2,17 +2,19 @@
   <img src="https://i.postimg.cc/j2ktjrwr/Liquid-You-Tube.gif" height="400px"/>
 </p>
 
-<h1 align="center"><b>MAGNEUM-YOUTUBE</b></h1>
+<h1 align="center"><b>⚡ MAGNEUM-YOUTUBE ⚡</b></h1>
 <p align="center">A youtube audio video scrapper and downloader</p>
 
-## Authors
+<br></br><br></br>
+
+<h1 align="center"><b>🖊️ Authors</b></h1>
 
 - [@magneum](https://www.github.com/magneum)
 - [@yt-dlp](https://github.com/yt-dlp/yt-dlp)
 
 ## Module Usage and Parameter
 
-<h1 align="center"><b>VideoMeta()</b></h1>
+<h1 align="center"><b>📹 VideoMeta() 👇🏻</b></h1>
 
 ```
   VideoMeta()
@@ -26,7 +28,7 @@
 | `songName / youtubeUrl` | VideoMeta("songName/youtubeUrl"); | **Required** |
 
 <!-- ================================================================================ -->
-<h1 align="center"><b>VideoSave()</b></h1>
+<h1 align="center"><b>📹 VideoSave() 👇🏻</b></h1>
 
 ```
   VideoSave()
@@ -43,7 +45,7 @@
 | `path`                  | VideoSave("songName/youtubeUrl", "datalink", "path", (callback) => console.log(callback)); | optional     |
 
 <!-- ================================================================================ -->
-<h1 align="center"><b>VideoAudioSave()</b></h1>
+<h1 align="center"><b>📹 VideoAudioSave() 👇🏻</b></h1>
 
 ```
   VideoAudioSave()
@@ -60,7 +62,7 @@
 | `path`                  | VideoAudioSave("songName/youtubeUrl", "datalink", "path", (callback) => console.log(callback)); | optional     |
 
 <!-- ================================================================================ -->
-<h1 align="center"><b>AudioMeta()</b></h1>
+<h1 align="center"><b>📢 AudioMeta() 👇🏻</b></h1>
 
 ```
   AudioMeta()
@@ -74,7 +76,7 @@
 | `songName / youtubeUrl` | AudioMeta("songName/youtubeUrl"); | **Required** |
 
 <!-- ================================================================================ -->
-<h1 align="center"><b>AudioSave()</b></h1>
+<h1 align="center"><b>📢 AudioSave() 👇🏻</b></h1>
 
 ```
   AudioSave()
@@ -91,7 +93,7 @@
 | `path`                  | AudioSave("songName/youtubeUrl", "datalink", "path", (callback) => console.log(callback)); | optional     |
 
 <!-- ================================================================================ -->
-<h1 align="center"><b>Search()</b></h1>
+<h1 align="center"><b>🔍 Search() 👇🏻</b></h1>
 
 ```
   Search()
