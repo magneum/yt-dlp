@@ -2,7 +2,7 @@
   "name": "magneum-youtube",
   "type": "module",
   "main": "index.js",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "A Youtube Audio Video Scrapper And Downloader Client",
   "scripts": {
     "preinstall": "pip install -r src/requirements.txt",
