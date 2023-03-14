@@ -7,10 +7,18 @@
 
 <br></br><br></br>
 
-<h1 align="center"><b>🖊️ Authors</b></h1>
+<h1 align="center"><b>🖊️ Dependencies</b></h1>
 
 - [@magneum](https://www.github.com/magneum)
 - [@yt-dlp](https://github.com/yt-dlp/yt-dlp)
+- [@ffmpeg-installer/ffmpeg](https://github.com/kribblo/node-ffmpeg-installer#readme)
+- [@ffprobe-installer/ffprobe](https://github.com/SavageCore/node-ffprobe-installer#readme)
+- [@dotenv](https://github.com/motdotla/dotenv#readme)
+- [@fluent-ffmpeg](https://github.com/fluent-ffmpeg/node-fluent-ffmpeg#readme)
+- [@node-fetch](https://github.com/yt-dlp/yt-dlp)
+- [@progress-estimator](https://github.com/bvaughn/progress-estimator#readme)
+- [@spinnies](https://github.com/jcarpanelli/spinnies#readme)
+- [@youtube-dl-exec](https://nicedoc.io/microlinkhq/youtube-dl-exec)
 
 ## Module Usage and Parameter
 
