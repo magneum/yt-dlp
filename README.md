@@ -1,4 +1,6 @@
-# magneum-youtube
+<p align="center">
+  <img src="src/LiquidYouTube.gif" height="400px"/>
+</p>
 
 <h1 align="center"><b>MAGNEUM-YOUTUBE</b></h1>
 <p align="center">A youtube audio video scrapper and downloader</p>
