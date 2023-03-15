@@ -26,6 +26,8 @@
 
 <br><h1 align="left"><b>📹 infoVideo_customResolution()</b></h1>
 
+<b> 🗝️ @parameters/@arguments </b>
+
 ```js
 /**
  * @param {url} url -> "youtube-video-link"
@@ -94,6 +96,8 @@ Done in 2.65s.
 
 <br><h1 align="left"><b>📹 infoVideo_Sorted()</b></h1>
 
+<b> 🗝️ @parameters/@arguments </b>
+
 ```js
 /**
  * @param {url} url -> "youtube-video-link"
@@ -159,6 +163,8 @@ Done in 2.64s.
 <!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
 
 <br><h1 align="left"><b>📢 infoAudio_Sorted()</b></h1>
+
+<b> 🗝️ @parameters/@arguments </b>
 
 ```js
 /**
@@ -227,6 +233,8 @@ Done in 2.62s.
 <!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
 
 <br><h1 align="left"><b>📢 infoAudio_customQuality()</b></h1>
+
+<b> 🗝️ @parameters/@arguments </b>
 
 ```js
 /**
