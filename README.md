@@ -1,11 +1,9 @@
+<h1 align="center"><b>⚡ YTDLP ⚡</b></h1>
+<h2 align="center" ><i>A youtube (audio - video) scrapper and downloader client</i></h2>
+<br></br>
 <p align="center">
   <img src="https://i.postimg.cc/j2ktjrwr/Liquid-You-Tube.gif" height="400" width="600" style="border-radius:5%"/>
 </p>
-
-<h1 align="center"><b>⚡ YTDLP ⚡</b></h1>
-<p align="center">A youtube (audio - video) scrapper and downloader client</p>
-
-<br></br><br></br>
 
 <h1 align="center"><b>🖊️ Dependencies</b></h1>
 
@@ -18,6 +16,9 @@
 - [@node-fetch](https://github.com/yt-dlp/yt-dlp)
 - [@progress-estimator](https://github.com/bvaughn/progress-estimator#readme)
 - [@spinnies](https://github.com/jcarpanelli/spinnies#readme)
+
+- Python versions 3.7+ (CPython and PyPy) are supported. Other versions and implementations may or may not work correctly.
+- ffmpeg and ffprobe are highly recommended
 
 <!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
 
