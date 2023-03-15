@@ -7,7 +7,7 @@
 
 <h1 align="center"><b>🖊️ Dependencies</b></h1>
 
-- [@magneum](https://www.github.com/magneum)
+- [@magneum-api](https://bit.ly/magneum)
 - [@yt-dlp](https://github.com/yt-dlp/yt-dlp)
 - [@ffmpeg-installer/ffmpeg](https://github.com/kribblo/node-ffmpeg-installer#readme)
 - [@ffprobe-installer/ffprobe](https://github.com/SavageCore/node-ffprobe-installer#readme)
