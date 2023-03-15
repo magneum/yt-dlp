@@ -3,12 +3,21 @@ import { Search } from "../index.js";
 import { AudioMeta, AudioSave } from "../index.js";
 import { VideoMeta, VideoSave, VideoAudioSave } from "../index.js";
 
-Search("Emptiness", (cb) => console.log(cb));
+// Search(
+// "https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI",
+// async function (data) {
+// console.log(data);
+// }
+// );
 
-AudioMeta("Emptiness", (cb) => console.log(cb));
-AudioSave("Emptiness", metalink, path, (cb) => console.log(cb));
+// AudioMeta("https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI", async (data) =>
+// console.log(data)
+// );
+// AudioSave("Emptiness", metalink, path, async (data) => console.log(data));
 
-VideoMeta("Emptiness", (cb) => console.log(cb));
-VideoSave("Emptiness", metalink, path, (cb) => console.log(cb));
-VideoAudioSave("Emptiness", metalink, path, (cb) => console.log(cb));
+VideoMeta("https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI", async (data) =>
+  console.log(data)
+);
+// VideoSave("Emptiness", metalink, path, async (data) => console.log(data));
+// VideoAudioSave("Emptiness", metalink, path, async (data) => console.log(data));
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");

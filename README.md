@@ -32,32 +32,48 @@
 
 ```
 
-<details><summary><b>❓Example & Outputs</b></summary>
+<details open><summary><b>❓Example & Usage</b></summary>
 <p>
 
-#### coded with ❤️ by magneum
+#### ❤️ for coding
 
 ```js
-import { Search } from "../index.js";
-import { AudioMeta, AudioSave } from "../index.js";
-import { VideoMeta, VideoSave, VideoAudioSave } from "../index.js";
+import { VideoMeta } from "magneum-youtube";
 
-Search("Emptiness", (cb) => console.log(cb));
+let url = "Take Me To Church";
+let name = "https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI";
+VideoMeta(url || name, async function (data) {
+  console.log(data);
+});
 
-AudioMeta("Emptiness", (cb) => console.log(cb));
-AudioSave("Emptiness", metalink, path, (cb) => console.log(cb));
+// or using arrow function:
+VideoMeta(url || name, async (data) => console.log(data));
+```
 
-VideoMeta("Emptiness", (cb) => console.log(cb));
-VideoSave("Emptiness", metalink, path, (cb) => console.log(cb));
-VideoAudioSave("Emptiness", metalink, path, (cb) => console.log(cb));
+### VideoMeta() metadata
+
+```json
+{
+  "header": "◎☱☱☱☱[ ву mågneum ]☱☱☱☱◎",
+  "status": true,
+  "links": {
+    "_1080p": "https://rr2---sn-gwpa-jj06.googlevideo.com",
+    "_720p": "https://rr2---sn-gwpa-jj06.googlevideo.com",
+    "_480p": "https://rr2---sn-gwpa-jj06.googlevideo.com",
+    "_360p": "https://rr2---sn-gwpa-jj06.googlevideo.com",
+    "_240p": "https://rr2---sn-gwpa-jj06.googlevideo.com",
+    "_144p": "https://rr2---sn-gwpa-jj06.googlevideo.com"
+  },
+  "footer": "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎"
+}
 ```
 
 </p>
 </details>
 
-<details><summary><b>⚠️Arguments & Parameters</b></summary>
+<details open><summary><b>⚠️Arguments & Parameters</b></summary>
 
-#### coded with ❤️ by magneum
+#### ❤️ for coding
 
 <p>
 
@@ -79,32 +95,50 @@ VideoAudioSave("Emptiness", metalink, path, (cb) => console.log(cb));
   ? callback: logs that will be available when the execution is completed
 ```
 
-<details><summary><b>❓Example & Outputs</b></summary>
+<details open><summary><b>❓Example & Usage</b></summary>
 <p>
 
-#### coded with ❤️ by magneum
+#### ❤️ for coding
 
 ```js
-import { Search } from "../index.js";
-import { AudioMeta, AudioSave } from "../index.js";
-import { VideoMeta, VideoSave, VideoAudioSave } from "../index.js";
+import { VideoMeta, VideoSave, VideoAudioSave } from "magneum-youtube";
 
-Search("Emptiness", (cb) => console.log(cb));
+let url = "Take Me To Church";
+let name = "https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI";
+VideoMeta(url || name, async function (data) {
+  console.log(data);
+  let path "./";
+  let metalink = data.links._1080p;
+  VideoSave(url || name, metalink, path, async function (data) {
+    console.log(data);
+  });
+});
+```
 
-AudioMeta("Emptiness", (cb) => console.log(cb));
-AudioSave("Emptiness", metalink, path, (cb) => console.log(cb));
+### VideoMeta() metadata
 
-VideoMeta("Emptiness", (cb) => console.log(cb));
-VideoSave("Emptiness", metalink, path, (cb) => console.log(cb));
-VideoAudioSave("Emptiness", metalink, path, (cb) => console.log(cb));
+```json
+{
+  "header": "◎☱☱☱☱[ ву mågneum ]☱☱☱☱◎",
+  "status": true,
+  "links": {
+    "_1080p": "https://rr2---sn-gwpa-jj06.googlevideo.com",
+    "_720p": "https://rr2---sn-gwpa-jj06.googlevideo.com",
+    "_480p": "https://rr2---sn-gwpa-jj06.googlevideo.com",
+    "_360p": "https://rr2---sn-gwpa-jj06.googlevideo.com",
+    "_240p": "https://rr2---sn-gwpa-jj06.googlevideo.com",
+    "_144p": "https://rr2---sn-gwpa-jj06.googlevideo.com"
+  },
+  "footer": "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎"
+}
 ```
 
 </p>
 </details>
 
-<details><summary><b>⚠️Arguments & Parameters</b></summary>
+<details open><summary><b>⚠️Arguments & Parameters</b></summary>
 
-#### coded with ❤️ by magneum
+#### ❤️ for coding
 
 <p>
 
@@ -128,32 +162,30 @@ VideoAudioSave("Emptiness", metalink, path, (cb) => console.log(cb));
   ? callback: logs that will be available when the execution is completed
 ```
 
-<details><summary><b>❓Example & Outputs</b></summary>
+<details open><summary><b>❓Example & Usage</b></summary>
 <p>
 
-#### coded with ❤️ by magneum
+#### ❤️ for coding
 
 ```js
-import { Search } from "../index.js";
-import { AudioMeta, AudioSave } from "../index.js";
-import { VideoMeta, VideoSave, VideoAudioSave } from "../index.js";
+import { VideoMeta, VideoSave, VideoAudioSave } from "magneum-youtube";
 
-Search("Emptiness", (cb) => console.log(cb));
-
-AudioMeta("Emptiness", (cb) => console.log(cb));
-AudioSave("Emptiness", metalink, path, (cb) => console.log(cb));
-
-VideoMeta("Emptiness", (cb) => console.log(cb));
-VideoSave("Emptiness", metalink, path, (cb) => console.log(cb));
-VideoAudioSave("Emptiness", metalink, path, (cb) => console.log(cb));
+let url = "Take Me To Church";
+let name = "https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI";
+VideoMeta(url || name, async function (data) {
+  console.log(data);
+});
+VideoAudioSave(url || name, metalink, path, async function (data) {
+  console.log(data);
+});
 ```
 
 </p>
 </details>
 
-<details><summary><b>⚠️Arguments & Parameters</b></summary>
+<details open><summary><b>⚠️Arguments & Parameters</b></summary>
 
-#### coded with ❤️ by magneum
+#### ❤️ for coding
 
 <p>
 
@@ -176,32 +208,42 @@ VideoAudioSave("Emptiness", metalink, path, (cb) => console.log(cb));
 
 ```
 
-<details><summary><b>❓Example & Outputs</b></summary>
+<details open><summary><b>❓Example & Usage</b></summary>
 <p>
 
-#### coded with ❤️ by magneum
+#### ❤️ for coding
 
 ```js
-import { Search } from "../index.js";
-import { AudioMeta, AudioSave } from "../index.js";
-import { VideoMeta, VideoSave, VideoAudioSave } from "../index.js";
+import { AudioMeta, AudioSave } from "magneum-youtube";
 
-Search("Emptiness", (cb) => console.log(cb));
+let url = "Take Me To Church";
+let name = "https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI";
+AudioMeta(url || name, async function (data) {
+  console.log(data);
+});
+```
 
-AudioMeta("Emptiness", (cb) => console.log(cb));
-AudioSave("Emptiness", metalink, path, (cb) => console.log(cb));
+#### 🎊 Output from the function
 
-VideoMeta("Emptiness", (cb) => console.log(cb));
-VideoSave("Emptiness", metalink, path, (cb) => console.log(cb));
-VideoAudioSave("Emptiness", metalink, path, (cb) => console.log(cb));
+```json
+{
+  "header": "◎☱☱☱☱[ ву mågneum ]☱☱☱☱◎",
+  "status": true,
+  "links": {
+    "ultralow": "https://rr4---sn-gwpa-jj0s.googlevideo.com",
+    "low": "https://rr4---sn-gwpa-jj0s.googlevideo.com",
+    "medium": "https://rr4---sn-gwpa-jj0s.googlevideo.com"
+  },
+  "footer": "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎"
+}
 ```
 
 </p>
 </details>
 
-<details><summary><b>⚠️Arguments & Parameters</b></summary>
+<details open><summary><b>⚠️Arguments & Parameters</b></summary>
 
-#### coded with ❤️ by magneum
+#### ❤️ for coding
 
 <p>
 
@@ -223,32 +265,30 @@ VideoAudioSave("Emptiness", metalink, path, (cb) => console.log(cb));
   ? callback: logs that will be available when the execution is completed
 ```
 
-<details><summary><b>❓Example & Outputs</b></summary>
+<details open><summary><b>❓Example & Usage</b></summary>
 <p>
 
-#### coded with ❤️ by magneum
+#### ❤️ for coding
 
 ```js
-import { Search } from "../index.js";
-import { AudioMeta, AudioSave } from "../index.js";
-import { VideoMeta, VideoSave, VideoAudioSave } from "../index.js";
+import { AudioMeta, AudioSave } from "magneum-youtube";
 
-Search("Emptiness", (cb) => console.log(cb));
-
-AudioMeta("Emptiness", (cb) => console.log(cb));
-AudioSave("Emptiness", metalink, path, (cb) => console.log(cb));
-
-VideoMeta("Emptiness", (cb) => console.log(cb));
-VideoSave("Emptiness", metalink, path, (cb) => console.log(cb));
-VideoAudioSave("Emptiness", metalink, path, (cb) => console.log(cb));
+let url = "Take Me To Church";
+let name = "https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI";
+AudioMeta(url || name, async function (data) {
+  console.log(data);
+});
+AudioSave(url || name, metalink, path, async function (data) {
+  console.log(data);
+});
 ```
 
 </p>
 </details>
 
-<details><summary><b>⚠️Arguments & Parameters</b></summary>
+<details open><summary><b>⚠️Arguments & Parameters</b></summary>
 
-#### coded with ❤️ by magneum
+#### ❤️ for coding
 
 <p>
 
@@ -271,32 +311,55 @@ VideoAudioSave("Emptiness", metalink, path, (cb) => console.log(cb));
 
 ```
 
-<details><summary><b>❓Example & Outputs</b></summary>
+<details open><summary><b>❓Example & Usage</b></summary>
 <p>
 
-#### coded with ❤️ by magneum
+#### ❤️ for coding
 
 ```js
-import { Search } from "../index.js";
-import { AudioMeta, AudioSave } from "../index.js";
-import { VideoMeta, VideoSave, VideoAudioSave } from "../index.js";
+import { Search } from "magneum-youtube";
 
-Search("Emptiness", (cb) => console.log(cb));
+let url = "Take Me To Church";
+let name = "https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI";
+Search(url || name, async function (data) {
+  console.log(data);
+});
 
-AudioMeta("Emptiness", (cb) => console.log(cb));
-AudioSave("Emptiness", metalink, path, (cb) => console.log(cb));
+// or using arrow function:
+Search(url || name, async (data) => console.log(data));
+```
 
-VideoMeta("Emptiness", (cb) => console.log(cb));
-VideoSave("Emptiness", metalink, path, (cb) => console.log(cb));
-VideoAudioSave("Emptiness", metalink, path, (cb) => console.log(cb));
+#### 🎊 Output from the function
+
+```json
+{
+  "header": "◎☱☱☱☱[ ву mågneum ]☱☱☱☱◎",
+  "status": true,
+  "api": "https://bit.ly/magneum",
+  "uuid": "c8739db6-1808-4c12-a5c1-fe0e8854350c",
+  "query": "https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI",
+  "apiCalled": "14-03-2023 04:56:45",
+  "title": "Janet Jackson - You Want This",
+  "videoId": "utxsSg1n_SQ",
+  "uploadedOn": "12 years ago",
+  "views": 2903297,
+  "durationString": "5:18",
+  "durationSeconds": 318,
+  "authorName": "Janet Jackson",
+  "authorChannel": "https://youtube.com/channel/UCz8ZHx5wFQpXWywaL2uqevw",
+  "videoLink": "https://youtube.com/watch?v=utxsSg1n_SQ",
+  "thumbnail": "https://i.ytimg.com/vi/utxsSg1n_SQ/hq720.jpg",
+  "description": "#JanetJackson Music video by Janet Jackson performing You Want This. (P) 2006 Virgin Records America, Inc.. All rights ...",
+  "footer": "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎"
+}
 ```
 
 </p>
 </details>
 
-<details><summary><b>⚠️Arguments & Parameters</b></summary>
+<details open><summary><b>⚠️Arguments & Parameters</b></summary>
 
-#### coded with ❤️ by magneum
+#### ❤️ for coding
 
 <p>
 
