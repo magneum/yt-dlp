@@ -2,7 +2,7 @@
   "name": "yt-dlp",
   "type": "module",
   "main": "index.js",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "yt-dlp - Python+ Javascript Youtube Audio Video Scrapper And Downloader Client",
   "scripts": {
     "preinstall": "pip install -r src/requirements.txt",
