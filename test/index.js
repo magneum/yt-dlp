@@ -12,7 +12,7 @@ dotenv.config();
 import { VideoAdvanced, VideoCustom } from "../utils/video.js";
 (async () => {
   const cron = await ProgressEst(
-    ExecJson(FourK, {
+    ExecJson(url, {
       noWarnings: true,
       dumpSingleJson: true,
       preferFreeFormats: true,
@@ -21,8 +21,10 @@ import { VideoAdvanced, VideoCustom } from "../utils/video.js";
     }),
     "Obtaining: " + " "
   );
-  const Video = await VideoCustom(cron, "Lowest");
-  console.log("CUSTOM VIDEO: ", Video);
+  const video_ = await VideoCustom(cron, "highest");
+  console.log("CUSTOM VIDEO: ", video_);
+  const _video = await VideoAdvanced(cron, "2160p");
+  console.log("ADVANCE VIDEO: ", _video);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 import { AudioSeperator, AudioQualityCustom } from "../utils/audio.js";
@@ -37,13 +39,9 @@ import { AudioSeperator, AudioQualityCustom } from "../utils/audio.js";
     }),
     "Obtaining: " + " "
   );
-  const Audio = await AudioSeperator(cron, "lowest-possible").catch((e) =>
-    console.error(e)
-  );
-  console.log(Audio);
-  const AudioCustom = await AudioQualityCustom(cron, "lowest-possible").catch(
-    (e) => console.log(e)
-  );
-  console.log(AudioCustom);
+  const audio_ = await AudioSeperator(cron, "medium");
+  console.log("AUDIO: ", audio_);
+  const _audio = await AudioQualityCustom(cron, "best-possible");
+  console.log("CUSTOM AUDIO: ", _audio);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
