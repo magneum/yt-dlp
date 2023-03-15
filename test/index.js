@@ -11,14 +11,14 @@ import { infoAudio_customQuality } from "../lib/utils/audio.js";
 
   // Promise method
   infoAudio_customQuality(url, sort)
-    .then((data) => console.log(data))
+    .then((data) => cconsole.log("infoAudio_customQuality: ", data))
     .catch((e) => console.log(e));
 
   // async/await method
   const data = await infoAudio_customQuality(url, sort).catch((e) =>
     console.log(e)
   );
-  console.log(data);
+  console.log("infoAudio_customQuality: ", data);
 })();
 
 /**
@@ -32,14 +32,14 @@ import { infoAudio_Sorted } from "../lib/utils/audio.js";
 
   // Promise method
   infoAudio_Sorted(url, quality)
-    .then((data) => console.log(data))
+    .then((data) => console.log("infoAudio_Sorted: ", data))
     .catch((e) => console.log(e));
 
   // async/await method
   const data = await infoAudio_Sorted(url, quality).catch((e) =>
     console.log(e)
   );
-  console.log(data);
+  console.log("infoAudio_Sorted: ", data);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 /**
@@ -53,14 +53,14 @@ import { infoVideo_customResolution } from "../lib/utils/video.js";
 
   // Promise method
   infoVideo_customResolution(url, resolution)
-    .then((data) => console.log(data))
+    .then((data) => console.log("infoVideo_customResolution: ", data))
     .catch((e) => console.log(e));
 
   // async/await method
   const data = await infoVideo_customResolution(url, resolution).catch((e) =>
     console.log(e)
   );
-  console.log(data);
+  console.log("infoVideo_customResolution: ", data);
 })();
 
 /**
@@ -74,14 +74,14 @@ import { infoVideo_Sorted } from "../lib/utils/video.js";
 
   // Promise method
   infoVideo_Sorted(url, quality)
-    .then((data) => console.log(data))
+    .then((data) => console.log("infoVideo_Sorted: ", data))
     .catch((e) => console.log(e));
 
   // async/await method
   const data = await infoVideo_Sorted(url, quality).catch((e) =>
     console.log(e)
   );
-  console.log(data);
+  console.log("infoVideo_Sorted: ", data);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 // import { audiosave } from "../lib/audio/index.js";
