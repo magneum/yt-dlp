@@ -1,5 +1,5 @@
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-async function VideoQualityCustom(jsondata, quality) {
+export default async function VideoQualityCustom(jsondata, quality) {
   var videoBest = await jsondata.formats.filter(
     async (data) =>
       (await data.format_id) === "399" ||
