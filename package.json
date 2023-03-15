@@ -2,7 +2,7 @@
   "name": "ytdlp",
   "type": "module",
   "main": "index.js",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "A youtube (audio - video) scrapper and downloader client",
   "scripts": {
     "preinstall": "pip install -r src/requirements.txt",
