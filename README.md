@@ -34,7 +34,7 @@
  */
 ```
 
-<details>
+<details open>
 <summary><b>❓Example & Usage</b></summary>
 <p>
 
@@ -63,7 +63,7 @@ infoVideo_customResolution(url, resolution)
 </p>
 </details>
 
-<details>
+<details open>
 <summary><b>🎊Output Layout Example</b></summary>
 <p>
 
@@ -103,7 +103,7 @@ Done in 2.65s.
  */
 ```
 
-<details>
+<details open>
 <summary><b>❓Example & Usage</b></summary>
 <p>
 
@@ -132,7 +132,7 @@ infoVideo_Sorted(url, quality)
 </p>
 </details>
 
-<details>
+<details open>
 <summary><b>🎊Output Layout Example</b></summary>
 <p>
 
@@ -169,7 +169,7 @@ Done in 2.64s.
  */
 ```
 
-<details>
+<details open>
 <summary><b>❓Example & Usage</b></summary>
 <p>
 
@@ -198,7 +198,7 @@ infoAudio_Sorted(url, quality)
 </p>
 </details>
 
-<details>
+<details open>
 <summary><b>🎊Output Layout Example</b></summary>
 <p>
 
@@ -237,7 +237,7 @@ Done in 2.62s.
  */
 ```
 
-<details>
+<details open>
 <summary><b>❓Example & Usage</b></summary>
 <p>
 
@@ -266,7 +266,7 @@ infoAudio_customQuality(url, sort)
 </p>
 </details>
 
-<details>
+<details open>
 <summary><b>🎊Output Layout Example</b></summary>
 <p>
 
@@ -305,7 +305,7 @@ Done in 2.68s.
 
 ```
 
-<details>
+<details open>
 <summary><b>❓Example & Usage</b></summary>
 <p>
 
@@ -350,7 +350,7 @@ Search(url, async (data) => console.log(data));
 </p>
 </details>
 
-<details>
+<details open>
 <summary><b>⚠️Arguments & Parameters</b></summary>
 
 #### ❤️ for coding
