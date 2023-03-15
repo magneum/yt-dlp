@@ -11,14 +11,14 @@ import { infoAudio_customQuality } from "../index.js";
 
   // Promise method
   infoAudio_customQuality(url, sort)
-    .then((data) => console.log("infoAudio_customQuality: ", data))
+    .then((data) => console.log("INFOAUDIO_CUSTOMQUALITY: ", data))
     .catch((e) => console.log(e));
 
   // async/await method
   const data = await infoAudio_customQuality(url, sort).catch((e) =>
     console.log(e)
   );
-  console.log("infoAudio_customQuality: ", data);
+  console.log("INFOAUDIO_CUSTOMQUALITY: ", data);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 import { infoAudio_Sorted } from "../index.js";
@@ -32,14 +32,14 @@ import { infoAudio_Sorted } from "../index.js";
 
   // Promise method
   infoAudio_Sorted(url, quality)
-    .then((data) => console.log("infoAudio_Sorted: ", data))
+    .then((data) => console.log("INFOAUDIO_SORTED: ", data))
     .catch((e) => console.log(e));
 
   // async/await method
   const data = await infoAudio_Sorted(url, quality).catch((e) =>
     console.log(e)
   );
-  console.log("infoAudio_Sorted: ", data);
+  console.log("INFOAUDIO_SORTED: ", data);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 import { infoVideo_customResolution } from "../index.js";
@@ -53,14 +53,14 @@ import { infoVideo_customResolution } from "../index.js";
 
   // Promise method
   infoVideo_customResolution(url, resolution)
-    .then((data) => console.log("infoVideo_customResolution: ", data))
+    .then((data) => console.log("INFOVIDEO_CUSTOMRESOLUTION: ", data))
     .catch((e) => console.log(e));
 
   // async/await method
   const data = await infoVideo_customResolution(url, resolution).catch((e) =>
     console.log(e)
   );
-  console.log("infoVideo_customResolution: ", data);
+  console.log("INFOVIDEO_CUSTOMRESOLUTION: ", data);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 import { infoVideo_Sorted } from "../index.js";
@@ -74,14 +74,14 @@ import { infoVideo_Sorted } from "../index.js";
 
   // Promise method
   infoVideo_Sorted(url, quality)
-    .then((data) => console.log("infoVideo_Sorted: ", data))
+    .then((data) => console.log("INFOVIDEO_SORTED: ", data))
     .catch((e) => console.log(e));
 
   // async/await method
   const data = await infoVideo_Sorted(url, quality).catch((e) =>
     console.log(e)
   );
-  console.log("infoVideo_Sorted: ", data);
+  console.log("INFOVIDEO_SORTED: ", data);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 // import { audiosave } from "../lib/audio/index.js";

@@ -50,7 +50,7 @@ const url = "https://youtu.be/TpdapO9QGRo";
 
 // Promise method
 infoVideo_customResolution(url, resolution)
-  .then((data) => console.log("infoVideo_customResolution: ", data))
+  .then((data) => console.log("INFOVIDEO_CUSTOMRESOLUTION: ", data))
   .catch((e) => console.log(e));
 
 // async/await method
@@ -58,7 +58,7 @@ infoVideo_customResolution(url, resolution)
   const data = await infoVideo_customResolution(url, resolution).catch((e) =>
     console.log(e)
   );
-  console.log("infoVideo_customResolution: ", data);
+  console.log("INFOVIDEO_CUSTOMRESOLUTION: ", data);
 })();
 ```
 
@@ -119,7 +119,7 @@ const url = "https://youtu.be/TpdapO9QGRo";
 
 // Promise method
 infoVideo_Sorted(url, quality)
-  .then((data) => console.log("infoVideo_Sorted: ", data))
+  .then((data) => console.log("INFOVIDEO_SORTED: ", data))
   .catch((e) => console.log(e));
 
 // async/await method
@@ -127,7 +127,7 @@ infoVideo_Sorted(url, quality)
   const data = await infoVideo_Sorted(url, quality).catch((e) =>
     console.log(e)
   );
-  console.log("infoVideo_Sorted: ", data);
+  console.log("INFOVIDEO_SORTED: ", data);
 })();
 ```
 
@@ -187,7 +187,7 @@ const url = "https://youtu.be/TpdapO9QGRo";
 
 // Promise method
 infoAudio_Sorted(url, quality)
-  .then((data) => console.log("infoAudio_Sorted: ", data))
+  .then((data) => console.log("INFOAUDIO_SORTED: ", data))
   .catch((e) => console.log(e));
 
 // async/await method
@@ -195,7 +195,7 @@ infoAudio_Sorted(url, quality)
   const data = await infoAudio_Sorted(url, quality).catch((e) =>
     console.log(e)
   );
-  console.log("infoAudio_Sorted: ", data);
+  console.log("INFOAUDIO_SORTED: ", data);
 })();
 ```
 
@@ -257,7 +257,7 @@ const url = "https://youtu.be/TpdapO9QGRo";
 
 // Promise method
 infoAudio_customQuality(url, sort)
-  .then((data) => console.log("infoAudio_customQuality: ", data))
+  .then((data) => console.log("INFOAUDIO_CUSTOMQUALITY: ", data))
   .catch((e) => console.log(e));
 
 // async/await method
@@ -265,7 +265,7 @@ infoAudio_customQuality(url, sort)
   const data = await infoAudio_customQuality(url, sort).catch((e) =>
     console.log(e)
   );
-  console.log("infoAudio_customQuality: ", data);
+  console.log("INFOAUDIO_CUSTOMQUALITY: ", data);
 })();
 ```
 
