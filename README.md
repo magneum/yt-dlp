@@ -64,7 +64,7 @@ infoVideo_customResolution(url, resolution)
 </details>
 
 <details>
-<summary><b>❓Example & Usage</b></summary>
+<summary><b>🎊Output Layout Example</b></summary>
 <p>
 
 ### Output Layout
@@ -133,7 +133,7 @@ infoVideo_Sorted(url, quality)
 </details>
 
 <details>
-<summary><b>❓Example & Usage</b></summary>
+<summary><b>🎊Output Layout Example</b></summary>
 <p>
 
 ### Output Layout
@@ -199,7 +199,7 @@ infoAudio_Sorted(url, quality)
 </details>
 
 <details>
-<summary><b>❓Example & Usage</b></summary>
+<summary><b>🎊Output Layout Example</b></summary>
 <p>
 
 ### Output Layout
@@ -267,7 +267,7 @@ infoAudio_customQuality(url, sort)
 </details>
 
 <details>
-<summary><b>❓Example & Usage</b></summary>
+<summary><b>🎊Output Layout Example</b></summary>
 <p>
 
 ### Output Layout
