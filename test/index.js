@@ -7,7 +7,7 @@ import ProgressEstimator from "progress-estimator";
 const ProgressEst = ProgressEstimator();
 dotenv.config();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-import { videoadvanced, videocustomquality } from "../utils/video.js";
+import { videoadvanced, videocustomquality } from "../lib/utils/video.js";
 (async () => {
   const cron = await ProgressEst(
     ExecJson(FourK, {
@@ -25,7 +25,7 @@ import { videoadvanced, videocustomquality } from "../utils/video.js";
   console.log("ADVANCE VIDEO: ", _video);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-import { audioseperator, audiocustomquality } from "../utils/audio.js";
+import { audioseperator, audiocustomquality } from "../lib/utils/audio.js";
 (async () => {
   const cron = await ProgressEst(
     ExecJson(FourK, {
