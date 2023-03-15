@@ -118,7 +118,7 @@ infoVideo_Sorted(url, quality)
 
 <!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
 
-<br><h1 align="left"><b>📢 infoAudio_customQuality()</b></h1>
+<br><h1 align="left"><b>📢 infoAudio_Sorted()</b></h1>
 
 ```js
 /**
@@ -134,19 +134,19 @@ infoVideo_Sorted(url, quality)
 #### ❤️ for coding
 
 ```js
-import { infoAudio_customQuality } from "ytdlp";
+import { infoAudio_Sorted } from "ytdlp";
 
 let quality = "best-possible";
 const url = "https://youtu.be/TpdapO9QGRo";
 
 // Promise method
-infoAudio_customQuality(url, quality)
+infoAudio_Sorted(url, quality)
   .then((data) => console.log(data))
   .catch((e) => console.log(e));
 
 // async/await method
 (async () => {
-  const data = await infoAudio_customQuality(url, quality).catch((e) =>
+  const data = await infoAudio_Sorted(url, quality).catch((e) =>
     console.log(e)
   );
   console.log(data);
@@ -164,7 +164,7 @@ infoAudio_customQuality(url, quality)
 
 <!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
 
-<br><h1 align="left"><b>📢 infoAudio_Sorted()</b></h1>
+<br><h1 align="left"><b>📢 infoAudio_customQuality()</b></h1>
 
 ```js
 /**
@@ -180,19 +180,21 @@ infoAudio_customQuality(url, quality)
 #### ❤️ for coding
 
 ```js
-import { infoAudio_Sorted } from "ytdlp";
+import { infoAudio_customQuality } from "ytdlp";
 
 let sort = "medium";
 const url = "https://youtu.be/TpdapO9QGRo";
 
 // Promise method
-infoAudio_Sorted(url, sort)
+infoAudio_customQuality(url, sort)
   .then((data) => console.log(data))
   .catch((e) => console.log(e));
 
 // async/await method
 (async () => {
-  const data = await infoAudio_Sorted(url, sort).catch((e) => console.log(e));
+  const data = await infoAudio_customQuality(url, sort).catch((e) =>
+    console.log(e)
+  );
   console.log(data);
 })();
 ```

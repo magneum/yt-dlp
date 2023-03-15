@@ -7,19 +7,20 @@ const four = "https://youtu.be/0XyV-vw5II4";
  * @param {string} sort -> "medium" || "low" || "ultralow"
  */
 
-import { infoAudio_Sorted } from "../lib/utils/audio.js";
-// import { infoAudio_Sorted } from "ytdlp";
+import { infoAudio_customQuality } from "../lib/utils/audio.js";
 (async () => {
   let sort = "medium";
   const url = "https://youtu.be/TpdapO9QGRo";
 
   // Promise method
-  infoAudio_Sorted(url, sort)
+  infoAudio_customQuality(url, sort)
     .then((data) => console.log(data))
     .catch((e) => console.log(e));
 
   // async/await method
-  const data = await infoAudio_Sorted(url, sort).catch((e) => console.log(e));
+  const data = await infoAudio_customQuality(url, sort).catch((e) =>
+    console.log(e)
+  );
   console.log(data);
 })();
 
@@ -27,19 +28,19 @@ import { infoAudio_Sorted } from "../lib/utils/audio.js";
  * @param {url} url -> "youtube-video-link"
  * @param {string} quality -> "best-possible" || "medium-possible" || "lowest-possible"
  */
-import { infoAudio_customQuality } from "../lib/utils/audio.js";
-// import { infoAudio_customQuality } from "ytdlp";
+import { infoAudio_Sorted } from "../lib/utils/audio.js";
+// import { infoAudio_Sorted } from "ytdlp";
 (async () => {
   let quality = "best-possible";
   const url = "https://youtu.be/TpdapO9QGRo";
 
   // Promise method
-  infoAudio_customQuality(url, quality)
+  infoAudio_Sorted(url, quality)
     .then((data) => console.log(data))
     .catch((e) => console.log(e));
 
   // async/await method
-  const data = await infoAudio_customQuality(url, quality).catch((e) =>
+  const data = await infoAudio_Sorted(url, quality).catch((e) =>
     console.log(e)
   );
   console.log(data);
