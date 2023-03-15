@@ -28,7 +28,8 @@
 ```js
 /**
  * @param {url} url -> "youtube-video-link"
- * @param {string} resolution -> "2160p" || "1440p" || "1080p" || "720p" || "480p" || "360p" || "240p" || "144p"
+ * @param {string} resolution -> "2160p" || "1440p" || "1080p" || "720p"
+ *                        || "480p" || "360p" || "240p" || "144p"
  */
 ```
 
