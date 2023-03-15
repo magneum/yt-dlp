@@ -1,10 +1,10 @@
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
+import { infoAudio_customQuality } from "../index.js";
 /**
  * @param {url} url -> "youtube-video-link"
  * @param {string} sort -> "medium" || "low" || "ultralow"
  */
 
-import { infoAudio_customQuality } from "../index.js";
 (async () => {
   let sort = "medium";
   const url = "https://youtu.be/TpdapO9QGRo";
@@ -20,12 +20,12 @@ import { infoAudio_customQuality } from "../index.js";
   );
   console.log("infoAudio_customQuality: ", data);
 })();
-
+("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
+import { infoAudio_Sorted } from "../index.js";
 /**
  * @param {url} url -> "youtube-video-link"
  * @param {string} quality -> "best-possible" || "medium-possible" || "lowest-possible"
  */
-import { infoAudio_Sorted } from "../index.js";
 (async () => {
   let quality = "best-possible";
   const url = "https://youtu.be/TpdapO9QGRo";
@@ -42,11 +42,11 @@ import { infoAudio_Sorted } from "../index.js";
   console.log("infoAudio_Sorted: ", data);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
+import { infoVideo_customResolution } from "../index.js";
 /**
  * @param {url} url -> "youtube-video-link"
  * @param {string} resolution -> "2160p" || "1440p" || "1080p" || "720p" || "480p" || "360p" || "240p" || "144p"
  */
-import { infoVideo_customResolution } from "../lib/utils/video.js";
 (async () => {
   let resolution = "2160p";
   const url = "https://youtu.be/TpdapO9QGRo";
@@ -62,12 +62,12 @@ import { infoVideo_customResolution } from "../lib/utils/video.js";
   );
   console.log("infoVideo_customResolution: ", data);
 })();
-
+("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
+import { infoVideo_Sorted } from "../index.js";
 /**
  * @param {url} url -> "youtube-video-link"
  * @param {string} resolution -> "highest" || "medium" || "lowest"
  */
-import { infoVideo_Sorted } from "../lib/utils/video.js";
 (async () => {
   let quality = "highest";
   const url = "https://youtu.be/TpdapO9QGRo";
