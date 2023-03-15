@@ -1,0 +1,10 @@
+yt-dlp
+cprint
+loguru
+psutil
+autopep8
+requests
+pyAesCrypt
+GitPython
+termcolor
+python-dotenv
