@@ -23,10 +23,10 @@
 
 ## Module Usage and Parameter
 
-<h1 align="center"><b>📹 VideoMeta() 👇🏻</b></h1>
+<h1 align="center"><b>📹 videometa() 👇🏻</b></h1>
 
 ```
-  VideoMeta()
+  videometa()
   : needs one paramter
   ? callback: logs that will be available when the execution is completed
 
@@ -38,19 +38,19 @@
 #### ❤️ for coding
 
 ```js
-import { VideoMeta } from "magneum-youtube";
+import { videometa } from "magneum-youtube";
 
 let url = "Take Me To Church";
 let name = "https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI";
-VideoMeta(url || name, async function (data) {
+videometa(url || name, async function (data) {
   console.log(data);
 });
 
 // or using arrow function:
-VideoMeta(url || name, async (data) => console.log(data));
+videometa(url || name, async (data) => console.log(data));
 ```
 
-### VideoMeta() metadata
+### videometa() metadata
 
 ```json
 {
@@ -79,18 +79,18 @@ VideoMeta(url || name, async (data) => console.log(data));
 
 | Parameter               | Usage                             | Arg[]        |
 | :---------------------- | :-------------------------------- | :----------- |
-| `songName / youtubeUrl` | VideoMeta("songName/youtubeUrl"); | **Required** |
+| `songName / youtubeUrl` | videometa("songName/youtubeUrl"); | **Required** |
 
 </p>
 </details>
 
 <!-- ================================================================================================================================================================ -->
-<h1 align="center"><b>📹 VideoSave() 👇🏻</b></h1>
+<h1 align="center"><b>📹 videosave() 👇🏻</b></h1>
 
 ```
-  VideoSave()
+  videosave()
   : needs three paramter
-  ? datalink:  the link of the video got from VideoMeta()
+  ? datalink:  the link of the video got from videometa()
   ? path:  absolute path where you wish to save the file
   ? callback: logs that will be available when the execution is completed
 ```
@@ -101,21 +101,21 @@ VideoMeta(url || name, async (data) => console.log(data));
 #### ❤️ for coding
 
 ```js
-import { VideoMeta, VideoSave, VideoAudioSave } from "magneum-youtube";
+import { videometa, videosave, videoaudiosave } from "magneum-youtube";
 
 let url = "Take Me To Church";
 let name = "https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI";
-VideoMeta(url || name, async function (data) {
+videometa(url || name, async function (data) {
   console.log(data);
   let path "./";
   let metalink = data.links._1080p;
-  VideoSave(url || name, metalink, path, async function (data) {
+  videosave(url || name, metalink, path, async function (data) {
     console.log(data);
   });
 });
 ```
 
-### VideoMeta() metadata
+### videometa() metadata
 
 ```json
 {
@@ -144,20 +144,20 @@ VideoMeta(url || name, async function (data) {
 
 | Parameter               | Usage                                                                                      | Arg[]        |
 | :---------------------- | :----------------------------------------------------------------------------------------- | :----------- |
-| `songName / youtubeUrl` | VideoSave("songName/youtubeUrl");                                                          | **Required** |
-| `datalink`              | VideoSave("songName/youtubeUrl", "datalink", "path", (callback) => console.log(callback)); | **Required** |
-| `path`                  | VideoSave("songName/youtubeUrl", "datalink", "path", (callback) => console.log(callback)); | optional     |
+| `songName / youtubeUrl` | videosave("songName/youtubeUrl");                                                          | **Required** |
+| `datalink`              | videosave("songName/youtubeUrl", "datalink", "path", (callback) => console.log(callback)); | **Required** |
+| `path`                  | videosave("songName/youtubeUrl", "datalink", "path", (callback) => console.log(callback)); | optional     |
 
 </p>
 </details>
 
 <!-- ================================================================================================================================================================ -->
-<h1 align="center"><b>📹 VideoAudioSave() 👇🏻</b></h1>
+<h1 align="center"><b>📹 videoaudiosave() 👇🏻</b></h1>
 
 ```
-  VideoAudioSave()
+  videoaudiosave()
   : needs three paramter
-  ? datalink:  the link of the video got from VideoAudioSave()
+  ? datalink:  the link of the video got from videoaudiosave()
   ? path:  absolute path where you wish to save the file
   ? callback: logs that will be available when the execution is completed
 ```
@@ -168,14 +168,14 @@ VideoMeta(url || name, async function (data) {
 #### ❤️ for coding
 
 ```js
-import { VideoMeta, VideoSave, VideoAudioSave } from "magneum-youtube";
+import { videometa, videosave, videoaudiosave } from "magneum-youtube";
 
 let url = "Take Me To Church";
 let name = "https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI";
-VideoMeta(url || name, async function (data) {
+videometa(url || name, async function (data) {
   console.log(data);
 });
-VideoAudioSave(url || name, metalink, path, async function (data) {
+videoaudiosave(url || name, metalink, path, async function (data) {
   console.log(data);
 });
 ```
@@ -191,18 +191,18 @@ VideoAudioSave(url || name, metalink, path, async function (data) {
 
 | Parameter               | Usage                                                                                           | Arg[]        |
 | :---------------------- | :---------------------------------------------------------------------------------------------- | :----------- |
-| `songName / youtubeUrl` | VideoAudioSave("songName/youtubeUrl");                                                          | **Required** |
-| `datalink`              | VideoAudioSave("songName/youtubeUrl", "datalink", "path", (callback) => console.log(callback)); | **Required** |
-| `path`                  | VideoAudioSave("songName/youtubeUrl", "datalink", "path", (callback) => console.log(callback)); | optional     |
+| `songName / youtubeUrl` | videoaudiosave("songName/youtubeUrl");                                                          | **Required** |
+| `datalink`              | videoaudiosave("songName/youtubeUrl", "datalink", "path", (callback) => console.log(callback)); | **Required** |
+| `path`                  | videoaudiosave("songName/youtubeUrl", "datalink", "path", (callback) => console.log(callback)); | optional     |
 
 </p>
 </details>
 
 <!-- ================================================================================================================================================================ -->
-<h1 align="center"><b>📢 AudioMeta() 👇🏻</b></h1>
+<h1 align="center"><b>📢 audiometa() 👇🏻</b></h1>
 
 ```
-  AudioMeta()
+  audiometa()
   : needs one paramter
   ? callback: logs that will be available when the execution is completed
 
@@ -214,11 +214,11 @@ VideoAudioSave(url || name, metalink, path, async function (data) {
 #### ❤️ for coding
 
 ```js
-import { AudioMeta, AudioSave } from "magneum-youtube";
+import { audiometa, audiosave } from "magneum-youtube";
 
 let url = "Take Me To Church";
 let name = "https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI";
-AudioMeta(url || name, async function (data) {
+audiometa(url || name, async function (data) {
   console.log(data);
 });
 ```
@@ -249,18 +249,18 @@ AudioMeta(url || name, async function (data) {
 
 | Parameter               | Usage                             | Arg[]        |
 | :---------------------- | :-------------------------------- | :----------- |
-| `songName / youtubeUrl` | AudioMeta("songName/youtubeUrl"); | **Required** |
+| `songName / youtubeUrl` | audiometa("songName/youtubeUrl"); | **Required** |
 
 </p>
 </details>
 
 <!-- ================================================================================================================================================================ -->
-<h1 align="center"><b>📢 AudioSave() 👇🏻</b></h1>
+<h1 align="center"><b>📢 audiosave() 👇🏻</b></h1>
 
 ```
-  AudioSave()
+  audiosave()
   : needs three paramter
-  ? datalink:  the link of the video got from VideoMeta()
+  ? datalink:  the link of the video got from videometa()
   ? path:  absolute path where you wish to save the file
   ? callback: logs that will be available when the execution is completed
 ```
@@ -271,14 +271,14 @@ AudioMeta(url || name, async function (data) {
 #### ❤️ for coding
 
 ```js
-import { AudioMeta, AudioSave } from "magneum-youtube";
+import { audiometa, audiosave } from "magneum-youtube";
 
 let url = "Take Me To Church";
 let name = "https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI";
-AudioMeta(url || name, async function (data) {
+audiometa(url || name, async function (data) {
   console.log(data);
 });
-AudioSave(url || name, metalink, path, async function (data) {
+audiosave(url || name, metalink, path, async function (data) {
   console.log(data);
 });
 ```
@@ -294,9 +294,9 @@ AudioSave(url || name, metalink, path, async function (data) {
 
 | Parameter               | Usage                                                                                      | Arg[]        |
 | :---------------------- | :----------------------------------------------------------------------------------------- | :----------- |
-| `songName / youtubeUrl` | AudioSave("songName/youtubeUrl");                                                          | **Required** |
-| `datalink`              | AudioSave("songName/youtubeUrl", "datalink", "path", (callback) => console.log(callback)); | **Required** |
-| `path`                  | AudioSave("songName/youtubeUrl", "datalink", "path", (callback) => console.log(callback)); | optional     |
+| `songName / youtubeUrl` | audiosave("songName/youtubeUrl");                                                          | **Required** |
+| `datalink`              | audiosave("songName/youtubeUrl", "datalink", "path", (callback) => console.log(callback)); | **Required** |
+| `path`                  | audiosave("songName/youtubeUrl", "datalink", "path", (callback) => console.log(callback)); | optional     |
 
 </p>
 </details>

@@ -43,15 +43,15 @@ import { AudioSeperator, AudioQualityCustom } from "../utils/audio.js";
   console.log("CUSTOM AUDIO: ", _audio);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-import { AudioSave } from "../lib/audio/index.js";
+import { audiosave } from "../lib/audio/index.js";
 (async () => {
-  const datalog = await AudioSave(url, "medium", "./src/");
+  const datalog = await audiosave(url, "medium", "./src/");
   console.log(datalog);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-import { AudioMeta } from "../lib/audio/index.js";
+import { audiometa } from "../lib/audio/index.js";
 (async () => {
-  const datalog = await AudioMeta(url);
+  const datalog = await audiometa(url);
   console.log(datalog);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
