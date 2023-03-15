@@ -1,63 +1,65 @@
-export default async function audio(jsondata) {
-  var audioBp = jsondata.formats.filter(
+("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
+async function AudioSeperator(jsondata) {
+  // const AudioSeperated = await AudioSeperator(jsondata);
+  // console.log("SEPERATED AUDIO: ", AudioSeperated);
+  const AudioBp = await jsondata.formats.filter(
     async (data) =>
       (await data.format_id) === "140" || (await data.format_id) === "251"
   );
-  var audioMp = jsondata.formats.filter(
+  const AudioMp = await jsondata.formats.filter(
     async (data) =>
       (await data.format_id) === "139" ||
       (await data.format_id) === "249" ||
       (await data.format_id) === "250"
   );
-  var audioLp = jsondata.formats.filter(
+  const AudioLp = await jsondata.formats.filter(
     async (data) =>
       (await data.format_id) === "599" || (await data.format_id) === "600"
   );
 
-  if (!audioBp.width && !audioMp.width && audioLp.width) {
-    let qLowest = audioLp[0] || audioLp[1] || audioLp;
-    return qLowest;
-  } else if (audioBp.width && audioMp.width && audioLp.width) {
-    let qBest = audioBp[0] || audioBp[1] || audioBp;
-    return qBest;
-  } else if (!audioBp.width && audioMp.width && audioLp.width) {
-    let qMedium = audioMp[0] || audioMp[1] || audioMp[2] || audioMp;
-    return qMedium;
-  } else if (!audioBp.width && !audioMp.width && !audioLp.width) {
-    throw new Error("SORRY: Audio Not Found.");
-  }
+  if (!AudioBp.width && !AudioMp.width && AudioLp.width)
+    return AudioLp[0] || AudioLp[1] || AudioLp;
+  else if (!AudioBp.width && AudioMp.width && AudioLp.width)
+    return AudioMp[0] || AudioMp[1] || AudioMp[2] || AudioMp;
+  else if (AudioBp.width && AudioMp.width && AudioLp.width)
+    return AudioBp[0] || AudioBp[1] || AudioBp;
+  else throw new Error("SORRY: Audio Not Found.");
 }
 
-export async function audioQulity(jsondata, quality) {
-  var audioBp = jsondata.formats.filter(
+async function AudioQualityCustom(jsondata, quality) {
+  // const AudioQualityCustom = await AudioQualityCustom(jsondata, "best-possible");
+  // console.log("CUSTOM AUDIO: ", AudioQualityCustom);
+  const AudioBp = await jsondata.formats.filter(
     async (data) =>
       (await data.format_id) === "140" || (await data.format_id) === "251"
   );
-  var audioMp = jsondata.formats.filter(
+  const AudioMp = await jsondata.formats.filter(
     async (data) =>
       (await data.format_id) === "139" ||
       (await data.format_id) === "249" ||
       (await data.format_id) === "250"
   );
-  var audioLp = jsondata.formats.filter(
+  const AudioLp = await jsondata.formats.filter(
     async (data) =>
       (await data.format_id) === "599" || (await data.format_id) === "600"
   );
 
   if (quality === "best-possible") {
-    if (audioBp.width) return audioBp[0] || audioBp[1] || audioBp;
-    else if (!audioBp.width && audioMp.width)
-      return audioMp[0] || audioMp[1] || audioMp[2] || audioMp;
-    else if (!audioBp.width && !audioMp.width && audioLp.width)
-      return audioLp[0] || audioLp[1] || audioLp;
+    if (AudioBp.width) return AudioBp[0] || AudioBp[1] || AudioBp;
+    else if (!AudioBp.width && AudioMp.width)
+      return AudioMp[0] || AudioMp[1] || AudioMp[2] || AudioMp;
+    else if (!AudioBp.width && !AudioMp.width && AudioLp.width)
+      return AudioLp[0] || AudioLp[1] || AudioLp;
     else throw new Error("SORRY: Quality Not Found.");
   } else if (quality === "medium-possible") {
-    if (audioMp.width) return audioMp[0] || audioMp[1] || audioMp[2] || audioMp;
-    else if (!audioMp.width && audioLp.width)
-      return audioLp[0] || audioLp[1] || audioLp;
+    if (AudioMp.width) return AudioMp[0] || AudioMp[1] || AudioMp[2] || AudioMp;
+    else if (!AudioMp.width && AudioLp.width)
+      return AudioLp[0] || AudioLp[1] || AudioLp;
     else throw new Error("SORRY: Quality Not Found.");
   } else if (quality === "lowest-possible") {
-    if (audioLp.width) return audioLp[0] || audioLp[1] || audioLp;
+    if (AudioLp.width) return AudioLp[0] || AudioLp[1] || AudioLp;
     else throw new Error("SORRY: Quality Not Found.");
   } else throw new Error("ERROR: Wrong Quality Provided.");
 }
+export { AudioQualityCustom, AudioSeperator };
+("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
