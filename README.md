@@ -60,10 +60,31 @@ infoVideo_customResolution(url, resolution)
 })();
 ```
 
+</p>
+</details>
+
+<details>
+<summary><b>❓Example & Usage</b></summary>
+<p>
+
 ### Output Layout
 
-```json
-{}
+```js
+// Promise method output
+✓ Obtaining:   2.3 secs
+{
+  type: '2160p',
+  url: 'https://(server-generated-random-link).com'
+}
+Done in 2.65s.
+
+// async/await method output
+✓ Obtaining:   2.4 secs
+{
+  type: '2160p',
+  url: 'https://(server-generated-random-link).com'
+}
+Done in 2.65s.
 ```
 
 </p>
@@ -108,15 +129,35 @@ infoVideo_Sorted(url, quality)
 })();
 ```
 
+</p>
+</details>
+
+<details>
+<summary><b>❓Example & Usage</b></summary>
+<p>
+
 ### Output Layout
 
-```json
-{}
+```js
+// Promise method output
+✓ Obtaining:   2.4 secs
+{
+  type: 'highest possible',
+  url: 'https://(server-generated-random-link).com'
+}
+Done in 2.64s.
+
+// async/await method output
+✓ Obtaining:   2.4 secs
+{
+  type: 'highest possible',
+  url: 'https://(server-generated-random-link).com'
+}
+Done in 2.64s.
 ```
 
 </p>
 </details>
-
 <!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
 
 <br><h1 align="left"><b>📢 infoAudio_Sorted()</b></h1>
@@ -154,15 +195,37 @@ infoAudio_Sorted(url, quality)
 })();
 ```
 
+</p>
+</details>
+
+<details>
+<summary><b>❓Example & Usage</b></summary>
+<p>
+
 ### Output Layout
 
-```json
-{}
+```js
+// Promise method output
+✓ Obtaining:   2.3 secs
+{
+  quality: 'best-possible',
+  resolution: 'audio only',
+  url: 'https://(server-generated-random-link).com'
+}
+Done in 2.62s.
+
+// async/await method output
+✓ Obtaining:   2.4 secs
+{
+  quality: 'best-possible',
+  resolution: 'audio only',
+  url: 'https://(server-generated-random-link).com'
+}
+Done in 2.62s.
 ```
 
 </p>
 </details>
-
 <!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
 
 <br><h1 align="left"><b>📢 infoAudio_customQuality()</b></h1>
@@ -200,15 +263,37 @@ infoAudio_customQuality(url, sort)
 })();
 ```
 
+</p>
+</details>
+
+<details>
+<summary><b>❓Example & Usage</b></summary>
+<p>
+
 ### Output Layout
 
-```json
-{}
+```js
+// Promise method output
+✓ Obtaining:   2.4 secs
+{
+  type: 'medium',
+  resolution: 'audio only',
+  url: 'https://(server-generated-random-link).com'
+}
+Done in 2.68s.
+
+// async/await method output
+✓ Obtaining:   2.4 secs
+{
+  type: 'medium',
+  resolution: 'audio only',
+  url: 'https://(server-generated-random-link).com'
+}
+Done in 2.68s.
 ```
 
 </p>
 </details>
-
 <!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
 
 <br><h1 align="left"><b>🔍 Search()</b></h1>
