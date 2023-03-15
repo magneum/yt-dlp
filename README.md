@@ -1,4 +1,4 @@
-<h1 align="center"><b>⚡ YTDLP ⚡</b></h1>
+<h1 align="center"><b>⚡ YT-DLP ⚡</b></h1>
 <h2 align="center" ><i>A youtube (audio - video) scrapper and downloader client</i></h2>
 <br></br>
 <p align="center">
@@ -43,7 +43,7 @@
 #### ❤️ for coding
 
 ```js
-import { infoVideo_customResolution } from "ytdlp";
+import { infoVideo_customResolution } from "yt-dlp";
 
 let resolution = "2160p";
 const url = "https://youtu.be/TpdapO9QGRo";
@@ -112,7 +112,7 @@ Done in 2.65s.
 #### ❤️ for coding
 
 ```js
-import { infoVideo_Sorted } from "ytdlp";
+import { infoVideo_Sorted } from "yt-dlp";
 
 let quality = "highest";
 const url = "https://youtu.be/TpdapO9QGRo";
@@ -180,7 +180,7 @@ Done in 2.64s.
 #### ❤️ for coding
 
 ```js
-import { infoAudio_Sorted } from "ytdlp";
+import { infoAudio_Sorted } from "yt-dlp";
 
 let quality = "best-possible";
 const url = "https://youtu.be/TpdapO9QGRo";
@@ -250,7 +250,7 @@ Done in 2.62s.
 #### ❤️ for coding
 
 ```js
-import { infoAudio_customQuality } from "ytdlp";
+import { infoAudio_customQuality } from "yt-dlp";
 
 let sort = "medium";
 const url = "https://youtu.be/TpdapO9QGRo";
@@ -318,7 +318,7 @@ Done in 2.68s.
 #### ❤️ for coding
 
 ```js
-import { Search } from "ytdlp";
+import { Search } from "yt-dlp";
 
 let url = "https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI";
 Search(url, async function (data) {
