@@ -1,5 +1,5 @@
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-export async function VideoAdvanced(json, quality) {
+export async function videoadvanced(json, quality) {
   var Format_2160p = json.formats.filter(
     (res) =>
       (res.format_id === "401" && res.format_note === "2160p") ||
@@ -142,7 +142,7 @@ export async function VideoAdvanced(json, quality) {
   } else throw new Error("ERROR: Wrong Quality Provided.");
 }
 
-export async function VideoCustom(json, quality) {
+export async function videocustomquality(json, quality) {
   var Format_2160p = json.formats.filter(
     (res) =>
       (res.format_id === "401" && res.format_note === "2160p") ||

@@ -7,10 +7,10 @@ import ProgressEstimator from "progress-estimator";
 const ProgressEst = ProgressEstimator();
 dotenv.config();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-import { VideoAdvanced, VideoCustom } from "../utils/video.js";
+import { videoadvanced, videocustomquality } from "../utils/video.js";
 (async () => {
   const cron = await ProgressEst(
-    ExecJson(url, {
+    ExecJson(FourK, {
       noWarnings: true,
       dumpSingleJson: true,
       preferFreeFormats: true,
@@ -19,16 +19,16 @@ import { VideoAdvanced, VideoCustom } from "../utils/video.js";
     }),
     "Obtaining: " + " "
   );
-  const video_ = await VideoCustom(cron, "highest");
-  const _video = await VideoAdvanced(cron, "2160p");
+  const video_ = await videocustomquality(cron, "highest");
+  const _video = await videoadvanced(cron, "2160p");
   console.log("CUSTOM VIDEO: ", video_);
   console.log("ADVANCE VIDEO: ", _video);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-import { AudioSeperator, AudioQualityCustom } from "../utils/audio.js";
+import { audioseperator, audiocustomquality } from "../utils/audio.js";
 (async () => {
   const cron = await ProgressEst(
-    ExecJson(url, {
+    ExecJson(FourK, {
       noWarnings: true,
       dumpSingleJson: true,
       preferFreeFormats: true,
@@ -37,21 +37,21 @@ import { AudioSeperator, AudioQualityCustom } from "../utils/audio.js";
     }),
     "Obtaining: " + " "
   );
-  const audio_ = await AudioSeperator(cron, "medium");
-  const _audio = await AudioQualityCustom(cron, "best-possible");
+  const audio_ = await audioseperator(cron, "medium");
+  const _audio = await audiocustomquality(cron, "best-possible");
   console.log("AUDIO: ", audio_);
   console.log("CUSTOM AUDIO: ", _audio);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 import { audiosave } from "../lib/audio/index.js";
 (async () => {
-  const datalog = await audiosave(url, "medium", "./src/");
+  const datalog = await audiosave(FourK, "medium", "./src/");
   console.log(datalog);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 import { audiometa } from "../lib/audio/index.js";
 (async () => {
-  const datalog = await audiometa(url);
+  const datalog = await audiometa(FourK);
   console.log(datalog);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");

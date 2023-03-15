@@ -1,5 +1,5 @@
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-export async function AudioSeperator(json) {
+export async function audioseperator(json) {
   try {
     const medium = json.formats.filter(
       (res) =>
@@ -56,7 +56,7 @@ export async function AudioSeperator(json) {
   }
 }
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-export async function AudioQualityCustom(json) {
+export async function audiocustomquality(json) {
   try {
     const medium = json.formats.filter(
       (res) =>
