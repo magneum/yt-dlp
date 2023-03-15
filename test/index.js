@@ -11,7 +11,7 @@ import { infoAudio_customQuality } from "../index.js";
 
   // Promise method
   infoAudio_customQuality(url, sort)
-    .then((data) => cconsole.log("infoAudio_customQuality: ", data))
+    .then((data) => console.log("infoAudio_customQuality: ", data))
     .catch((e) => console.log(e));
 
   // async/await method
