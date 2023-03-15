@@ -36,26 +36,26 @@ export async function AudioSeperator(json) {
       return {
         type: "medium",
         resolution: "audio only",
-        url: medium[0].url || medium[1].url || medium.url,
+        url: medium[0].url || medium[1].url || medium.url || null,
       };
     } else if (low) {
       return {
         type: "low",
         resolution: "audio only",
-        url: low[0].url || low[1].url || low[2].url || low.url,
+        url: low[0].url || low[1].url || low[2].url || low.url || null,
       };
     } else if (ultralow) {
       return {
         type: "ultralow",
         resolution: "audio only",
-        url: ultralow[0].url || ultralow[1].url || ultralow.url,
+        url: ultralow[0].url || ultralow[1].url || ultralow.url || null,
       };
     } else throw new Error("SORRY: Quality Not Found.");
   } catch (error) {
     return error.message;
   }
 }
-
+("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 export async function AudioQualityCustom(json) {
   try {
     const medium = json.formats.filter(
@@ -94,19 +94,19 @@ export async function AudioQualityCustom(json) {
         return {
           quality: "best-possible",
           resolution: "audio only",
-          url: medium[0].url || medium[1].url || medium.url,
+          url: medium[0].url || medium[1].url || medium.url || null,
         };
       } else if (!medium && low) {
         return {
           quality: "best-possible",
           resolution: "audio only",
-          url: low[0].url || low[1].url || low[2].url || low.url,
+          url: low[0].url || low[1].url || low[2].url || low.url || null,
         };
       } else if (!medium && !low && ultralow) {
         return {
           quality: "best-possible",
           resolution: "audio only",
-          url: ultralow[0].url || ultralow[1].url || ultralow.url,
+          url: ultralow[0].url || ultralow[1].url || ultralow.url || null,
         };
       } else throw new Error("SORRY: Quality Not Found.");
     } else if (quality === "medium-possible") {
@@ -114,13 +114,13 @@ export async function AudioQualityCustom(json) {
         return {
           quality: "medium-possible",
           resolution: "audio only",
-          url: low[0].url || low[1].url || low[2].url || low.url,
+          url: low[0].url || low[1].url || low[2].url || low.url || null,
         };
       } else if (!low && ultralow) {
         return {
           quality: "medium-possible",
           resolution: "audio only",
-          url: ultralow[0].url || ultralow[1].url || ultralow.url,
+          url: ultralow[0].url || ultralow[1].url || ultralow.url || null,
         };
       } else throw new Error("SORRY: Quality Not Found.");
     } else if (quality === "lowest-possible") {
@@ -128,7 +128,7 @@ export async function AudioQualityCustom(json) {
         return {
           quality: "lowest-possible",
           resolution: "audio only",
-          url: ultralow[0].url || ultralow[1].url || ultralow.url,
+          url: ultralow[0].url || ultralow[1].url || ultralow.url || null,
         };
       } else throw new Error("SORRY: Quality Not Found.");
     } else throw new Error("ERROR: Wrong Quality Provided.");
@@ -230,3 +230,4 @@ export async function AudioMetaData(json, quality) {
     return error.message;
   }
 }
+("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
