@@ -4,7 +4,7 @@
  * @param {string} sort -> "medium" || "low" || "ultralow"
  */
 
-import { infoAudio_customQuality } from "../lib/utils/audio.js";
+import { infoAudio_customQuality } from "../index.js";
 (async () => {
   let sort = "medium";
   const url = "https://youtu.be/TpdapO9QGRo";
@@ -25,7 +25,7 @@ import { infoAudio_customQuality } from "../lib/utils/audio.js";
  * @param {url} url -> "youtube-video-link"
  * @param {string} quality -> "best-possible" || "medium-possible" || "lowest-possible"
  */
-import { infoAudio_Sorted } from "../lib/utils/audio.js";
+import { infoAudio_Sorted } from "../index.js";
 (async () => {
   let quality = "best-possible";
   const url = "https://youtu.be/TpdapO9QGRo";
