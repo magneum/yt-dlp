@@ -42,27 +42,163 @@ async function VideoQualityCustom(jsondata, quality) {
       (await data.format_id) === "278"
   );
 
-  var TubeBest = videoBest[2] || videoBest[1] || videoBest[0] || videoBest;
-  var TubeHighest =
-    videoHighest[3] ||
-    videoHighest[2] ||
-    videoHighest[1] ||
-    videoHighest[0] ||
-    videoHighest;
-  var TubeHigh = videoHigh[0] || videoHigh[1] || videoHigh[2] || videoHigh;
-  var TubeMedium =
-    videoMedium[0] ||
-    videoMedium[1] ||
-    videoMedium[2] ||
-    videoMedium[3] ||
-    videoMedium;
-  var TubeLow = videoLow[0] || videoLow[1] || videoLow[2] || videoLow;
-  var TubeLowest =
-    videoLowest[0] ||
-    videoLowest[1] ||
-    videoLowest[2] ||
-    videoLowest[3] ||
-    videoLowest[4] ||
-    videoLowest[5] ||
-    videoLowest;
+  if (quality === "best") {
+    if (videoBest.width)
+      return videoBest[2] || videoBest[1] || videoBest[0] || videoBest;
+    else throw new Error("SORRY: Quality Not Found.");
+  } else if (quality === "highest") {
+    if (
+      videoHighest.width &&
+      videoHigh.width &&
+      videoMedium.width &&
+      videoLow.width &&
+      videoLowest.width
+    )
+      return (
+        videoHighest[3] ||
+        videoHighest[2] ||
+        videoHighest[1] ||
+        videoHighest[0] ||
+        videoHighest
+      );
+    else if (
+      !videoHighest.width &&
+      videoHigh.width &&
+      videoMedium.width &&
+      videoLow.width &&
+      videoLowest.width
+    )
+      return videoHigh[0] || videoHigh[1] || videoHigh[2] || videoHigh;
+    else if (
+      !videoHighest.width &&
+      !videoHigh.width &&
+      videoMedium.width &&
+      videoLow.width &&
+      videoLowest.width
+    )
+      return (
+        videoMedium[0] ||
+        videoMedium[1] ||
+        videoMedium[2] ||
+        videoMedium[3] ||
+        videoMedium
+      );
+    else if (
+      !videoHighest.width &&
+      !videoHigh.width &&
+      !videoMedium.width &&
+      videoLow.width &&
+      videoLowest.width
+    )
+      return videoLow[0] || videoLow[1] || videoLow[2] || videoLow;
+    else if (
+      !videoHighest.width &&
+      !videoHigh.width &&
+      !videoMedium.width &&
+      !videoLow.width &&
+      videoLowest.width
+    )
+      return (
+        videoLowest[0] ||
+        videoLowest[1] ||
+        videoLowest[2] ||
+        videoLowest[3] ||
+        videoLowest[4] ||
+        videoLowest[5] ||
+        videoLowest
+      );
+    else throw new Error("SORRY: Quality Not Found.");
+  } else if (quality === "high") {
+    if (
+      videoHigh.width &&
+      videoMedium.width &&
+      videoLow.width &&
+      videoLowest.width
+    )
+      return videoHigh[0] || videoHigh[1] || videoHigh[2] || videoHigh;
+    else if (
+      !videoHigh.width &&
+      videoMedium.width &&
+      videoLow.width &&
+      videoLowest.width
+    )
+      return (
+        videoMedium[0] ||
+        videoMedium[1] ||
+        videoMedium[2] ||
+        videoMedium[3] ||
+        videoMedium
+      );
+    else if (
+      !videoHigh.width &&
+      !videoMedium.width &&
+      videoLow.width &&
+      videoLowest.width
+    )
+      return videoLow[0] || videoLow[1] || videoLow[2] || videoLow;
+    else if (
+      !videoHigh.width &&
+      !videoMedium.width &&
+      !videoLow.width &&
+      videoLowest.width
+    )
+      return (
+        videoLowest[0] ||
+        videoLowest[1] ||
+        videoLowest[2] ||
+        videoLowest[3] ||
+        videoLowest[4] ||
+        videoLowest[5] ||
+        videoLowest
+      );
+    else throw new Error("SORRY: Quality Not Found.");
+  } else if (quality === "medium") {
+    if (videoMedium.width && videoLow.width && videoLowest.width)
+      return (
+        videoMedium[0] ||
+        videoMedium[1] ||
+        videoMedium[2] ||
+        videoMedium[3] ||
+        videoMedium
+      );
+    else if (!videoMedium.width && videoLow.width && videoLowest.width)
+      return videoLow[0] || videoLow[1] || videoLow[2] || videoLow;
+    else if (!videoMedium.width && !videoLow.width && videoLowest.width)
+      return (
+        videoLowest[0] ||
+        videoLowest[1] ||
+        videoLowest[2] ||
+        videoLowest[3] ||
+        videoLowest[4] ||
+        videoLowest[5] ||
+        videoLowest
+      );
+    else throw new Error("SORRY: Quality Not Found.");
+  } else if (quality === "low") {
+    if (videoLow.width && videoLowest.width)
+      return videoLow[0] || videoLow[1] || videoLow[2] || videoLow;
+    else if (!videoLow.width && videoLowest.width)
+      return (
+        videoLowest[0] ||
+        videoLowest[1] ||
+        videoLowest[2] ||
+        videoLowest[3] ||
+        videoLowest[4] ||
+        videoLowest[5] ||
+        videoLowest
+      );
+    else throw new Error("SORRY: Quality Not Found.");
+  } else if (quality === "lowest") {
+    if (!videoLow.width && videoLowest.width)
+      return (
+        videoLowest[0] ||
+        videoLowest[1] ||
+        videoLowest[2] ||
+        videoLowest[3] ||
+        videoLowest[4] ||
+        videoLowest[5] ||
+        videoLowest
+      );
+    else throw new Error("SORRY: Quality Not Found.");
+  } else throw new Error("ERROR: Wrong Quality Provided.");
 }
