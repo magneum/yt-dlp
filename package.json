@@ -3,7 +3,7 @@
   "type": "module",
   "main": "index.js",
   "version": "1.1.0",
-  "description": "A Youtube Audio Video Scrapper And Downloader Client",
+  "description": "A youtube (audio - video) scrapper and downloader client",
   "scripts": {
     "preinstall": "pip install -r src/requirements.txt",
     "test": "node test/index.js"

@@ -2,8 +2,8 @@
   <img src="https://i.postimg.cc/j2ktjrwr/Liquid-You-Tube.gif" height="400" width="600" style="border-radius:5%"/>
 </p>
 
-<h1 align="center"><b>⚡ MAGNEUM-YOUTUBE ⚡</b></h1>
-<p align="center">A youtube audio video scrapper and downloader</p>
+<h1 align="center"><b>⚡ YTDLP ⚡</b></h1>
+<p align="center">A youtube (audio - video) scrapper and downloader client</p>
 
 <br></br><br></br>
 
@@ -19,290 +19,195 @@
 - [@progress-estimator](https://github.com/bvaughn/progress-estimator#readme)
 - [@spinnies](https://github.com/jcarpanelli/spinnies#readme)
 
-<!-- ================================================================================================================================================================ -->
+<!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
 
-## Module Usage and Parameter
+## Module Usage and Parameters
 
-<h1 align="center"><b>📹 videometa() 👇🏻</b></h1>
+<br><h1 align="left"><b>📹 infoVideo_customResolution()</b></h1>
 
+```js
+/**
+ * @param {url} url -> "youtube-video-link"
+ * @param {string} resolution -> "2160p" || "1440p" || "1080p" || "720p" || "480p" || "360p" || "240p" || "144p"
+ */
 ```
-  videometa()
-  : needs one paramter
-  ? callback: logs that will be available when the execution is completed
 
-```
-
-<details open><summary><b>❓Example & Usage</b></summary>
+<details>
+<summary><b>❓Example & Usage</b></summary>
 <p>
 
 #### ❤️ for coding
 
 ```js
-import { videometa } from "magneum-youtube";
+import { infoVideo_customResolution } from "ytdlp";
 
-let url = "Take Me To Church";
-let name = "https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI";
-videometa(url || name, async function (data) {
+let resolution = "2160p";
+const url = "https://youtu.be/TpdapO9QGRo";
+
+// Promise method
+infoVideo_customResolution(url, resolution)
+  .then((data) => console.log(data))
+  .catch((e) => console.log(e));
+
+// async/await method
+(async () => {
+  const data = await infoVideo_customResolution(url, resolution).catch((e) =>
+    console.log(e)
+  );
   console.log(data);
-});
-
-// or using arrow function:
-videometa(url || name, async (data) => console.log(data));
+})();
 ```
 
-### videometa() metadata
+### Output Layout
 
 ```json
-{
-  "header": "◎☱☱☱☱[ ву mågneum ]☱☱☱☱◎",
-  "status": true,
-  "links": {
-    "_1080p": "https://rr2---sn-gwpa-jj06.googlevideo.com",
-    "_720p": "https://rr2---sn-gwpa-jj06.googlevideo.com",
-    "_480p": "https://rr2---sn-gwpa-jj06.googlevideo.com",
-    "_360p": "https://rr2---sn-gwpa-jj06.googlevideo.com",
-    "_240p": "https://rr2---sn-gwpa-jj06.googlevideo.com",
-    "_144p": "https://rr2---sn-gwpa-jj06.googlevideo.com"
-  },
-  "footer": "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎"
-}
+{}
 ```
 
 </p>
 </details>
 
-<details open><summary><b>⚠️Arguments & Parameters</b></summary>
+<!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
 
-#### ❤️ for coding
+## Module Usage and Parameters
 
-<p>
+<br><h1 align="left"><b>📹 infoVideo_Sorted()</b></h1>
 
-| Parameter               | Usage                             | Arg[]        |
-| :---------------------- | :-------------------------------- | :----------- |
-| `songName / youtubeUrl` | videometa("songName/youtubeUrl"); | **Required** |
-
-</p>
-</details>
-
-<!-- ================================================================================================================================================================ -->
-<h1 align="center"><b>📹 videosave() 👇🏻</b></h1>
-
-```
-  videosave()
-  : needs three paramter
-  ? datalink:  the link of the video got from videometa()
-  ? path:  absolute path where you wish to save the file
-  ? callback: logs that will be available when the execution is completed
+```js
+/**
+ * @param {url} url -> "youtube-video-link"
+ * @param {string} resolution -> "highest" || "medium" || "lowest"
+ */
 ```
 
-<details open><summary><b>❓Example & Usage</b></summary>
+<details>
+<summary><b>❓Example & Usage</b></summary>
 <p>
 
 #### ❤️ for coding
 
 ```js
-import { videometa, videosave, videoaudiosave } from "magneum-youtube";
+import { infoVideo_Sorted } from "ytdlp";
 
-let url = "Take Me To Church";
-let name = "https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI";
-videometa(url || name, async function (data) {
+let quality = "highest";
+const url = "https://youtu.be/TpdapO9QGRo";
+
+// Promise method
+infoVideo_Sorted(url, quality)
+  .then((data) => console.log(data))
+  .catch((e) => console.log(e));
+
+// async/await method
+(async () => {
+  const data = await infoVideo_Sorted(url, quality).catch((e) =>
+    console.log(e)
+  );
   console.log(data);
-  let path "./";
-  let metalink = data.links._1080p;
-  videosave(url || name, metalink, path, async function (data) {
-    console.log(data);
-  });
-});
+})();
 ```
 
-### videometa() metadata
+### Output Layout
 
 ```json
-{
-  "header": "◎☱☱☱☱[ ву mågneum ]☱☱☱☱◎",
-  "status": true,
-  "links": {
-    "_1080p": "https://rr2---sn-gwpa-jj06.googlevideo.com",
-    "_720p": "https://rr2---sn-gwpa-jj06.googlevideo.com",
-    "_480p": "https://rr2---sn-gwpa-jj06.googlevideo.com",
-    "_360p": "https://rr2---sn-gwpa-jj06.googlevideo.com",
-    "_240p": "https://rr2---sn-gwpa-jj06.googlevideo.com",
-    "_144p": "https://rr2---sn-gwpa-jj06.googlevideo.com"
-  },
-  "footer": "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎"
-}
+{}
 ```
 
 </p>
 </details>
 
-<details open><summary><b>⚠️Arguments & Parameters</b></summary>
+<!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
 
-#### ❤️ for coding
+<br><h1 align="left"><b>📢 infoAudio_customQuality()</b></h1>
 
-<p>
-
-| Parameter               | Usage                                                                                      | Arg[]        |
-| :---------------------- | :----------------------------------------------------------------------------------------- | :----------- |
-| `songName / youtubeUrl` | videosave("songName/youtubeUrl");                                                          | **Required** |
-| `datalink`              | videosave("songName/youtubeUrl", "datalink", "path", (callback) => console.log(callback)); | **Required** |
-| `path`                  | videosave("songName/youtubeUrl", "datalink", "path", (callback) => console.log(callback)); | optional     |
-
-</p>
-</details>
-
-<!-- ================================================================================================================================================================ -->
-<h1 align="center"><b>📹 videoaudiosave() 👇🏻</b></h1>
-
-```
-  videoaudiosave()
-  : needs three paramter
-  ? datalink:  the link of the video got from videoaudiosave()
-  ? path:  absolute path where you wish to save the file
-  ? callback: logs that will be available when the execution is completed
+```js
+/**
+ * @param {url} url -> "youtube-video-link"
+ * @param {string} quality -> "best-possible" || "medium-possible" || "lowest-possible"
+ */
 ```
 
-<details open><summary><b>❓Example & Usage</b></summary>
+<details>
+<summary><b>❓Example & Usage</b></summary>
 <p>
 
 #### ❤️ for coding
 
 ```js
-import { videometa, videosave, videoaudiosave } from "magneum-youtube";
+import { infoAudio_customQuality } from "ytdlp";
 
-let url = "Take Me To Church";
-let name = "https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI";
-videometa(url || name, async function (data) {
+let quality = "best-possible";
+const url = "https://youtu.be/TpdapO9QGRo";
+
+// Promise method
+infoAudio_customQuality(url, quality)
+  .then((data) => console.log(data))
+  .catch((e) => console.log(e));
+
+// async/await method
+(async () => {
+  const data = await infoAudio_customQuality(url, quality).catch((e) =>
+    console.log(e)
+  );
   console.log(data);
-});
-videoaudiosave(url || name, metalink, path, async function (data) {
-  console.log(data);
-});
+})();
 ```
 
-</p>
-</details>
-
-<details open><summary><b>⚠️Arguments & Parameters</b></summary>
-
-#### ❤️ for coding
-
-<p>
-
-| Parameter               | Usage                                                                                           | Arg[]        |
-| :---------------------- | :---------------------------------------------------------------------------------------------- | :----------- |
-| `songName / youtubeUrl` | videoaudiosave("songName/youtubeUrl");                                                          | **Required** |
-| `datalink`              | videoaudiosave("songName/youtubeUrl", "datalink", "path", (callback) => console.log(callback)); | **Required** |
-| `path`                  | videoaudiosave("songName/youtubeUrl", "datalink", "path", (callback) => console.log(callback)); | optional     |
-
-</p>
-</details>
-
-<!-- ================================================================================================================================================================ -->
-<h1 align="center"><b>📢 audiometa() 👇🏻</b></h1>
-
-```
-  audiometa()
-  : needs one paramter
-  ? callback: logs that will be available when the execution is completed
-
-```
-
-<details open><summary><b>❓Example & Usage</b></summary>
-<p>
-
-#### ❤️ for coding
-
-```js
-import { audiometa, audiosave } from "magneum-youtube";
-
-let url = "Take Me To Church";
-let name = "https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI";
-audiometa(url || name, async function (data) {
-  console.log(data);
-});
-```
-
-#### 🎊 Output from the function
+### Output Layout
 
 ```json
-{
-  "header": "◎☱☱☱☱[ ву mågneum ]☱☱☱☱◎",
-  "status": true,
-  "links": {
-    "ultralow": "https://rr4---sn-gwpa-jj0s.googlevideo.com",
-    "low": "https://rr4---sn-gwpa-jj0s.googlevideo.com",
-    "medium": "https://rr4---sn-gwpa-jj0s.googlevideo.com"
-  },
-  "footer": "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎"
-}
+{}
 ```
 
 </p>
 </details>
 
-<details open><summary><b>⚠️Arguments & Parameters</b></summary>
+<!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
 
-#### ❤️ for coding
+<br><h1 align="left"><b>📢 infoAudio_Sorted()</b></h1>
 
-<p>
-
-| Parameter               | Usage                             | Arg[]        |
-| :---------------------- | :-------------------------------- | :----------- |
-| `songName / youtubeUrl` | audiometa("songName/youtubeUrl"); | **Required** |
-
-</p>
-</details>
-
-<!-- ================================================================================================================================================================ -->
-<h1 align="center"><b>📢 audiosave() 👇🏻</b></h1>
-
-```
-  audiosave()
-  : needs three paramter
-  ? datalink:  the link of the video got from videometa()
-  ? path:  absolute path where you wish to save the file
-  ? callback: logs that will be available when the execution is completed
+```js
+/**
+ * @param {url} url -> "youtube-video-link"
+ * @param {string} sort -> "medium" || "low" || "ultralow"
+ */
 ```
 
-<details open><summary><b>❓Example & Usage</b></summary>
+<details>
+<summary><b>❓Example & Usage</b></summary>
 <p>
 
 #### ❤️ for coding
 
 ```js
-import { audiometa, audiosave } from "magneum-youtube";
+import { infoAudio_Sorted } from "ytdlp";
 
-let url = "Take Me To Church";
-let name = "https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI";
-audiometa(url || name, async function (data) {
+let sort = "medium";
+const url = "https://youtu.be/TpdapO9QGRo";
+
+// Promise method
+infoAudio_Sorted(url, sort)
+  .then((data) => console.log(data))
+  .catch((e) => console.log(e));
+
+// async/await method
+(async () => {
+  const data = await infoAudio_Sorted(url, sort).catch((e) => console.log(e));
   console.log(data);
-});
-audiosave(url || name, metalink, path, async function (data) {
-  console.log(data);
-});
+})();
+```
+
+### Output Layout
+
+```json
+{}
 ```
 
 </p>
 </details>
 
-<details open><summary><b>⚠️Arguments & Parameters</b></summary>
+<!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
 
-#### ❤️ for coding
-
-<p>
-
-| Parameter               | Usage                                                                                      | Arg[]        |
-| :---------------------- | :----------------------------------------------------------------------------------------- | :----------- |
-| `songName / youtubeUrl` | audiosave("songName/youtubeUrl");                                                          | **Required** |
-| `datalink`              | audiosave("songName/youtubeUrl", "datalink", "path", (callback) => console.log(callback)); | **Required** |
-| `path`                  | audiosave("songName/youtubeUrl", "datalink", "path", (callback) => console.log(callback)); | optional     |
-
-</p>
-</details>
-
-<!-- ================================================================================================================================================================ -->
-<h1 align="center"><b>🔍 Search() 👇🏻</b></h1>
+<br><h1 align="left"><b>🔍 Search()</b></h1>
 
 ```
   Search()
@@ -311,22 +216,21 @@ audiosave(url || name, metalink, path, async function (data) {
 
 ```
 
-<details open><summary><b>❓Example & Usage</b></summary>
+<details>
+<summary><b>❓Example & Usage</b></summary>
 <p>
 
 #### ❤️ for coding
 
 ```js
-import { Search } from "magneum-youtube";
+import { Search } from "ytdlp";
 
-let url = "Take Me To Church";
-let name = "https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI";
-Search(url || name, async function (data) {
+let url = "https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI";
+Search(url, async function (data) {
   console.log(data);
 });
 
-// or using arrow function:
-Search(url || name, async (data) => console.log(data));
+Search(url, async (data) => console.log(data));
 ```
 
 #### 🎊 Output from the function
@@ -357,17 +261,18 @@ Search(url || name, async (data) => console.log(data));
 </p>
 </details>
 
-<details open><summary><b>⚠️Arguments & Parameters</b></summary>
+<details>
+<summary><b>⚠️Arguments & Parameters</b></summary>
 
 #### ❤️ for coding
 
 <p>
 
-| Parameter               | Usage                          | Arg[]        |
-| :---------------------- | :----------------------------- | :----------- |
-| `songName / youtubeUrl` | Search("songName/youtubeUrl"); | **Required** |
+| Parameter                  | Usage                          | Arg[]        |
+| :------------------------- | :----------------------------- | :----------- |
+| `song-name or youtube-url` | Search("songName/youtubeUrl"); | **Required** |
 
 </p>
 </details>
 
-<!-- ================================================================================================================================================================ -->
+<!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
