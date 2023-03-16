@@ -97,7 +97,7 @@ Done in 2.65s.
 
 <!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
 
-<br><h1 align="center"><b>📹 infoVideo_Sorted()</b></h1>
+<br><h1 align="center"><b>📹 infoVideo_autoSorted()</b></h1>
 
 <b> 🗝️ @parameters/@arguments </b>
 
@@ -115,20 +115,20 @@ Done in 2.65s.
 #### ❤️ for coding
 
 ```js
-import { infoVideo_Sorted } from "yt-dlp";
+import { infoVideo_autoSorted } from "yt-dlp";
 import chalk from "chalk";
 
 let quality = "highest";
 const url = "https://youtu.be/TpdapO9QGRo";
 
 // Promise method
-infoVideo_Sorted(url, quality)
+infoVideo_autoSorted(url, quality)
   .then((data) => console.log(chalk.bgGreen("INFOVIDEO_SORTED:"), data))
   .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
 
 // async/await method
 (async () => {
-  const data = await infoVideo_Sorted(url, quality).catch((e) =>
+  const data = await infoVideo_autoSorted(url, quality).catch((e) =>
     console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message))
   );
   console.log(chalk.bgGreen("INFOVIDEO_SORTED:"), data);
@@ -166,7 +166,7 @@ Done in 2.64s.
 </details>
 <!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
 
-<br><h1 align="center"><b>📢 infoAudio_Sorted()</b></h1>
+<br><h1 align="center"><b>📢 infoAudio_autoSorted()</b></h1>
 
 <b> 🗝️ @parameters/@arguments </b>
 
@@ -184,20 +184,20 @@ Done in 2.64s.
 #### ❤️ for coding
 
 ```js
-import { infoAudio_Sorted } from "yt-dlp";
+import { infoAudio_autoSorted } from "yt-dlp";
 import chalk from "chalk";
 
 let quality = "best-possible";
 const url = "https://youtu.be/TpdapO9QGRo";
 
 // Promise method
-infoAudio_Sorted(url, quality)
+infoAudio_autoSorted(url, quality)
   .then((data) => console.log(chalk.bgGreen("INFOAUDIO_SORTED:"), data))
   .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
 
 // async/await method
 (async () => {
-  const data = await infoAudio_Sorted(url, quality).catch((e) =>
+  const data = await infoAudio_autoSorted(url, quality).catch((e) =>
     console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message))
   );
   console.log(chalk.bgGreen("INFOAUDIO_SORTED:"), data);

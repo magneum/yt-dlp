@@ -92,18 +92,18 @@ import { downloadAudio_customQuality } from "../lib/audio/ffmpeg.js";
  * @param {download-folder-name} @arg {optional} -> auto created if not exists or specified
  */
 
-let sort = "medium";
-const url = "https://youtu.be/TpdapO9QGRo";
-
-// Promise method
-downloadAudio_customQuality(url, sort, "mågneum")
-  .then((data) =>
-    console.log(chalk.bgGreen("DOWNLOADAUDIO_CUSTOMQUALITY:"), data)
-  )
-  .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
-
 // async/await method
 (async () => {
+  let sort = "medium";
+  const url = "https://youtu.be/TpdapO9QGRo";
+
+  // Promise method
+  downloadAudio_customQuality(url, sort, "mågneum")
+    .then((data) =>
+      console.log(chalk.bgGreen("DOWNLOADAUDIO_CUSTOMQUALITY:"), data)
+    )
+    .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
+
   const data = await downloadAudio_customQuality(url, sort, "./src/").catch(
     (e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message))
   );
@@ -118,13 +118,16 @@ import { downloadAudio_Sorted } from "../lib/audio/ffmpeg.js";
  * @param {download-folder-name} @arg {optional} -> auto created if not exists or specified
  */
 
-// Promise method
-downloadAudio_Sorted(url, "best-possible", "mågneum")
-  .then((data) => console.log(chalk.bgGreen("DOWNLOADAUDIO_SORTED:"), data))
-  .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
-
 // async/await method
 (async () => {
+  let sort = "medium";
+  const url = "https://youtu.be/TpdapO9QGRo";
+
+  // Promise method
+  downloadAudio_Sorted(url, "best-possible", "mågneum")
+    .then((data) => console.log(chalk.bgGreen("DOWNLOADAUDIO_SORTED:"), data))
+    .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
+
   const data = await downloadAudio_Sorted(url, "best-possible", "./src/").catch(
     (e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message))
   );
