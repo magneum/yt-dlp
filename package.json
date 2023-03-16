@@ -2,24 +2,24 @@
   "name": "yt-dlp",
   "type": "module",
   "main": "./bin/index.js",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "yt-dlp - Python+ Javascript Youtube Audio Video Scrapper And Downloader Client",
   "scripts": {
     "preinstall": "pip install -r src/requirements.txt",
     "test": "node test/index.js"
   },
   "dependencies": {
-    "@ffmpeg-installer/ffmpeg": "^1.1.0",
-    "@ffprobe-installer/ffprobe": "^2.0.0",
-    "@types/fluent-ffmpeg": "^2.1.21",
-    "chalk": "^5.2.0",
-    "dotenv": "^16.0.3",
-    "fluent-ffmpeg": "^2.1.2",
+    "@ffmpeg-installer/ffmpeg": "*",
+    "@ffprobe-installer/ffprobe": "*",
+    "@types/fluent-ffmpeg": "*",
+    "chalk": "*",
+    "dotenv": "*",
+    "fluent-ffmpeg": "*",
     "node-fetch": "2",
-    "progress-estimator": "^0.3.0",
-    "spinnies": "^0.5.1",
-    "youtube-dl-exec": "^2.4.0",
-    "yt-dlp": "^1.1.0"
+    "progress-estimator": "*",
+    "spinnies": "*",
+    "youtube-dl-exec": "*",
+    "yt-dlp": "*"
   },
   "devDependencies": {
     "winston": "^3.8.2"
