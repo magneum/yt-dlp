@@ -1,7 +1,9 @@
+("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 import chalk from "chalk";
 const url = "https://youtu.be/TpdapO9QGRo";
-("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 import { infoAudio_customQuality, infoAudio_Sorted } from "../index.js";
+import { infoVideo_customResolution, infoVideo_Sorted } from "../index.js";
+// =========================================================== [ AUDIO ] ===========================================================
 infoAudio_customQuality(url, "medium")
   .then((data) => console.log(chalk.bgGreen("INFOAUDIO_CUSTOMQUALITY:"), data))
   .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
@@ -9,8 +11,8 @@ infoAudio_customQuality(url, "medium")
 infoAudio_Sorted(url, "best-possible")
   .then((data) => console.log(chalk.bgGreen("INFOAUDIO_SORTED:"), data))
   .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
-("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-import { infoVideo_customResolution, infoVideo_Sorted } from "../index.js";
+
+// =========================================================== [ VIDEO ] ===========================================================
 infoVideo_customResolution(url, "2160p")
   .then((data) =>
     console.log(chalk.bgGreen("INFOVIDEO_CUSTOMRESOLUTION:"), data)
