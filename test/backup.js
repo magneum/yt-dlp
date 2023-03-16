@@ -83,14 +83,33 @@ import { infoVideo_Sorted } from "../index.js";
   );
   console.log("INFOVIDEO_SORTED: ", data);
 })();
-("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-// import { audiosave } from "../lib/audio/index.js";
-// (async () => {
-// const data = await audiosave(url, "medium", "./src/").catch((e) => console.log(e));
-// audiosave(url, "medium", "./src/").then((data) => console.log(data)).catch((e) => console.log(e));
-// console.log(data);
-// })();
+// ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱ [ DOWNLOADER ] ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱
+import { downloadAudio_customQuality } from "../lib/audio/ffmpeg.js";
 
+/**
+ * @param {url} url -> "youtube-video-link"
+ * @param {string} sort -> "medium" || "low" || "ultralow"
+ * @param {download-folder-name} @arg {optional} -> auto created if not exists or specified
+ */
+
+let sort = "medium";
+const url = "https://youtu.be/TpdapO9QGRo";
+
+// Promise method
+downloadAudio_customQuality(url, sort, "mågneum")
+  .then((data) =>
+    console.log(chalk.bgGreen("DOWNLOADAUDIO_CUSTOMQUALITY:"), data)
+  )
+  .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
+
+// async/await method
+(async () => {
+  const data = await downloadAudio_customQuality(url, sort, "./src/").catch(
+    (e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message))
+  );
+  console.log(chalk.bgGreen("DOWNLOADAUDIO_CUSTOMQUALITY:"), data);
+})();
+("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 // import { audiometa } from "../lib/audio/index.js";
 // (async () => {
 // const data = await audiometa(url).catch((e) => console.log(e));

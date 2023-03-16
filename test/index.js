@@ -26,16 +26,34 @@ import { infoVideo_customResolution, infoVideo_Sorted } from "../index.js";
 // .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
 
 // ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱ [ DOWNLOADER ] ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱
-import { audiosave } from "../lib/audio/ffmpeg.js";
+import { downloadAudio_customQuality } from "../lib/audio/ffmpeg.js";
 
-audiosave(url, "medium", "mod")
-  .then((data) => console.log(chalk.bgGreen("AUDIOSAVE:"), data))
+downloadAudio_customQuality(url, "medium", "mågneum")
+  .then((data) =>
+    console.log(chalk.bgGreen("downloadAudio_customQuality:"), data)
+  )
   .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
+
+// ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱ [ DOWNLOADER ] ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱
+// import { downloadAudio_Sorted } from "../lib/audio/ffmpeg.js";
+
+// /**
+//  * @param {url} url -> "youtube-video-link"
+//  * @param {string} sort -> "best-possible" || "medium-possible" || "lowest-possible"
+//  * @param {download-folder-name} @arg {optional} -> auto created if not exists or specified
+//  */
+
+// // Promise method
+// downloadAudio_Sorted(url, "best-possible", "mågneum")
+//   .then((data) => console.log(chalk.bgGreen("downloadAudio_Sorted:"), data))
+//   .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
+
+// // async/await method
 // (async () => {
-// const data = await audiosave(url, "medium", "./src/").catch((e) =>
-// console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message))
-// );
-// console.log(chalk.bgGreen("AUDIOSAVE:"), data);
+//   const data = await downloadAudio_Sorted(url, "best-possible", "./src/").catch(
+//     (e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message))
+//   );
+//   console.log(chalk.bgGreen("downloadAudio_Sorted:"), data);
 // })();
 
 // import { audiometa } from "../lib/audio/index.js";
