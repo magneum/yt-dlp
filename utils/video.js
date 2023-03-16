@@ -15,16 +15,16 @@ export async function infoVideo_customResolution(
     throw new Error("YouTube Link not found.Refer to docs for usage examples.");
   } else
     try {
-      const jsonmeta = await ProgressEst(
-        ExecJson(url, {
-          noWarnings: true,
-          dumpSingleJson: true,
-          preferFreeFormats: true,
-          noCheckCertificates: true,
-          addHeader: ["referer:youtube.com", "user-agent:googlebot"],
-        }),
-        "Obtaining: " + " "
-      );
+      var Execjson = ExecJson(url, {
+        noWarnings: true,
+        dumpSingleJson: true,
+        preferFreeFormats: true,
+        noCheckCertificates: true,
+        addHeader: ["referer:youtube.com", "user-agent:googlebot"],
+      }).catch(() => {
+        throw new Error("Sorry some error occured.Try again!");
+      });
+      const jsonmeta = await ProgressEst(Execjson, "Obtaining: " + " ");
 
       var Format_2160p = jsonmeta.formats.filter(
         (res) =>
@@ -179,16 +179,16 @@ export async function infoVideo_Sorted(
     throw new Error("YouTube Link not found.Refer to docs for usage examples.");
   } else
     try {
-      const jsonmeta = await ProgressEst(
-        ExecJson(url, {
-          noWarnings: true,
-          dumpSingleJson: true,
-          preferFreeFormats: true,
-          noCheckCertificates: true,
-          addHeader: ["referer:youtube.com", "user-agent:googlebot"],
-        }),
-        "Obtaining: " + " "
-      );
+      var Execjson = ExecJson(url, {
+        noWarnings: true,
+        dumpSingleJson: true,
+        preferFreeFormats: true,
+        noCheckCertificates: true,
+        addHeader: ["referer:youtube.com", "user-agent:googlebot"],
+      }).catch(() => {
+        throw new Error("Sorry some error occured.Try again!");
+      });
+      const jsonmeta = await ProgressEst(Execjson, "Obtaining: " + " ");
       var Format_2160p = jsonmeta.formats.filter(
         (res) =>
           (res.format_id === "401" && res.format_note === "2160p") ||
