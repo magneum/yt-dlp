@@ -13,4 +13,5 @@ RUN apt update -y && DEBIAN_FRONTEND=noninteractive apt install -y curl php-cli 
 RUN apt update -y && apt install -y curl && \
   curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
   apt update -y && apt install -y nodejs
-RUN apt install -y python3 python3-pip yarn
+RUN apt install -y python3 python3-pip
+RUN npm i -g yarn
