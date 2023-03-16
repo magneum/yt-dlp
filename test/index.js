@@ -1,12 +1,9 @@
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 import chalk from "chalk";
-import { downloadAudio_autoSorted } from "../bin/index.js";
-import { downloadAudio_customQuality } from "../bin/index.js";
-import { infoAudio_customQuality, infoAudio_autoSorted } from "../bin/index.js";
-import {
-  infoVideo_customResolution,
-  infoVideo_autoSorted,
-} from "../bin/index.js";
+import { downloadAudio_autoSorted } from "yt-dlp";
+import { downloadAudio_customQuality } from "yt-dlp";
+import { infoAudio_customQuality, infoAudio_autoSorted } from "yt-dlp";
+import { infoVideo_customResolution, infoVideo_autoSorted } from "yt-dlp";
 const url = "https://youtu.be/VCiDeT16t6U"; // https://youtu.be/TpdapO9QGRo";
 
 // ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱ [ AUDIO ] ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱

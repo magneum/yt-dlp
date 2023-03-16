@@ -18,7 +18,8 @@
     "node-fetch": "2",
     "progress-estimator": "^0.3.0",
     "spinnies": "^0.5.1",
-    "youtube-dl-exec": "^2.4.0"
+    "youtube-dl-exec": "^2.4.0",
+    "yt-dlp": "^1.1.0"
   },
   "devDependencies": {
     "winston": "^3.8.2"

@@ -1,5 +1,5 @@
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-import { infoAudio_customQuality } from "../bin/index.js";
+import { infoAudio_customQuality } from "yt-dlp";
 url = "https://youtu.be/TpdapO9QGRo";
 sort = "medium";
 
@@ -21,7 +21,7 @@ infoAudio_customQuality(url, sort)
   console.log("INFOAUDIO_CUSTOMQUALITY: ", data);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-import { infoAudio_Sorted } from "../bin/index.js";
+import { infoAudio_Sorted } from "yt-dlp";
 url = "https://youtu.be/TpdapO9QGRo";
 quality = "best-possible";
 
@@ -43,7 +43,7 @@ infoAudio_Sorted(url, quality)
   console.log("INFOAUDIO_SORTED: ", data);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-import { infoVideo_customResolution } from "../bin/index.js";
+import { infoVideo_customResolution } from "yt-dlp";
 url = "https://youtu.be/TpdapO9QGRo";
 resolution = "2160p";
 
@@ -65,7 +65,7 @@ infoVideo_customResolution(url, resolution)
   console.log("INFOVIDEO_CUSTOMRESOLUTION: ", data);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-import { infoVideo_Sorted } from "../bin/index.js";
+import { infoVideo_Sorted } from "yt-dlp";
 url = "https://youtu.be/TpdapO9QGRo";
 quality = "highest";
 
