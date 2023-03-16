@@ -110,10 +110,24 @@ downloadAudio_customQuality(url, sort, "mågneum")
   console.log(chalk.bgGreen("DOWNLOADAUDIO_CUSTOMQUALITY:"), data);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-// import { audiometa } from "../lib/audio/index.js";
-// (async () => {
-// const data = await audiometa(url).catch((e) => console.log(e));
-// audiometa(url).then((data) => console.log(data)).catch((e) => console.log(e));
-// console.log(data);
-// })();
+import { downloadAudio_Sorted } from "../lib/audio/ffmpeg.js";
+
+/**
+ * @param {url} url -> "youtube-video-link"
+ * @param {string} sort -> "best-possible" || "medium-possible" || "lowest-possible"
+ * @param {download-folder-name} @arg {optional} -> auto created if not exists or specified
+ */
+
+// Promise method
+downloadAudio_Sorted(url, "best-possible", "mågneum")
+  .then((data) => console.log(chalk.bgGreen("DOWNLOADAUDIO_SORTED:"), data))
+  .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
+
+// async/await method
+(async () => {
+  const data = await downloadAudio_Sorted(url, "best-possible", "./src/").catch(
+    (e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message))
+  );
+  console.log(chalk.bgGreen("DOWNLOADAUDIO_SORTED:"), data);
+})();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");

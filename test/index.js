@@ -26,7 +26,7 @@ import { infoVideo_customResolution, infoVideo_Sorted } from "../index.js";
 // .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
 
 // ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱ [ DOWNLOADER ] ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱
-// import { downloadAudio_customQuality } from "../lib/audio/ffmpeg.js";
+// import { downloadAudio_customQuality } from "../index.js";
 
 // downloadAudio_customQuality(url, "ultralow", "mågneum")
 // .then((data) =>
@@ -35,7 +35,7 @@ import { infoVideo_customResolution, infoVideo_Sorted } from "../index.js";
 // .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
 
 // ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱ [ DOWNLOADER ] ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱
-import { downloadAudio_Sorted } from "../lib/audio/ffmpeg.js";
+import { downloadAudio_Sorted } from "../index.js";
 
 /**
  * @param {url} url -> "youtube-video-link"
