@@ -2,11 +2,17 @@
 import ExecJson from "youtube-dl-exec";
 import ProgressEstimator from "progress-estimator";
 const ProgressEst = ProgressEstimator();
-export async function infoVideo_customResolution(url, resolution) {
-  if (!url) {
-    throw new Error(
-      "ERROR: YouTube Link not found.Refer to docs for usage examples."
-    );
+function regExTestYT(str) {
+  var exp = new RegExp(/(youtu\.be|youtube\.com)/);
+  return exp.test(str);
+}
+
+export async function infoVideo_customResolution(
+  url = "not-a-youtube-link",
+  resolution
+) {
+  if (!regExTestYT(url)) {
+    throw new Error("YouTube Link not found.Refer to docs for usage examples.");
   } else
     try {
       const jsonmeta = await ProgressEst(
@@ -80,14 +86,14 @@ export async function infoVideo_customResolution(url, resolution) {
             type: "2160p",
             url: Format_2160p[0].url || Format_2160p[1].url || Format_2160p.url,
           };
-        } else throw new Error("SORRY: Quality Not Found.");
+        } else throw new Error("Sorry Quality Not Found.");
       } else if (resolution === "1440p") {
         if (Format_1440p) {
           return {
             type: "1440p",
             url: Format_1440p[0].url || Format_1440p[1].url || Format_1440p.url,
           };
-        } else throw new Error("SORRY: Quality Not Found.");
+        } else throw new Error("Sorry Quality Not Found.");
       } else if (resolution === "1080p") {
         if (Format_1080p) {
           return {
@@ -98,7 +104,7 @@ export async function infoVideo_customResolution(url, resolution) {
               Format_1080p[2].url ||
               Format_1080p.url,
           };
-        } else throw new Error("SORRY: Quality Not Found.");
+        } else throw new Error("Sorry Quality Not Found.");
       } else if (resolution === "720p") {
         if (Format_720p) {
           return {
@@ -110,7 +116,7 @@ export async function infoVideo_customResolution(url, resolution) {
               Format_720p[3].url ||
               Format_720p.url,
           };
-        } else throw new Error("SORRY: Quality Not Found.");
+        } else throw new Error("Sorry Quality Not Found.");
       } else if (resolution === "480p") {
         if (Format_480p) {
           return {
@@ -121,7 +127,7 @@ export async function infoVideo_customResolution(url, resolution) {
               Format_480p[2].url ||
               Format_480p.url,
           };
-        } else throw new Error("SORRY: Quality Not Found.");
+        } else throw new Error("Sorry Quality Not Found.");
       } else if (resolution === "360p") {
         if (Format_360p) {
           return {
@@ -133,7 +139,7 @@ export async function infoVideo_customResolution(url, resolution) {
               Format_360p[3].url ||
               Format_360p.url,
           };
-        } else throw new Error("SORRY: Quality Not Found.");
+        } else throw new Error("Sorry Quality Not Found.");
       } else if (resolution === "240p") {
         if (Format_240p) {
           return {
@@ -144,7 +150,7 @@ export async function infoVideo_customResolution(url, resolution) {
               Format_240p[2].url ||
               Format_240p,
           };
-        } else throw new Error("SORRY: Quality Not Found.");
+        } else throw new Error("Sorry Quality Not Found.");
       } else if (resolution === "144p") {
         if (Format_144p) {
           return {
@@ -158,18 +164,19 @@ export async function infoVideo_customResolution(url, resolution) {
               Format_144p[5].url ||
               Format_144p.url,
           };
-        } else throw new Error("SORRY: Quality Not Found.");
-      } else throw new Error("ERROR: Wrong Quality Provided.");
+        } else throw new Error("Sorry Quality Not Found.");
+      } else throw new Error("Wrong Quality Provided.");
     } catch (error) {
       return error.message;
     }
 }
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-export async function infoVideo_Sorted(url, quality = "highest") {
-  if (!url) {
-    throw new Error(
-      "ERROR: YouTube Link not found.Refer to docs for usage examples."
-    );
+export async function infoVideo_Sorted(
+  url = "not-a-youtube-link",
+  quality = "highest"
+) {
+  if (!regExTestYT(url)) {
+    throw new Error("YouTube Link not found.Refer to docs for usage examples.");
   } else
     try {
       const jsonmeta = await ProgressEst(
@@ -253,7 +260,7 @@ export async function infoVideo_Sorted(url, quality = "highest") {
             url:
               Format_1080p[0].url || Format_1080p[1].url || Format_1080p[2].url,
           };
-        } else throw new Error("SORRY: Quality Not Found.");
+        } else throw new Error("Sorry Quality Not Found.");
       } else if (quality === "medium") {
         if (Format_720p) {
           return {
@@ -308,7 +315,7 @@ export async function infoVideo_Sorted(url, quality = "highest") {
               Format_144p.url,
           };
         }
-      } else throw new Error("ERROR: Wrong Quality Provided.");
+      } else throw new Error("Wrong Quality Provided.");
     } catch (error) {
       return error.message;
     }

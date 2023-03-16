@@ -1,12 +1,19 @@
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
+import chalk from "chalk";
 import ExecJson from "youtube-dl-exec";
 import ProgressEstimator from "progress-estimator";
 const ProgressEst = ProgressEstimator();
-export async function infoAudio_customQuality(url, sort = "medium") {
-  if (!url) {
-    throw new Error(
-      "ERROR: YouTube Link not found.Refer to docs for usage examples."
-    );
+function regExTestYT(str) {
+  var exp = new RegExp(/(youtu\.be|youtube\.com)/);
+  return exp.test(str);
+}
+
+export async function infoAudio_customQuality(
+  url = "not-a-youtube-link",
+  sort = "medium"
+) {
+  if (!regExTestYT(url)) {
+    throw new Error("YouTube Link not found.Refer to docs for usage examples.");
   } else
     try {
       const jsonmeta = await ProgressEst(
@@ -74,11 +81,12 @@ export async function infoAudio_customQuality(url, sort = "medium") {
     }
 }
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-export async function infoAudio_Sorted(url, quality = "best-possible") {
-  if (!url) {
-    throw new Error(
-      "ERROR: YouTube Link not found.Refer to docs for usage examples."
-    );
+export async function infoAudio_Sorted(
+  url = "not-a-youtube-link",
+  quality = "best-possible"
+) {
+  if (!regExTestYT(url)) {
+    throw new Error("YouTube Link not found.Refer to docs for usage examples.");
   } else
     try {
       const jsonmeta = await ProgressEst(
@@ -164,17 +172,15 @@ export async function infoAudio_Sorted(url, quality = "best-possible") {
             url: ultralow[0].url || ultralow[1].url || ultralow.url || null,
           };
         } else throw new Error("SORRY: Quality Not Found.");
-      } else throw new Error("ERROR: Wrong Quality Provided.");
+      } else throw new Error("Wrong Quality Provided.");
     } catch (error) {
       return error.message;
     }
 }
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-export async function audiometasep(url, quality) {
-  if (!url) {
-    throw new Error(
-      "ERROR: YouTube Link not found.Refer to docs for usage examples."
-    );
+export async function audiometasep(url = "not-a-youtube-link", quality) {
+  if (!regExTestYT(url)) {
+    throw new Error("YouTube Link not found.Refer to docs for usage examples.");
   } else
     try {
       const jsonmeta = await ProgressEst(

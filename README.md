@@ -44,21 +44,24 @@
 
 ```js
 import { infoVideo_customResolution } from "yt-dlp";
+import chalk from "chalk";
 
 let resolution = "2160p";
 const url = "https://youtu.be/TpdapO9QGRo";
 
 // Promise method
 infoVideo_customResolution(url, resolution)
-  .then((data) => console.log("INFOVIDEO_CUSTOMRESOLUTION: ", data))
-  .catch((e) => console.log(e));
+  .then((data) =>
+    console.log(chalk.bgGreen("INFOVIDEO_CUSTOMRESOLUTION:"), data)
+  )
+  .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
 
 // async/await method
 (async () => {
   const data = await infoVideo_customResolution(url, resolution).catch((e) =>
-    console.log(e)
+    console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message))
   );
-  console.log("INFOVIDEO_CUSTOMRESOLUTION: ", data);
+  console.log(chalk.bgGreen("INFOVIDEO_CUSTOMRESOLUTION:"), data);
 })();
 ```
 
@@ -113,21 +116,22 @@ Done in 2.65s.
 
 ```js
 import { infoVideo_Sorted } from "yt-dlp";
+import chalk from "chalk";
 
 let quality = "highest";
 const url = "https://youtu.be/TpdapO9QGRo";
 
 // Promise method
 infoVideo_Sorted(url, quality)
-  .then((data) => console.log("INFOVIDEO_SORTED: ", data))
-  .catch((e) => console.log(e));
+  .then((data) => console.log(chalk.bgGreen("INFOVIDEO_SORTED:"), data))
+  .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
 
 // async/await method
 (async () => {
   const data = await infoVideo_Sorted(url, quality).catch((e) =>
-    console.log(e)
+    console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message))
   );
-  console.log("INFOVIDEO_SORTED: ", data);
+  console.log(chalk.bgGreen("INFOVIDEO_SORTED:"), data);
 })();
 ```
 
@@ -181,21 +185,22 @@ Done in 2.64s.
 
 ```js
 import { infoAudio_Sorted } from "yt-dlp";
+import chalk from "chalk";
 
 let quality = "best-possible";
 const url = "https://youtu.be/TpdapO9QGRo";
 
 // Promise method
 infoAudio_Sorted(url, quality)
-  .then((data) => console.log("INFOAUDIO_SORTED: ", data))
-  .catch((e) => console.log(e));
+  .then((data) => console.log(chalk.bgGreen("INFOAUDIO_SORTED:"), data))
+  .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
 
 // async/await method
 (async () => {
   const data = await infoAudio_Sorted(url, quality).catch((e) =>
-    console.log(e)
+    console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message))
   );
-  console.log("INFOAUDIO_SORTED: ", data);
+  console.log(chalk.bgGreen("INFOAUDIO_SORTED:"), data);
 })();
 ```
 
@@ -251,21 +256,22 @@ Done in 2.62s.
 
 ```js
 import { infoAudio_customQuality } from "yt-dlp";
+import chalk from "chalk";
 
 let sort = "medium";
 const url = "https://youtu.be/TpdapO9QGRo";
 
 // Promise method
 infoAudio_customQuality(url, sort)
-  .then((data) => console.log("INFOAUDIO_CUSTOMQUALITY: ", data))
-  .catch((e) => console.log(e));
+  .then((data) => console.log(chalk.bgGreen("INFOAUDIO_CUSTOMQUALITY:"), data))
+  .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
 
 // async/await method
 (async () => {
   const data = await infoAudio_customQuality(url, sort).catch((e) =>
-    console.log(e)
+    console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message))
   );
-  console.log("INFOAUDIO_CUSTOMQUALITY: ", data);
+  console.log(chalk.bgGreen("INFOAUDIO_CUSTOMQUALITY:"), data);
 })();
 ```
 
@@ -319,6 +325,7 @@ Done in 2.68s.
 
 ```js
 import { Search } from "yt-dlp";
+import chalk from "chalk";
 
 let url = "https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI";
 Search(url, async function (data) {

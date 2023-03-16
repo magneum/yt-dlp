@@ -12,6 +12,7 @@
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@ffprobe-installer/ffprobe": "^2.0.0",
     "@types/fluent-ffmpeg": "^2.1.21",
+    "chalk": "^5.2.0",
     "dotenv": "^16.0.3",
     "fluent-ffmpeg": "^2.1.2",
     "node-fetch": "2",
