@@ -26,7 +26,7 @@
   resolved "https://registry.yarnpkg.com/@ffmpeg-installer/darwin-x64/-/darwin-x64-4.1.0.tgz#48e1706c690e628148482bfb64acb67472089aaa"
   integrity sha512-Z4EyG3cIFjdhlY8wI9aLUXuH8nVt7E9SlMVZtWvSPnm2sm37/yC2CwjUzyCQbJbySnef1tQwGG2Sx+uWhd9IAw==
 
-"@ffmpeg-installer/ffmpeg@*", "@ffmpeg-installer/ffmpeg@^1.1.0":
+"@ffmpeg-installer/ffmpeg@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@ffmpeg-installer/ffmpeg/-/ffmpeg-1.1.0.tgz#87fdb9e7d180e8d78f7903f9441e36f978938a90"
   integrity sha512-Uq4rmwkdGxIa9A6Bd/VqqYbT7zqh1GrT5/rFwCwKM70b42W5gIjWeVETq6SdcL0zXqDtY081Ws/iJWhr1+xvQg==
@@ -80,7 +80,7 @@
   resolved "https://registry.yarnpkg.com/@ffprobe-installer/darwin-x64/-/darwin-x64-5.1.0.tgz#f52316ac0bbe6f4ac70fdaea8db259ba4a055b00"
   integrity sha512-J+YGscZMpQclFg31O4cfVRGmDpkVsQ2fZujoUdMAAYcP0NtqpC49Hs3SWJpBdsGB4VeqOt5TTm1vSZQzs1NkhA==
 
-"@ffprobe-installer/ffprobe@*", "@ffprobe-installer/ffprobe@^2.0.0":
+"@ffprobe-installer/ffprobe@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@ffprobe-installer/ffprobe/-/ffprobe-2.0.0.tgz#d01ba6e3caa15b18dae809426360f4ccd2d2aaa7"
   integrity sha512-BT5BHZZSOyFFbHd+3zFdEQCNfBORYwNtqre7l1dMmqvDha60G/7rEDCSeCX4sNLuCcNR4IxvGHicfRQie7SNUA==
@@ -124,7 +124,7 @@
   resolved "https://registry.yarnpkg.com/@ffprobe-installer/win32-x64/-/win32-x64-5.1.0.tgz#87841123e8b903cc327f1e5b9aa69e5d2fbe6d7b"
   integrity sha512-jMGYeAgkrdn4e2vvYt/qakgHRE3CPju4bn5TmdPfoAm1BlX1mY9cyMd8gf5vSzI8gH8Zq5WQAyAkmekX/8TSTg==
 
-"@types/fluent-ffmpeg@*", "@types/fluent-ffmpeg@^2.1.21":
+"@types/fluent-ffmpeg@^2.1.21":
   version "2.1.21"
   resolved "https://registry.yarnpkg.com/@types/fluent-ffmpeg/-/fluent-ffmpeg-2.1.21.tgz#8f2f80370d36b09cae9c144cf9283f40c8cb7bfc"
   integrity sha512-+n3dy/Tegt6n+YwGZUiGq6i8Jrnt8+MoyPiW1L6J5EWUl7GSt18a/VyReecfCsvTTNBXNMIKOMHDstiQM8nJLA==
@@ -185,11 +185,6 @@ bin-version@^6.0.0:
     execa "^5.0.0"
     find-versions "^5.0.0"
 
-chalk@*:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/chalk/-/chalk-5.2.0.tgz#249623b7d66869c673699fb66d65723e54dfcfb3"
-  integrity sha512-ree3Gqw/nazQAPuJJEy+avdl7QfZMcUvmHIKgEZkGL+xOBzRvup5Hxo6LHuMceSxOabuJLJm5Yp/92R9eMmMvA==
-
 chalk@^2.4.1, chalk@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
@@ -198,6 +193,11 @@ chalk@^2.4.1, chalk@^2.4.2:
     ansi-styles "^3.2.1"
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
+
+chalk@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-5.2.0.tgz#249623b7d66869c673699fb66d65723e54dfcfb3"
+  integrity sha512-ree3Gqw/nazQAPuJJEy+avdl7QfZMcUvmHIKgEZkGL+xOBzRvup5Hxo6LHuMceSxOabuJLJm5Yp/92R9eMmMvA==
 
 cli-cursor@^2.0.0:
   version "2.1.0"
@@ -280,7 +280,7 @@ decompress-response@^6.0.0:
   dependencies:
     mimic-response "^3.1.0"
 
-dotenv@*, dotenv@^16.0.3:
+dotenv@^16.0.3:
   version "16.0.3"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.0.3.tgz#115aec42bac5053db3c456db30cc243a5a836a07"
   integrity sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==
@@ -322,7 +322,7 @@ find-versions@^5.0.0:
   dependencies:
     semver-regex "^4.0.5"
 
-fluent-ffmpeg@*, fluent-ffmpeg@^2.1.2:
+fluent-ffmpeg@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/fluent-ffmpeg/-/fluent-ffmpeg-2.1.2.tgz#c952de2240f812ebda0aa8006d7776ee2acf7d74"
   integrity sha512-IZTB4kq5GK0DPp7sGQ0q/BWurGHffRtQQwVkiqDgeO6wYJLLV5ZhgNOQ65loZxxuPMKZKZcICCUnaGtlxBiR0Q==
@@ -490,7 +490,7 @@ path-key@^3.0.0, path-key@^3.1.0:
   resolved "https://registry.yarnpkg.com/path-key/-/path-key-3.1.1.tgz#581f6ade658cbba65a0d3380de7753295054f375"
   integrity sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==
 
-progress-estimator@*, progress-estimator@^0.3.0:
+progress-estimator@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/progress-estimator/-/progress-estimator-0.3.0.tgz#b80066764e9e614daf7a01808d00673ab9899634"
   integrity sha512-vGKF+OgSjguKo+sbpgxE0c+HCNBf9QJsTgYXIUIGrriTBbZvPSVxjEed5JrurqMFDL+JthvX+amPP6a0TvpIkA==
@@ -597,7 +597,7 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
-spinnies@*, spinnies@^0.5.1:
+spinnies@^0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/spinnies/-/spinnies-0.5.1.tgz#6ac88455d9117c7712d52898a02c969811819a7e"
   integrity sha512-WpjSXv9NQz0nU3yCT9TFEOfpFrXADY9C5fG6eAJqixLhvTX1jP3w92Y8IE5oafIe42nlF9otjhllnXN/QCaB3A==
@@ -743,7 +743,7 @@ yallist@^4.0.0:
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-4.0.0.tgz#9bb92790d9c0effec63be73519e11a35019a3a72"
   integrity sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
 
-youtube-dl-exec@*, youtube-dl-exec@^2.4.0:
+youtube-dl-exec@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/youtube-dl-exec/-/youtube-dl-exec-2.4.0.tgz#7e99b5c8b272244e91fbe228e220f94c0678bdb3"
   integrity sha512-uHQzfhljFPyXZElSJ+YhKhWD11YdKDK+QTuRCp/22sOD8g3RE++uGti/kHFPV62DupEAWNq8XGoVaYyqsrEAyw==
@@ -753,18 +753,3 @@ youtube-dl-exec@*, youtube-dl-exec@^2.4.0:
     execa "~5.1.0"
     is-unix "~2.0.1"
     simple-get "~4.0.1"
-
-yt-dlp@*:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/yt-dlp/-/yt-dlp-1.1.0.tgz#01f147aeca912f775c334050f8ed92b4a77b48a4"
-  integrity sha512-fhKgIJEw33anrCxAasi4lO3PFFUG93/Y69y/RYmLF8OL1AsQ8mkxRJucGEufIn6WEbpREvlFun3DCJLlQRraIQ==
-  dependencies:
-    "@ffmpeg-installer/ffmpeg" "^1.1.0"
-    "@ffprobe-installer/ffprobe" "^2.0.0"
-    "@types/fluent-ffmpeg" "^2.1.21"
-    dotenv "^16.0.3"
-    fluent-ffmpeg "^2.1.2"
-    node-fetch "2"
-    progress-estimator "^0.3.0"
-    spinnies "^0.5.1"
-    youtube-dl-exec "^2.4.0"
