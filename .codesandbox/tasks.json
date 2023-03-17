@@ -1,0 +1,10 @@
+{
+  "setupTasks": [],
+  "tasks": {
+    "whereis htop": {
+      "name": "whereis htop",
+      "command": "whereis htop",
+      "runAtStart": true
+    }
+  }
+}

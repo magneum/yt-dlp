@@ -1,0 +1,41 @@
+{
+  "name": "yt-dlp",
+  "type": "module",
+  "main": "index.js",
+  "version": "1.5.0",
+  "description": "yt-dlp - Python+ Javascript Youtube Audio Video Scrapper And Downloader Client",
+  "scripts": {
+    "preinstall": "echo '[RUNNING PREINSTALL]' && pip install -r src/requirements.txt && npm run updeps",
+    "updeps": "echo '[UPDATING DEPENDENCIES]' && npx npm-check-updates -u",
+    "test": "node test/index.js"
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@ffprobe-installer/ffprobe": "^2.0.0",
+    "@types/fluent-ffmpeg": "^2.1.21",
+    "chalk": "^5.2.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "node-fetch": "^3.3.1",
+    "progress-estimator": "^0.3.0",
+    "youtube-dl-exec": "^2.4.0",
+    "yt-dlp": "^1.5.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3",
+    "spinnies": "^0.5.1",
+    "winston": "^3.8.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/magneum"
+  },
+  "keywords": [
+    "audio",
+    "video",
+    "youtube",
+    "python",
+    "javascript"
+  ],
+  "author": "magneum",
+  "license": "MIT"
+}
