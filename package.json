@@ -58,5 +58,10 @@
     "name": "bit.ly/magneum",
     "url": "https://bit.ly/magneum"
   },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
   "license": "MIT"
 }
