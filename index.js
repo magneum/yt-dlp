@@ -20,7 +20,7 @@
 // SOFTWARE.
 // ◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎"
 
-import Search from "./routes/web/index.js";
+import Scrapper from "./routes/web/index.js";
 import { AudioData_SortedAuto } from "./routes/audio/index.js";
 import { AudioData_CustomQuality } from "./routes/audio/index.js";
 import { VideoData_SortedResolution } from "./routes/video/index.js";
@@ -34,5 +34,5 @@ export {
   VideoData_CustomResolution,
   DownloadAudio_CustomQuality,
   DownloadAudio_SortedQuality,
-  Search,
+  Scrapper,
 };
