@@ -1,7 +1,9 @@
 <h1 align="center"><b>❝ ⚡ ⒸYT-DLP ⚡ ❞</b></h1>
 <h3 align="center">Is A Python+ Javascript Youtube Audio Video Scrapper And Downloader Client.<br/>
 YT-DLP Was Made For Easier Scrapping And Downloading Youtube Audios & Videos.<br/>
-YT-DLP Provide Many Useful Functions For Audios And Videos Both.<br />
+YT-DLP Provide Many Useful Functions For Audios And Videos Both.<br/>
+<i><b>[ "audio", video", youtube", "python", "javascript", "binary", "nodejs", "yt-dlp", "yt-dlp-wrapper", "youtube-downloader" ]</b></i>
+<br />
 </h3>
 <br></br>
 <p align="center">
