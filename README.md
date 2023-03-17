@@ -1,7 +1,7 @@
 <h1 align="center"><b>❝ ⚡ ⒸYT-DLP ⚡ ❞</b></h1>
 <h2  align="center"><i>yt-dlp - Python+ Javascript Youtube Audio Video Scrapper And Downloader Client</i></h2>
 <br></br>
-<p>
+<p align="center">
 <img src="https://github.com/magneum/yt-dlp/blob/main/src/LiquidYouTube.gif" height="400" width="600" style="border-radius:5%"/>
 </p>
 
