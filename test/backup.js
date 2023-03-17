@@ -1,51 +1,57 @@
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-import { infoAudio_customQuality } from "yt-dlp";
-url = "https://youtu.be/TpdapO9QGRo";
-sort = "medium";
-
+import * as ytdlp from "ytdlp";
 /**
  * @param {url} url -> "youtube-video-link"
  * @param {string} sort -> "medium" || "low" || "ultralow"
  */
 
 // Promise method
-infoAudio_customQuality(url, sort)
+ytdlp
+  .infoAudio_customQuality({
+    url: "https://youtu.be/TpdapO9QGRo", // required
+    sort: "medium", // required
+  })
   .then((data) => console.log("INFOAUDIO_CUSTOMQUALITY: ", data))
   .catch((e) => console.log(e));
 
 // async/await method
 (async () => {
-  const data = await infoAudio_customQuality(url, sort).catch((e) =>
-    console.log(e)
-  );
+  const data = await ytdlp
+    .infoAudio_customQuality({
+      url: "https://youtu.be/TpdapO9QGRo", // required
+      sort: "medium", // required
+    })
+    .catch((e) => console.log(e));
   console.log("INFOAUDIO_CUSTOMQUALITY: ", data);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-import { infoAudio_Sorted } from "yt-dlp";
-url = "https://youtu.be/TpdapO9QGRo";
-quality = "best-possible";
-
+import * as ytdlp from "ytdlp";
 /**
  * @param {url} url -> "youtube-video-link"
  * @param {string} quality -> "best-possible" || "medium-possible" || "lowest-possible"
  */
 
 // Promise method
-infoAudio_Sorted(url, quality)
+ytdlp
+  .infoAudio_Sorted({
+    url: "https://youtu.be/TpdapO9QGRo", // required
+    quality: "best-possible", // required
+  })
   .then((data) => console.log("INFOAUDIO_SORTED: ", data))
   .catch((e) => console.log(e));
 
 // async/await method
 (async () => {
-  const data = await infoAudio_Sorted(url, quality).catch((e) =>
-    console.log(e)
-  );
+  const data = await ytdlp
+    .infoAudio_Sorted({
+      url: "https://youtu.be/TpdapO9QGRo", // required
+      quality: "best-possible", // required
+    })
+    .catch((e) => console.log(e));
   console.log("INFOAUDIO_SORTED: ", data);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-import { infoVideo_customResolution } from "yt-dlp";
-url = "https://youtu.be/TpdapO9QGRo";
-resolution = "2160p";
+import * as ytdlp from "ytdlp";
 
 /**
  * @param {url} url -> "youtube-video-link"
@@ -53,43 +59,54 @@ resolution = "2160p";
  */
 
 // Promise method
-infoVideo_customResolution(url, resolution)
+ytdlp
+  .infoVideo_customResolution({
+    url: "https://youtu.be/TpdapO9QGRo", // required
+    resolution: "2160p", // required
+  })
   .then((data) => console.log("INFOVIDEO_CUSTOMRESOLUTION: ", data))
   .catch((e) => console.log(e));
 
 // async/await method
 (async () => {
-  const data = await infoVideo_customResolution(url, resolution).catch((e) =>
-    console.log(e)
-  );
+  const data = await ytdlp
+    .infoVideo_customResolution({
+      url: "https://youtu.be/TpdapO9QGRo", // required
+      resolution: "2160p", // required
+    })
+    .catch((e) => console.log(e));
   console.log("INFOVIDEO_CUSTOMRESOLUTION: ", data);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-import { infoVideo_Sorted } from "yt-dlp";
-url = "https://youtu.be/TpdapO9QGRo";
-quality = "highest";
 
+import * as ytdlp from "ytdlp";
 /**
  * @param {url} url -> "youtube-video-link"
  * @param {string} resolution -> "highest" || "medium" || "lowest"
  */
+
 // Promise method
-infoVideo_Sorted(url, quality)
+ytdlp
+  .infoVideo_Sorted({
+    url: "https://youtu.be/TpdapO9QGRo", // required
+    quality: "highest", // required
+  })
   .then((data) => console.log("INFOVIDEO_SORTED: ", data))
   .catch((e) => console.log(e));
 
 // async/await method
 (async () => {
-  const data = await infoVideo_Sorted(url, quality).catch((e) =>
-    console.log(e)
-  );
+  const data = await ytdlp
+    .infoVideo_Sorted({
+      url: "https://youtu.be/TpdapO9QGRo", // required
+      quality: "highest", // required
+    })
+    .catch((e) => console.log(e));
   console.log("INFOVIDEO_SORTED: ", data);
 })();
 // ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱ [ DOWNLOADER ] ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱
-import { downloadAudio_customQuality } from "../lib/audio/ffmpeg.js";
-url = "https://youtu.be/TpdapO9QGRo";
-sort = "medium";
 
+import * as ytdlp from "ytdlp";
 /**
  * @param {url} url -> "youtube-video-link"
  * @param {string} sort -> "medium" || "low" || "ultralow"
@@ -97,7 +114,13 @@ sort = "medium";
  */
 
 // Promise method
-downloadAudio_customQuality(url, sort, "mågneum")
+ytdlp
+  .downloadAudio_customQuality({
+    url: "https://youtu.be/TpdapO9QGRo", // required
+    title: "song-title", // optional
+    sort: "medium", // required
+    path: "mågneum", // optional
+  })
   .then((data) =>
     console.log(chalk.bgGreen("DOWNLOADAUDIO_CUSTOMQUALITY:"), data)
   )
@@ -105,16 +128,19 @@ downloadAudio_customQuality(url, sort, "mågneum")
 
 // async/await method
 (async () => {
-  const data = await downloadAudio_customQuality(url, sort, "./src/").catch(
-    (e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message))
-  );
+  const data = await ytdlp
+    .downloadAudio_customQuality({
+      url: "https://youtu.be/TpdapO9QGRo", // required
+      title: "song-title", // optional
+      sort: "medium", // required
+      path: "mågneum", //optional
+    })
+    .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
   console.log(chalk.bgGreen("DOWNLOADAUDIO_CUSTOMQUALITY:"), data);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-import { downloadAudio_Sorted } from "../lib/audio/ffmpeg.js";
-url = "https://youtu.be/TpdapO9QGRo";
-sort = "medium";
 
+import * as ytdlp from "ytdlp";
 /**
  * @param {url} url -> "youtube-video-link"
  * @param {string} sort -> "best-possible" || "medium-possible" || "lowest-possible"
@@ -122,15 +148,25 @@ sort = "medium";
  */
 
 // Promise method
-downloadAudio_Sorted(url, "best-possible", "mågneum")
+ytdlp
+  .downloadAudio_Sorted({
+    url: "https://youtu.be/TpdapO9QGRo", // required
+    title: "song-title", // optional
+    sort: "medium", // required
+    path: "mågneum", // optional
+  })
   .then((data) => console.log(chalk.bgGreen("DOWNLOADAUDIO_SORTED:"), data))
   .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
 
 // async/await method
 (async () => {
-  const data = await downloadAudio_Sorted(url, "best-possible", "./src/").catch(
-    (e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message))
-  );
+  const data = await ytdlp
+    .downloadAudio_Sorted({
+      url: "https://youtu.be/VCiDeT16t6U",
+      sort: "medium",
+      path: "mågneum",
+    })
+    .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
   console.log(chalk.bgGreen("DOWNLOADAUDIO_SORTED:"), data);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");

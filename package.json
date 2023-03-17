@@ -5,7 +5,8 @@
   "version": "1.4.0",
   "description": "yt-dlp - Python+ Javascript Youtube Audio Video Scrapper And Downloader Client",
   "scripts": {
-    "preinstall": "pip install -r src/requirements.txt",
+    "preinstall": "pip install -r src/requirements.txt && npm run update-deps",
+    "update": "npx npm-check-updates -u",
     "test": "node test/index.js"
   },
   "dependencies": {
@@ -13,14 +14,14 @@
     "@ffprobe-installer/ffprobe": "^2.0.0",
     "@types/fluent-ffmpeg": "^2.1.21",
     "chalk": "^5.2.0",
-    "dotenv": "^16.0.3",
     "fluent-ffmpeg": "^2.1.2",
-    "node-fetch": "2",
+    "node-fetch": "^3.3.1",
     "progress-estimator": "^0.3.0",
-    "spinnies": "^0.5.1",
     "youtube-dl-exec": "^2.4.0"
   },
   "devDependencies": {
+    "dotenv": "^16.0.3",
+    "spinnies": "^0.5.1",
     "winston": "^3.8.2"
   },
   "repository": {

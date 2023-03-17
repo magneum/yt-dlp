@@ -1,49 +1,55 @@
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 import chalk from "chalk";
-import { downloadAudio_autoSorted } from "../index.js";
-import { downloadAudio_customQuality } from "../index.js";
-import { infoAudio_customQuality, infoAudio_autoSorted } from "../index.js";
-import { infoVideo_customResolution, infoVideo_autoSorted } from "../index.js";
-const url = "https://youtu.be/VCiDeT16t6U"; // https://youtu.be/TpdapO9QGRo";
+import * as ytdlp from "../index.js";
+const url = "https://youtu.be/TpdapO9QGRo";
 
 // ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱ [ AUDIO ] ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱
-// infoAudio_customQuality({
-// url: url,
-// sort: "medium",
-// })
-// .then((data) => console.log(chalk.bgGreen("INFOAUDIO_CUSTOMQUALITY:"), data))
+
+// ytdlp.infoAudio_customQuality({
+// url: "https://youtu.be/VCiDeT16t6U", //required
+// sort: "medium", //required
+// }).then((data) => console.log(chalk.bgGreen("INFOAUDIO_CUSTOMQUALITY:"), data))
 // .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
 
-// infoAudio_autoSorted(url, "best-possible")
-// .then((data) => console.log(chalk.bgGreen("INFOAUDIO_SORTED:"), data))
+// ytdlp.infoAudio_autoSorted({
+// url: "https://youtu.be/VCiDeT16t6U", //required
+// quality: "best-possible", //required
+// }).then((data) => console.log(chalk.bgGreen("INFOAUDIO_SORTED:"), data))
 // .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
 
 // ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱ [ VIDEO ] ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱
-// infoVideo_customResolution({
-//   url: url,
-//   resolution: "2160p",
-// })
-//   .then((data) =>
-//     console.log(chalk.bgGreen("INFOVIDEO_CUSTOMRESOLUTION:"), data)
-//   )
+
+// ytdlp.infoVideo_customResolution({
+// url: "https://youtu.be/VCiDeT16t6U", //required
+// resolution: "2160p", //required
+// }).then((data) => console.log(chalk.bgGreen("INFOVIDEO_CUSTOMRESOLUTION:"), data))
 // .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
 
-infoVideo_autoSorted({ url: url, quality: "lowest" })
-  .then((data) => console.log(chalk.bgGreen("INFOVIDEO_SORTED:"), data))
-  .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
+// ytdlp.infoVideo_autoSorted({
+// url: "https://youtu.be/VCiDeT16t6U", // required
+// quality: "highest", //required
+// }).then((data) => console.log(chalk.bgGreen("INFOVIDEO_SORTED:"), data))
+// .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
 
 // ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱ [ DOWNLOADER ] ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱
 
-// downloadAudio_customQuality(url, "ultralow", "mågneum")
-// .then((data) =>
+// ytdlp.downloadAudio_customQuality({
+// url: "https://youtu.be/VCiDeT16t6U", // required
+// sort: "ultralow", // required
+// path: "mågneum", // optional
+// title: "mågneum", // optional
+// }).then((data) =>
 // console.log(chalk.bgGreen("downloadAudio_customQuality:"), data)
-// )
-// .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
+// ).catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
 
 // ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱ [ DOWNLOADER ] ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱
 
-// downloadAudio_autoSorted(url, "best-possible", "mågneum")
-// .then((data) => console.log(chalk.bgGreen("downloadAudio_autoSorted:"), data))
+// ytdlp.downloadAudio_autoSorted({
+// url: "https://youtu.be/VCiDeT16t6U", // required
+// quality: "best-possible", // required
+// path: "mågneum", // optional
+// title: "mågneum", // optional
+// }).then((data) => console.log(chalk.bgGreen("downloadAudio_autoSorted:"), data))
 // .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
 
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
