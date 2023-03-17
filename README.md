@@ -225,7 +225,7 @@ Done in 2.64s.
 ```js
 /**
  * @param {url} url -> "youtube-video-link"
- * @param {string} quality -> "best-possible" || "medium-possible" || "lowest-possible"
+ * @param {string} quality -> "highest-possible" || "lowest-possible"
  */
 ```
 
@@ -240,7 +240,7 @@ Done in 2.64s.
 import { AudioData_SortedAuto } from "yt-dlp";
 import chalk from "chalk";
 
-let quality = "best-possible";
+let quality = "highest-possible";
 const url = "https://youtu.be/TpdapO9QGRo";
 
 // Promise method
@@ -307,7 +307,7 @@ Done in 2.62s.
 ```js
 /**
  * @param {url} url -> "youtube-video-link"
- * @param {string} sort -> "medium" || "low" || "ultralow"
+ * @param {string} sort -> "high" || "medium" || "low"
  */
 ```
 

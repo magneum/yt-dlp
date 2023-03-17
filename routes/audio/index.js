@@ -28,7 +28,7 @@ function regExTestYT(str) {
 }
 
 export async function AudioData_CustomQuality(rover) {
-  rover.sort || "medium";
+  rover.sort || "high";
   rover.url || "not-a-youtube-link";
   if (!regExTestYT(rover.url)) {
     throw new Error("YouTube Link not found.Refer to docs for usage examples.");
@@ -75,25 +75,25 @@ export async function AudioData_CustomQuality(rover) {
             res.resolution === "audio only")
       );
 
-      if (rover.sort === "medium") {
+      if (rover.sort === "high")
         return {
-          type: "medium",
+          type: "high",
           resolution: "audio only",
           url: medium[0].url || medium[1].url || medium.url || null,
         };
-      } else if (rover.sort === "low") {
+      else if (rover.sort === "medium")
         return {
-          type: "low",
+          type: "medium",
           resolution: "audio only",
           url: low[0].url || low[1].url || low[2].url || low.url || null,
         };
-      } else if (rover.sort === "ultralow") {
+      else if (rover.sort === "low")
         return {
-          type: "ultralow",
+          type: "low",
           resolution: "audio only",
           url: ultralow[0].url || ultralow[1].url || ultralow.url || null,
         };
-      } else
+      else
         throw new Error("Sorry this video doesn't have the Quality requested.");
     } catch (error) {
       return error.message;
@@ -102,7 +102,7 @@ export async function AudioData_CustomQuality(rover) {
 // ◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎"
 export async function AudioData_SortedAuto(rover) {
   rover.url = rover.url || "not-a-youtube-link";
-  rover.quality = rover.quality || "best-possible";
+  rover.quality = rover.quality || "highest-possible";
   if (!regExTestYT(rover.url)) {
     throw new Error("YouTube Link not found.Refer to docs for usage examples.");
   } else
@@ -148,54 +148,49 @@ export async function AudioData_SortedAuto(rover) {
             res.resolution === "audio only")
       );
 
-      if (rover.quality === "best-possible") {
-        if (medium) {
+      if (rover.quality === "highest-possible") {
+        if (medium)
           return {
-            quality: "best-possible",
+            quality: "highest-possible",
             resolution: "audio only",
             url: medium[0].url || medium[1].url || medium.url || null,
           };
-        } else if (!medium && low) {
+        else if (!medium && low)
           return {
-            quality: "best-possible",
+            quality: "highest-possible",
             resolution: "audio only",
             url: low[0].url || low[1].url || low[2].url || low.url || null,
           };
-        } else if (!medium && !low && ultralow) {
+        else if (!medium && !low && ultralow)
           return {
-            quality: "best-possible",
+            quality: "highest-possible",
             resolution: "audio only",
             url: ultralow[0].url || ultralow[1].url || ultralow.url || null,
           };
-        } else
-          throw new Error(
-            "Sorry this video doesn't have the Quality requested."
-          );
-      } else if (rover.quality === "medium-possible") {
-        if (low) {
-          return {
-            quality: "medium-possible",
-            resolution: "audio only",
-            url: low[0].url || low[1].url || low[2].url || low.url || null,
-          };
-        } else if (!low && ultralow) {
-          return {
-            quality: "medium-possible",
-            resolution: "audio only",
-            url: ultralow[0].url || ultralow[1].url || ultralow.url || null,
-          };
-        } else
+        else
           throw new Error(
             "Sorry this video doesn't have the Quality requested."
           );
       } else if (rover.quality === "lowest-possible") {
-        if (ultralow) {
+        if (ultralow)
           return {
             quality: "lowest-possible",
             resolution: "audio only",
             url: ultralow[0].url || ultralow[1].url || ultralow.url || null,
           };
-        } else
+        else if (low)
+          return {
+            quality: "lowest-possible",
+            resolution: "audio only",
+            url: low[0].url || low[1].url || low[2].url || low.url || null,
+          };
+        else if (medium)
+          return {
+            quality: "lowest-possible",
+            resolution: "audio only",
+            url: medium[0].url || medium[1].url || medium.url || null,
+          };
+        else
           throw new Error(
             "Sorry this video doesn't have the Quality requested."
           );
@@ -207,7 +202,7 @@ export async function AudioData_SortedAuto(rover) {
 // ◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎"
 export async function audiometasep(rover) {
   rover.url = rover.url || "not-a-youtube-link";
-  rover.quality = rover.quality || "best-possible";
+  rover.quality = rover.quality || "highest-possible";
   if (!regExTestYT(rover.url)) {
     throw new Error("YouTube Link not found.Refer to docs for usage examples.");
   } else
