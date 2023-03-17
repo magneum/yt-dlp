@@ -27,8 +27,7 @@
     "progress-estimator": "latest",
     "yt-dlp-exec": "latest",
     "standard": "latest",
-    "standard-version": "latest",
-    "yt-dlp": "latest"
+    "standard-version": "latest"
   },
   "devDependencies": {
     "dotenv": "latest",
