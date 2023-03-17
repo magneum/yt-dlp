@@ -7,9 +7,9 @@
   "scripts": {
     "preinstall": "echo '[RUNNING PREINSTALL]' && pip install -r src/requirements.txt && npm run updeps",
     "updeps": "echo '[UPDATING DEPENDENCIES]' && npx npm-check-updates -u",
-    "clean": "rm -rf node_modules",
+    "clean": "echo '[REMOVING NODE MODULES]' && rm -rf node_modules",
+    "dev": "echo '[RUNNING DEV]' && node view/index.js",
     "release": "standard-version -a",
-    "view": "node view/index.js",
     "pretest": "npm run lint",
     "lint": "standard"
   },
