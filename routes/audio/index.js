@@ -27,7 +27,7 @@ function regExTestYT(str) {
   return exp.test(str);
 }
 
-export async function infoAudio_customQuality(rover) {
+export async function AudioData_CustomQuality(rover) {
   rover.sort || "medium";
   rover.url || "not-a-youtube-link";
   if (!regExTestYT(rover.url)) {
@@ -100,7 +100,7 @@ export async function infoAudio_customQuality(rover) {
     }
 }
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-export async function infoAudio_autoSorted(rover) {
+export async function AudioData_SortedAuto(rover) {
   rover.url = rover.url || "not-a-youtube-link";
   rover.quality = rover.quality || "best-possible";
   if (!regExTestYT(rover.url)) {

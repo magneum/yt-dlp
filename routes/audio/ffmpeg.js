@@ -47,7 +47,7 @@ function FFmpegSave(link, savepath, qual, title) {
     .run();
 }
 
-export async function downloadAudio_customQuality(rover) {
+export async function DownloadAudio_CustomQuality(rover) {
   rover.sort = rover.sort || "medium";
   rover.url = rover.url || "not-a-youtube-link";
   rover.title = rover.title || "random-title-" + Math.random();
@@ -149,7 +149,7 @@ export async function downloadAudio_customQuality(rover) {
     }
 }
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-export async function downloadAudio_autoSorted(rover) {
+export async function DownloadAudio_SortedQuality(rover) {
   rover.url = rover.url || "not-a-youtube-link";
   rover.quality = rover.quality || "best-possible";
   rover.title = rover.title || "random-title-" + Math.random();

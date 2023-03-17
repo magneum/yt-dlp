@@ -1,0 +1,74 @@
+{
+  "name": "yt-dlp",
+  "type": "module",
+  "main": "index.js",
+  "version": "1.6.0",
+  "description": "yt-dlp - Python+ Javascript Youtube Audio Video Scrapper And Downloader Client",
+  "scripts": {
+    "preinstall": "echo '[RUNNING PREINSTALL]' && pip install -r src/requirements.txt && npm run updeps",
+    "updeps": "echo '[UPDATING DEPENDENCIES]' && npx npm-check-updates -u",
+    "clean": "rm -rf node_modules",
+    "release": "standard-version -a",
+    "view": "node view/index.js",
+    "pretest": "npm run lint",
+    "lint": "standard"
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "latest",
+    "@ffprobe-installer/ffprobe": "latest",
+    "@types/fluent-ffmpeg": "latest",
+    "chalk": "latest",
+    "fluent-ffmpeg": "latest",
+    "node-fetch": "latest",
+    "conventional-github-releaser": "latest",
+    "finepack": "latest",
+    "git-authors-cli": "latest",
+    "nano-staged": "latest",
+    "npm-check-updates": "latest",
+    "progress-estimator": "latest",
+    "yt-dlp-exec": "latest",
+    "standard": "latest",
+    "standard-version": "latest",
+    "yt-dlp": "latest"
+  },
+  "devDependencies": {
+    "dotenv": "latest",
+    "spinnies": "latest",
+    "lint": "standard",
+    "winston": "latest",
+    "bin-version-check": "~5.0.0",
+    "dargs": "~8.1.0",
+    "execa": "~7.1.1",
+    "is-unix": "~2.0.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/magneum"
+  },
+  "keywords": [
+    "audio",
+    "video",
+    "youtube",
+    "python",
+    "javascript",
+    "binary",
+    "nodejs",
+    "yt-dlp",
+    "yt-dlp-wrapper",
+    "youtube-downloader"
+  ],
+  "engines": {
+    "node": ">= 14"
+  },
+  "author": {
+    "email": "magneumpro@gmail.com",
+    "name": "bit.ly/magneum",
+    "url": "https://bit.ly/magneum"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "license": "MIT"
+}
