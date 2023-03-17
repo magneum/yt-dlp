@@ -14,15 +14,21 @@
     "lint": "standard"
   },
   "dependencies": {
-    "@ffmpeg-installer/ffmpeg": "^1.1.0",
-    "@ffprobe-installer/ffprobe": "^2.0.0",
-    "@types/fluent-ffmpeg": "^2.1.21",
-    "chalk": "^5.2.0",
-    "fluent-ffmpeg": "^2.1.2",
-    "node-fetch": "^3.3.1",
-    "progress-estimator": "^0.3.0",
-    "youtube-dl-exec": "^2.4.0",
-    "yt-dlp": "^1.6.0"
+    "@ffmpeg-installer/ffmpeg": "latest",
+    "@ffprobe-installer/ffprobe": "latest",
+    "@types/fluent-ffmpeg": "latest",
+    "chalk": "latest",
+    "fluent-ffmpeg": "latest",
+    "node-fetch": "latest",
+    "conventional-github-releaser": "latest",
+    "git-authors-cli": "latest",
+    "nano-staged": "latest",
+    "npm-check-updates": "latest",
+    "progress-estimator": "latest",
+    "yt-dlp-exec": "latest",
+    "standard": "latest",
+    "standard-version": "latest",
+    "yt-dlp": "latest"
   },
   "devDependencies": {
     "dotenv": "latest",
