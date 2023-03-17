@@ -25,12 +25,17 @@
     "yt-dlp": "^1.6.0"
   },
   "devDependencies": {
-    "dotenv": "^16.0.3",
-    "spinnies": "^0.5.1",
-    "winston": "^3.8.2"
+    "dotenv": "latest",
+    "spinnies": "latest",
+    "lint": "standard",
+    "winston": "latest",
+    "bin-version-check": "~5.0.0",
+    "dargs": "~8.1.0",
+    "execa": "~7.1.1",
+    "is-unix": "~2.0.7"
   },
   "repository": {
-    "type": "git ",
+    "type": "git",
     "url": "https://github.com/magneum"
   },
   "keywords": [
@@ -38,8 +43,20 @@
     "video",
     "youtube",
     "python",
-    "javascript"
+    "javascript",
+    "binary",
+    "nodejs",
+    "yt-dlp",
+    "yt-dlp-wrapper",
+    "youtube-downloader"
   ],
-  "author": "magneum",
+  "engines": {
+    "node": ">= 14"
+  },
+  "author": {
+    "email": "magneumpro@gmail.com",
+    "name": "bit.ly/magneum",
+    "url": "https://bit.ly/magneum"
+  },
   "license": "MIT"
 }
