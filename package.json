@@ -9,9 +9,7 @@
     "updeps": "echo '[UPDATING DEPENDENCIES]' && npx npm-check-updates -u",
     "clean": "echo '[REMOVING NODE MODULES]' && rm -rf node_modules",
     "dev": "echo '[RUNNING DEV]' && node view/index.js",
-    "release": "standard-version -a",
-    "test": "npm run lint",
-    "lint": "standard"
+    "release": "standard-version -a"
   },
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "latest",
