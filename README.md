@@ -1,5 +1,8 @@
 <h1 align="center"><b>❝ ⚡ ⒸYT-DLP ⚡ ❞</b></h1>
-<h2  align="center"><i>yt-dlp - Python+ Javascript Youtube Audio Video Scrapper And Downloader Client</i></h2>
+<h3 align="center">Is A Python+ Javascript Youtube Audio Video Scrapper And Downloader Client.<br/>
+YT-DLP Was Made For Easier Scrapping And Downloading Youtube Audios & Videos.<br/>
+YT-DLP Provide Many Useful Functions For Audios And Videos Both.<br />
+</h3>
 <br></br>
 <p align="center">
 <img src="https://github.com/magneum/yt-dlp/blob/main/src/LiquidYouTube.gif" height="400" width="600" style="border-radius:5%"/>
@@ -50,6 +53,7 @@
 </b>
 </h1>
 
+> <b>⚠️ RETURNS AUDIO-LESS VIDEO METADATA ⚠️</b> <br />
 > Every Youtube Video Metadata Returned From Server Will Have '2160p', '1440p', '1080p', '720p', '480p', '360p', '240p', '144p'. <br />
 > You Can Get Customized Metadata Depending On Your Selected Resolution And What The Max Resolution Initial Video Was Uploaded At.
 
@@ -134,6 +138,7 @@ Done in 2.65s.
 </b>
 </h1>
 
+> <b>⚠️ RETURNS AUDIO-LESS VIDEO METADATA ⚠️</b> <br />
 > Every Youtube Video Metadata Returned From Server Will Be Sorted Into 'Highest-Possible', 'Medium-Possible' 'Lowest-Possible' Categories. <br />
 > You Can Supply Any Of The Above Arguments And Can Get Required Download Metadata.
 
