@@ -10,7 +10,7 @@ import {
   audioseperator,
   audiocustomquality,
   audiometasep,
-} from "../utils/audio.js";
+} from "../utils/audio.js.js";
 function printProgress(progress) {
   process.stdout.clearLine();
   process.stdout.cursorTo(0);
