@@ -1,8 +1,8 @@
 <h1 align="center"><b>❝ ⚡ ⒸYT-DLP ⚡ ❞</b></h1>
-<h2 align="center">Is A Python+ Javascript Youtube Audio Video Scrapper And Downloader Client.<br/>
+<h3 align="center">Is A Python+ Javascript Youtube Audio Video Scrapper And Downloader Client.<br/>
 YT-DLP Was Made For Easier Scrapping And Downloading Youtube Audios & Videos.<br/>
 YT-DLP Provide Many Useful Functions For Audios And Videos Both.<br />
-</h2>
+</h3>
 <br></br>
 <p align="center">
 <img src="https://github.com/magneum/yt-dlp/blob/main/src/LiquidYouTube.gif" height="400" width="600" style="border-radius:5%"/>
@@ -48,10 +48,10 @@ YT-DLP Provide Many Useful Functions For Audios And Videos Both.<br />
 <!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
 
 <br>
-<h2 align="center">
-<b>  📹 VideoData_CustomResolution()
+<h1 align="center">
+<b>📹 VideoData_CustomResolution()
 </b>
-</h2>
+</h1>
 
 > <b>⚠️ RETURNS AUDIO-LESS VIDEO METADATA ⚠️</b> <br />
 > Every Youtube Video Metadata Returned From Server Will Have '2160p', '1440p', '1080p', '720p', '480p', '360p', '240p', '144p'. <br />
@@ -133,10 +133,10 @@ Done in 2.65s.
 <!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
 
 <br>
-<h2 align="center">
-<b>  📹 VideoData_SortedResolution()
+<h1 align="center">
+<b>📹 VideoData_SortedResolution()
 </b>
-</h2>
+</h1>
 
 > <b>⚠️ RETURNS AUDIO-LESS VIDEO METADATA ⚠️</b> <br />
 > Every Youtube Video Metadata Returned From Server Will Be Sorted Into 'Highest-Possible', 'Medium-Possible' 'Lowest-Possible' Categories. <br />
@@ -214,10 +214,10 @@ Done in 2.64s.
 <!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
 
 <br>
-<h2 align="center">
-<b>  📢 AudioData_SortedAuto()
+<h1 align="center">
+<b>📢 AudioData_SortedAuto()
 </b>
-</h2>
+</h1>
 
 > Every Youtube Video Metadata Returned From Server Will Have 'Highest-Possible', 'Lowest-Possible' Audio Quality. <br />
 > You Can Get Either Of The Audio Quality As Output Depending On Parameter Passed.
@@ -296,10 +296,10 @@ Done in 2.62s.
 <!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
 
 <br>
-<h2 align="center">
-<b>  📢 AudioData_CustomQuality()
+<h1 align="center">
+<b>📢 AudioData_CustomQuality()
 </b>
-</h2>
+</h1>
 
 > Every Youtube Video Metadata Returned From Server Will Have 'High', "Medium', 'Low' Audio Quality.<br />
 > You Can Get Metadata Of Your Selected Audio Quality Depending On Your Passed Parameter.
@@ -378,10 +378,10 @@ Done in 2.68s.
 <!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
 
 <!-- <br>
-<h2 align="center">
-<b>  🔍 Scrapper()
+<h1 align="center">
+<b>🔍 Scrapper()
 </b>
-</h2>
+</h1>
 
 ```
 Search()
