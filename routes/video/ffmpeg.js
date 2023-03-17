@@ -19,20 +19,3 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-
-import Search from "./routes/web/index.js";
-import { infoAudio_autoSorted } from "./routes/audio/index.js";
-import { infoAudio_customQuality } from "./routes/audio/index.js";
-import { infoVideo_autoSorted } from "./routes/video/index.js";
-import { infoVideo_customResolution } from "./routes/video/index.js";
-import { downloadAudio_customQuality } from "./routes/audio/ffmpeg.js";
-import { downloadAudio_autoSorted } from "./routes/audio/ffmpeg.js";
-export {
-  infoAudio_autoSorted,
-  infoAudio_customQuality,
-  infoVideo_autoSorted,
-  infoVideo_customResolution,
-  downloadAudio_customQuality,
-  downloadAudio_autoSorted,
-  Search,
-};
