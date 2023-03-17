@@ -20,7 +20,7 @@
 // SOFTWARE.
 // ◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎'
 import chalk from "chalk";
-import * as ytdlp from "../index.js";
+import * as ytdlp from "../../index.js";
 
 ytdlp
   .AudioData_CustomQuality({
@@ -63,7 +63,7 @@ ytdlp
 ytdlp
   .DownloadAudio_CustomQuality({
     url: "https://youtu.be/VCiDeT16t6U", // required
-    sort: "ultralow", // required
+    sort: "medium", // required
     path: "mågneum", // optional
     title: "mågneum", // optional
   })
