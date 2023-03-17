@@ -33,7 +33,7 @@ ytdlp
 ytdlp
   .AudioData_SortedAuto({
     url: "https://youtu.be/VCiDeT16t6U", // required
-    quality: "best-possible", // required
+    quality: "highest-possible", // required
   })
   .then((data) => console.log(chalk.bgGreen("AudioData_SortedAuto:"), data))
   .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
