@@ -25,12 +25,12 @@
     "progress-estimator": "latest",
     "yt-dlp-exec": "latest",
     "standard": "latest",
+    "youtube-dl-exec": "latest",
     "standard-version": "latest"
   },
   "devDependencies": {
     "dotenv": "latest",
     "spinnies": "latest",
-    "lint": "standard",
     "winston": "latest",
     "bin-version-check": "~5.0.0",
     "dargs": "~8.1.0",
@@ -60,11 +60,6 @@
     "email": "magneumpro@gmail.com",
     "name": "bit.ly/magneum",
     "url": "https://bit.ly/magneum"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
   },
   "license": "MIT"
 }
