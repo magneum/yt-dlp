@@ -69,7 +69,7 @@
 </p>
 </details>
 
-<details open>
+<details>
 <summary><b>❓Example & Usage</b></summary>
 <p>
 
@@ -99,7 +99,7 @@ VideoData_CustomResolution(url, resolution)
 </p>
 </details>
 
-<details open>
+<details>
 <summary><b>🎊Output Layout Example</b></summary>
 <p>
 
@@ -152,7 +152,7 @@ Done in 2.65s.
 </p>
 </details>
 
-<details open>
+<details>
 <summary><b>❓Example & Usage</b></summary>
 <p>
 
@@ -180,7 +180,7 @@ VideoData_SortedResolution(url, quality)
 </p>
 </details>
 
-<details open>
+<details>
 <summary><b>🎊Output Layout Example</b></summary>
 <p>
 
@@ -232,7 +232,7 @@ Done in 2.64s.
 </p>
 </details>
 
-<details open>
+<details>
 <summary><b>❓Example & Usage</b></summary>
 <p>
 
@@ -260,7 +260,7 @@ AudioData_SortedAuto(url, quality)
 </p>
 </details>
 
-<details open>
+<details>
 <summary><b>🎊Output Layout Example</b></summary>
 <p>
 
@@ -314,7 +314,7 @@ Done in 2.62s.
 </p>
 </details>
 
-<details open>
+<details>
 <summary><b>❓Example & Usage</b></summary>
 <p>
 
@@ -342,7 +342,7 @@ AudioData_CustomQuality(url, sort)
 </p>
 </details>
 
-<details open>
+<details>
 <summary><b>🎊Output Layout Example</b></summary>
 <p>
 
@@ -385,7 +385,7 @@ Search()
 
 ```
 
-<details open>
+<details>
 <summary><b>❓Example & Usage</b></summary>
 <p>
 
