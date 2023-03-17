@@ -13,4 +13,5 @@ RUN apt update -y && apt install -y curl && \
 RUN apt install -y python3 \
   python3-pip \
   nodejs
-RUN   apt update -y && npm i -g yarn
+RUN apt update -y && npm i -g yarn
+RUN yarn
