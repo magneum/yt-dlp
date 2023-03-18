@@ -36,22 +36,22 @@ import * as YTDLP from "yt-dlp";
  */
 
 // Promise method
-YTDLP.AudioData_CustomQuality({
+YTDLP.audioData_customQuality({
   url: "https://youtu.be/TpdapO9QGRo", // required
   sort: "medium", // required
 })
-  .then((data) => console.log(chalk.bgGreen("AudioData_CustomQuality:"), data))
+  .then((data) => console.log(chalk.bgGreen("audioData_customQuality:"), data))
   .catch((error) =>
     console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
   );
 
 // async/await method
 (async () => {
-  const data = await YTDLP.AudioData_CustomQuality({
+  const data = await YTDLP.audioData_customQuality({
     url: "https://youtu.be/TpdapO9QGRo", // required
     sort: "medium", // required
   }).catch((error) =>
     console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
   );
-  console.log(chalk.bgGreen("AudioData_CustomQuality:"), data);
+  console.log(chalk.bgGreen("audioData_customQuality:"), data);
 })();

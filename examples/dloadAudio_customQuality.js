@@ -31,26 +31,31 @@ import chalk from "chalk";
 import * as YTDLP from "yt-dlp";
 /**
  * @param {url} url -> "youtube-video-link"
- * @param {string} quality -> "highest-possible" || "lowest-possible"
+ * @param {string} sort -> "medium" || "low" || "ultralow"
+ * @param {download-folder-name} @arg {optional} -> auto created if not exists or specified
  */
 
 // Promise method
-YTDLP.AudioData_SortedAuto({
+YTDLP.dloadAudio_customQuality({
   url: "https://youtu.be/TpdapO9QGRo", // required
-  quality: "highest-possible", // required
+  title: "song-title", // optional
+  sort: "medium", // required
+  folder: "folder_save", // optional
 })
-  .then((data) => console.log(chalk.bgGreen("INFOAUDIO_SORTED:"), data))
+  .then((data) => console.log(chalk.bgGreen("dloadAudio_customQuality:"), data))
   .catch((error) =>
     console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
   );
 
 // async/await method
 (async () => {
-  const data = await YTDLP.AudioData_SortedAuto({
+  const data = await YTDLP.dloadAudio_customQuality({
     url: "https://youtu.be/TpdapO9QGRo", // required
-    quality: "highest-possible", // required
+    title: "song-title", // optional
+    sort: "medium", // required
+    folder: "folder_save", //optional
   }).catch((error) =>
     console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
   );
-  console.log(chalk.bgGreen("INFOAUDIO_SORTED:"), data);
+  console.log(chalk.bgGreen("dloadAudio_customQuality:"), data);
 })();

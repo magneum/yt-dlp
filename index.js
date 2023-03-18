@@ -29,18 +29,18 @@
 "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎";
 
 import Scrapper from "./routes/web/index.js";
-import { AudioData_SortedAuto } from "./routes/audio/index.js";
-import { AudioData_CustomQuality } from "./routes/audio/index.js";
-import { VideoData_SortedResolution } from "./routes/video/index.js";
-import { VideoData_CustomResolution } from "./routes/video/index.js";
-import { DownloadAudio_CustomQuality } from "./routes/audio/ffmpeg.js";
-import { DownloadAudio_SortedQuality } from "./routes/audio/ffmpeg.js";
+import { audioData_autoSorted } from "./routes/audio/index.js";
+import { audioData_customQuality } from "./routes/audio/index.js";
+import { videoData_autoSorted } from "./routes/video/index.js";
+import { videoData_customQuality } from "./routes/video/index.js";
+import { dloadAudio_customQuality } from "./routes/audio/ffmpeg.js";
+import { dloadAudio_autoSorted } from "./routes/audio/ffmpeg.js";
 export {
-  AudioData_SortedAuto,
-  AudioData_CustomQuality,
-  VideoData_SortedResolution,
-  VideoData_CustomResolution,
-  DownloadAudio_CustomQuality,
-  DownloadAudio_SortedQuality,
+  audioData_autoSorted,
+  audioData_customQuality,
+  videoData_autoSorted,
+  videoData_customQuality,
+  dloadAudio_customQuality,
+  dloadAudio_autoSorted,
   Scrapper,
 };

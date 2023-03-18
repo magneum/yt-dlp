@@ -29,31 +29,32 @@
 "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎";
 import chalk from "chalk";
 import * as YTDLP from "yt-dlp";
-
 /**
  * @param {url} url -> "youtube-video-link"
- * @param {string} resolution -> "2160p" || "1440p" || "1080p" || "720p" || "480p" || "360p" || "240p" || "144p"
+ * @param {string} sort -> "best-possible" || "lowest-possible"
+ * @param {download-folder-name} @arg {optional} -> auto created if not exists or specified
  */
 
 // Promise method
-YTDLP.VideoData_CustomResolution({
+YTDLP.dloadAudio_autoSorted({
   url: "https://youtu.be/TpdapO9QGRo", // required
-  resolution: "2160p", // required
+  title: "song-title", // optional
+  sort: "medium", // required
+  folder: "folder_save", // optional
 })
-  .then((data) =>
-    console.log(chalk.bgGreen("VideoData_CustomResolution:"), data)
-  )
+  .then((data) => console.log(chalk.bgGreen("dloadAudio_autoSorted:"), data))
   .catch((error) =>
     console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
   );
 
 // async/await method
 (async () => {
-  const data = await YTDLP.VideoData_CustomResolution({
-    url: "https://youtu.be/TpdapO9QGRo", // required
-    resolution: "2160p", // required
+  const data = await YTDLP.dloadAudio_autoSorted({
+    url: "https://youtu.be/VCiDeT16t6U",
+    sort: "medium",
+    folder: "mågneum",
   }).catch((error) =>
     console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
   );
-  console.log(chalk.bgGreen("VideoData_CustomResolution:"), data);
+  console.log(chalk.bgGreen("dloadAudio_autoSorted:"), data);
 })();

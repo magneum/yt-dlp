@@ -29,28 +29,29 @@
 "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎";
 import chalk from "chalk";
 import * as YTDLP from "yt-dlp";
+
 /**
  * @param {url} url -> "youtube-video-link"
- * @param {string} resolution -> "highest-possible" || "lowest-possible"
+ * @param {string} resolution -> "2160p" || "1440p" || "1080p" || "720p" || "480p" || "360p" || "240p" || "144p"
  */
 
 // Promise method
-YTDLP.VideoData_SortedResolution({
+YTDLP.videoData_customQuality({
   url: "https://youtu.be/TpdapO9QGRo", // required
-  quality: "highest-possible", // required
+  resolution: "2160p", // required
 })
-  .then((data) => console.log(chalk.bgGreen("INFOVIDEO_SORTED:"), data))
+  .then((data) => console.log(chalk.bgGreen("videoData_customQuality:"), data))
   .catch((error) =>
     console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
   );
 
 // async/await method
 (async () => {
-  const data = await YTDLP.VideoData_SortedResolution({
+  const data = await YTDLP.videoData_customQuality({
     url: "https://youtu.be/TpdapO9QGRo", // required
-    quality: "highest-possible", // required
+    resolution: "2160p", // required
   }).catch((error) =>
     console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
   );
-  console.log(chalk.bgGreen("INFOVIDEO_SORTED:"), data);
+  console.log(chalk.bgGreen("videoData_customQuality:"), data);
 })();

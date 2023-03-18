@@ -35,7 +35,7 @@ function regExTestYT(str) {
   return exp.test(str);
 }
 
-export async function VideoData_CustomResolution(rover) {
+export async function videoData_customQuality(rover) {
   rover.resolution || "1080p";
   rover.url || "not-a-youtube-link";
   if (!regExTestYT(rover.url)) {
@@ -222,7 +222,7 @@ export async function VideoData_CustomResolution(rover) {
     }
 }
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-export async function VideoData_SortedResolution(rover) {
+export async function videoData_autoSorted(rover) {
   rover.quality || "highest";
   rover.url || "not-a-youtube-link";
   if (!regExTestYT(rover.url)) {
