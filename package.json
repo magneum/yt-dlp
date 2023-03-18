@@ -5,9 +5,9 @@
   "version": "1.0.0",
   "description": "yt-dlp - Python+ Javascript Youtube Audio Video Scrapper And Downloader Client",
   "scripts": {
-    "preinstall": "echo '[RUNNING PREINSTALL]' && pip install -r src/requirements.txt && npm run updeps",
-    "release": "standard-version -a && git push --follow-tags origin main && npm publish",
-    "updeps": "echo '[UPDATING DEPENDENCIES]' && npx npm-check-updates -u",
+    "release": "echo '[GIT PUBLISH]' && standard-version -a && git push --follow-tags origin main && npm publish",
+    "preinstall": "echo '[RUNNING PREINSTALL]' && pip install -r src/requirements.txt && npm run update",
+    "update": "echo '[UPDATING DEPENDENCIES]' && npx npm-check-updates -u",
     "clean": "echo '[REMOVING NODE MODULES]' && rm -rf node_modules",
     "view": "echo '[RUNNING DEV]' && node view/index.js"
   },
