@@ -64,12 +64,12 @@ export async function DownloadAudio_CustomQuality(rover) {
   } else
     try {
       let downloadpath;
-      if (!rover.path) {
+      if (!rover.folder) {
         if (!fs.existsSync("mågneum")) fs.mkdirSync("mågneum");
         downloadpath = "./mågneum/";
       } else {
-        if (!fs.existsSync(rover.path)) fs.mkdirSync(rover.path);
-        downloadpath = "./" + rover.path + "/";
+        if (!fs.existsSync(rover.folder)) fs.mkdirSync(rover.folder);
+        downloadpath = "./" + rover.folder + "/";
       }
 
       var Execjson = ExecJson(rover.url, {
@@ -166,12 +166,12 @@ export async function DownloadAudio_SortedQuality(rover) {
   } else
     try {
       let downloadpath;
-      if (!rover.path) {
+      if (!rover.folder) {
         if (!fs.existsSync("mågneum")) fs.mkdirSync("mågneum");
         downloadpath = "./mågneum/";
       } else {
-        if (!fs.existsSync(rover.path)) fs.mkdirSync(rover.path);
-        downloadpath = "./" + rover.path + "/";
+        if (!fs.existsSync(rover.folder)) fs.mkdirSync(rover.folder);
+        downloadpath = "./" + rover.folder + "/";
       }
       var Execjson = ExecJson(rover.url, {
         noWarnings: true,

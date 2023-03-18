@@ -39,8 +39,10 @@ ytdlp
     url: "https://youtu.be/TpdapO9QGRo", // required
     sort: "medium", // required
   })
-  .then((data) => console.log("AudioData_CustomQuality: ", data))
-  .catch((e) => console.log(e));
+  .then((data) => console.log(chalk.bgGreen("AudioData_CustomQuality:"), data))
+  .catch((error) =>
+    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
+  );
 
 // async/await method
 (async () => {
@@ -49,34 +51,40 @@ ytdlp
       url: "https://youtu.be/TpdapO9QGRo", // required
       sort: "medium", // required
     })
-    .catch((e) => console.log(e));
-  console.log("AudioData_CustomQuality: ", data);
+    .catch((error) =>
+      console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
+    );
+  console.log(chalk.bgGreen("AudioData_CustomQuality:"), data);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 import * as ytdlp from "yt-dlp";
 /**
  * @param {url} url -> "youtube-video-link"
- * @param {string} quality -> "best-possible" || "medium-possible" || "lowest-possible"
+ * @param {string} quality -> "highest-possible" || "lowest-possible"
  */
 
 // Promise method
 ytdlp
   .AudioData_SortedAuto({
     url: "https://youtu.be/TpdapO9QGRo", // required
-    quality: "best-possible", // required
+    quality: "highest-possible", // required
   })
-  .then((data) => console.log("AudioData_SortedAuto: ", data))
-  .catch((e) => console.log(e));
+  .then((data) => console.log(chalk.bgGreen("INFOAUDIO_SORTED:"), data))
+  .catch((error) =>
+    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
+  );
 
 // async/await method
 (async () => {
   const data = await ytdlp
     .AudioData_SortedAuto({
       url: "https://youtu.be/TpdapO9QGRo", // required
-      quality: "best-possible", // required
+      quality: "highest-possible", // required
     })
-    .catch((e) => console.log(e));
-  console.log("AudioData_SortedAuto: ", data);
+    .catch((error) =>
+      console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
+    );
+  console.log(chalk.bgGreen("INFOAUDIO_SORTED:"), data);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 import * as ytdlp from "yt-dlp";
@@ -92,8 +100,12 @@ ytdlp
     url: "https://youtu.be/TpdapO9QGRo", // required
     resolution: "2160p", // required
   })
-  .then((data) => console.log("VideoData_CustomResolution: ", data))
-  .catch((e) => console.log(e));
+  .then((data) =>
+    console.log(chalk.bgGreen("VideoData_CustomResolution:"), data)
+  )
+  .catch((error) =>
+    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
+  );
 
 // async/await method
 (async () => {
@@ -102,35 +114,41 @@ ytdlp
       url: "https://youtu.be/TpdapO9QGRo", // required
       resolution: "2160p", // required
     })
-    .catch((e) => console.log(e));
-  console.log("VideoData_CustomResolution: ", data);
+    .catch((error) =>
+      console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
+    );
+  console.log(chalk.bgGreen("VideoData_CustomResolution:"), data);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 
 import * as ytdlp from "yt-dlp";
 /**
  * @param {url} url -> "youtube-video-link"
- * @param {string} resolution -> "highest" || "medium" || "lowest"
+ * @param {string} resolution -> "highest-possible" || "lowest-possible"
  */
 
 // Promise method
 ytdlp
   .VideoData_SortedResolution({
     url: "https://youtu.be/TpdapO9QGRo", // required
-    quality: "highest", // required
+    quality: "highest-possible", // required
   })
-  .then((data) => console.log("VideoData_SortedResolution: ", data))
-  .catch((e) => console.log(e));
+  .then((data) => console.log(chalk.bgGreen("INFOVIDEO_SORTED:"), data))
+  .catch((error) =>
+    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
+  );
 
 // async/await method
 (async () => {
   const data = await ytdlp
     .VideoData_SortedResolution({
       url: "https://youtu.be/TpdapO9QGRo", // required
-      quality: "highest", // required
+      quality: "highest-possible", // required
     })
-    .catch((e) => console.log(e));
-  console.log("VideoData_SortedResolution: ", data);
+    .catch((error) =>
+      console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
+    );
+  console.log(chalk.bgGreen("INFOVIDEO_SORTED:"), data);
 })();
 // ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱ [ DOWNLOADER ] ☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱
 
@@ -152,7 +170,9 @@ ytdlp
   .then((data) =>
     console.log(chalk.bgGreen("DownloadAudio_CustomQuality:"), data)
   )
-  .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
+  .catch((error) =>
+    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
+  );
 
 // async/await method
 (async () => {
@@ -163,7 +183,9 @@ ytdlp
       sort: "medium", // required
       folder: "folder_save", //optional
     })
-    .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
+    .catch((error) =>
+      console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
+    );
   console.log(chalk.bgGreen("DownloadAudio_CustomQuality:"), data);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
@@ -186,7 +208,9 @@ ytdlp
   .then((data) =>
     console.log(chalk.bgGreen("DownloadAudio_SortedQuality:"), data)
   )
-  .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
+  .catch((error) =>
+    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
+  );
 
 // async/await method
 (async () => {
@@ -196,7 +220,9 @@ ytdlp
       sort: "medium",
       folder: "mågneum",
     })
-    .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
+    .catch((error) =>
+      console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
+    );
   console.log(chalk.bgGreen("DownloadAudio_SortedQuality:"), data);
 })();
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");

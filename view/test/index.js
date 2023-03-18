@@ -30,69 +30,75 @@
 import chalk from "chalk";
 import * as ytdlp from "../../index.js";
 
-ytdlp
-  .AudioData_CustomQuality({
-    url: "https://youtu.be/VCiDeT16t6U", // required
-    sort: "medium", // required
-  })
-  .then((data) => console.log(chalk.bgGreen("AudioData_CustomQuality:"), data))
-  .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
+(async () => {
+  await ytdlp
+    .AudioData_CustomQuality({
+      url: "https://youtu.be/TpdapO9QGRo", // required
+      sort: "high", // required
+    })
+    .then((data) =>
+      console.log(chalk.bgGreen("AudioData_CustomQuality:"), data)
+    )
+    .catch((error) =>
+      console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
+    );
+  await ytdlp
+    .AudioData_SortedAuto({
+      url: "https://youtu.be/TpdapO9QGRo", // required
+      quality: "highest-possible", // required
+    })
+    .then((data) => console.log(chalk.bgGreen("INFOAUDIO_SORTED:"), data))
+    .catch((error) =>
+      console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
+    );
+  await ytdlp
+    .VideoData_CustomResolution({
+      url: "https://youtu.be/TpdapO9QGRo", // required
+      resolution: "2160p", // required
+    })
+    .then((data) =>
+      console.log(chalk.bgGreen("VideoData_CustomResolution:"), data)
+    )
+    .catch((error) =>
+      console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
+    );
+  await ytdlp
+    .VideoData_SortedResolution({
+      url: "https://youtu.be/TpdapO9QGRo", // required
+      quality: "highest-possible", // required
+    })
+    .then((data) => console.log(chalk.bgGreen("INFOVIDEO_SORTED:"), data))
+    .catch((error) =>
+      console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
+    );
 
-ytdlp
-  .AudioData_SortedAuto({
-    url: "https://youtu.be/VCiDeT16t6U", // required
-    quality: "highest-possible", // required
-  })
-  .then((data) => console.log(chalk.bgGreen("AudioData_SortedAuto:"), data))
-  .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
-
-("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-
-ytdlp
-  .VideoData_CustomResolution({
-    url: "https://youtu.be/VCiDeT16t6U", // required
-    resolution: "2160p", // required
-  })
-  .then((data) =>
-    console.log(chalk.bgGreen("VideoData_CustomResolution:"), data)
-  )
-  .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
-
-ytdlp
-  .VideoData_SortedResolution({
-    url: "https://youtu.be/VCiDeT16t6U", // required
-    quality: "highest", // required
-  })
-  .then((data) => console.log(chalk.bgGreen("INFOVIDEO_SORTED:"), data))
-  .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
-
-("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-
-ytdlp
-  .DownloadAudio_CustomQuality({
-    url: "https://youtu.be/VCiDeT16t6U", // required
-    sort: "medium", // required
-    path: "mågneum", // optional
-    title: "mågneum", // optional
-  })
-  .then((data) =>
-    console.log(chalk.bgGreen("DownloadAudio_CustomQuality:"), data)
-  )
-  .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
-
-("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
-
-ytdlp
-  .DownloadAudio_SortedQuality({
-    url: "https://youtu.be/VCiDeT16t6U", // required
-    quality: "best-possible", // required
-    path: "mågneum", // optional
-    title: "mågneum", // optional
-  })
-  .then((data) =>
-    console.log(chalk.bgGreen("DownloadAudio_SortedQuality:"), data)
-  )
-  .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
+  // await ytdlp
+  // .DownloadAudio_CustomQuality({
+  // url: "https://youtu.be/TpdapO9QGRo", // required
+  // title: "song-title", // optional
+  // sort: "medium", // required
+  // folder: "folder_save", // optional
+  // })
+  // .then((data) =>
+  // console.log(chalk.bgGreen("DownloadAudio_CustomQuality:"), data)
+  // )
+  // .catch((error) =>
+  // console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
+  // );
+  // await ytdlp
+  // .DownloadAudio_SortedQuality({
+  // url: "https://youtu.be/TpdapO9QGRo", // required
+  // title: "song-title", // optional
+  // sort: "medium", // required
+  // folder: "folder_save", // optional
+  // })
+  // .then((data) =>
+  // console.log(chalk.bgGreen("DownloadAudio_SortedQuality:"), data)
+  // )
+  // .catch((error) =>
+  // console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
+  // );
+})();
 
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 

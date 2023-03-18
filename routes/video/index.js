@@ -293,29 +293,29 @@ export async function VideoData_SortedResolution(rover) {
           (res.format_id === "278" && res.format_note === "144p")
       );
 
-      if (rover.quality === "highest") {
+      if (rover.quality === "highest-possible") {
         if (Format_2160p.filter((w) => w.width).length)
           return {
-            type: "highest possible",
+            type: "highest-possible",
             resolution: "2160p",
             url: Format_2160p[0].url || Format_2160p[1].url || Format_2160p.url,
           };
         else if (Format_1440p.filter((w) => w.width).length)
           return {
-            type: "highest possible",
+            type: "highest-possible",
             resolution: "1440p",
             url: Format_1440p[0].url || Format_1440p[1].url || Format_1440p.url,
           };
         else if (Format_1080p.filter((w) => w.width).length)
           return {
-            type: "highest possible",
+            type: "highest-possible",
             resolution: "1080p",
             url:
               Format_1080p[0].url || Format_1080p[1].url || Format_1080p[2].url,
           };
         else if (Format_720p.filter((w) => w.width).length)
           return {
-            type: "highest possible",
+            type: "highest-possible",
             resolution: "720p",
             url:
               Format_720p[0].url ||
@@ -326,7 +326,7 @@ export async function VideoData_SortedResolution(rover) {
           };
         else if (Format_480p.filter((w) => w.width).length)
           return {
-            type: "highest possible",
+            type: "highest-possible",
             resolution: "480p",
             url:
               Format_480p[0].url ||
@@ -336,7 +336,7 @@ export async function VideoData_SortedResolution(rover) {
           };
         else if (Format_360p.filter((w) => w.width).length)
           return {
-            type: "highest possible",
+            type: "highest-possible",
             resolution: "360p",
             url:
               Format_360p[0].url ||
@@ -347,7 +347,7 @@ export async function VideoData_SortedResolution(rover) {
           };
         else if (Format_240p.filter((w) => w.width).length)
           return {
-            type: "highest possible",
+            type: "highest-possible",
             resolution: "240p",
             url:
               Format_240p[0].url ||
@@ -357,7 +357,7 @@ export async function VideoData_SortedResolution(rover) {
           };
         else if (Format_144p.filter((w) => w.width).length)
           return {
-            type: "highest possible",
+            type: "highest-possible",
             resolution: "144p",
             url:
               Format_144p[0].url ||
@@ -372,66 +372,10 @@ export async function VideoData_SortedResolution(rover) {
           throw new Error(
             "Sorry this video doesn't have the Quality requested."
           );
-      } else if (rover.quality === "medium") {
-        if (Format_720p.filter((w) => w.width).length)
-          return {
-            type: "medium possible",
-            resolution: "720p",
-            url:
-              Format_720p[0].url ||
-              Format_720p[1].url ||
-              Format_720p[2].url ||
-              Format_720p[3].url ||
-              Format_720p.url,
-          };
-        else if (Format_480p.filter((w) => w.width).length)
-          return {
-            type: "medium possible",
-            resolution: "480p",
-            url:
-              Format_480p[0].url ||
-              Format_480p[1].url ||
-              Format_480p[2].url ||
-              Format_480p.url,
-          };
-        else if (Format_360p.filter((w) => w.width).length)
-          return {
-            type: "medium possible",
-            resolution: "360p",
-            url:
-              Format_360p[0].url ||
-              Format_360p[1].url ||
-              Format_360p[2].url ||
-              Format_360p[3].url ||
-              Format_360p.url,
-          };
-        else if (Format_240p.filter((w) => w.width).length)
-          return {
-            type: "medium possible",
-            resolution: "240p",
-            url:
-              Format_240p[0].url ||
-              Format_240p[1].url ||
-              Format_240p[2].url ||
-              Format_240p,
-          };
-        else if (Format_144p.filter((w) => w.width).length)
-          return {
-            type: "medium possible",
-            resolution: "144p",
-            url:
-              Format_144p[0].url ||
-              Format_144p[1].url ||
-              Format_144p[2].url ||
-              Format_144p[3].url ||
-              Format_144p[4].url ||
-              Format_144p[5].url ||
-              Format_144p.url,
-          };
-      } else if (rover.quality === "lowest") {
+      } else if (rover.quality === "lowest-possible") {
         if (Format_144p.filter((w) => w.width).length)
           return {
-            type: "lowest possible",
+            type: "lowest-possible",
             resolution: "144p",
             url:
               Format_144p[0].url ||
@@ -444,13 +388,73 @@ export async function VideoData_SortedResolution(rover) {
           };
       } else if (Format_240p.filter((w) => w.width).length)
         return {
-          type: "lowest possible",
+          type: "lowest-possible",
           resolution: "240p",
           url:
             Format_240p[0].url ||
             Format_240p[1].url ||
             Format_240p[2].url ||
             Format_240p,
+        };
+      else if (Format_360p.filter((w) => w.width).length)
+        return {
+          type: "lowest-possible",
+          resolution: "240p",
+          url:
+            Format_360p[0].url ||
+            Format_360p[1].url ||
+            Format_360p[2].url ||
+            Format_360p,
+        };
+      else if (Format_480p.filter((w) => w.width).length)
+        return {
+          type: "lowest-possible",
+          resolution: "240p",
+          url:
+            Format_480p[0].url ||
+            Format_480p[1].url ||
+            Format_480p[2].url ||
+            Format_480p,
+        };
+      else if (Format_720p.filter((w) => w.width).length)
+        return {
+          type: "lowest-possible",
+          resolution: "240p",
+          url:
+            Format_720p[0].url ||
+            Format_720p[1].url ||
+            Format_720p[2].url ||
+            Format_720p,
+        };
+      else if (Format_1080p.filter((w) => w.width).length)
+        return {
+          type: "lowest-possible",
+          resolution: "240p",
+          url:
+            Format_1080p[0].url ||
+            Format_1080p[1].url ||
+            Format_1080p[2].url ||
+            Format_1080p,
+        };
+      else if (Format_1440p.filter((w) => w.width).length)
+        return {
+          type: "lowest-possible",
+          resolution: "240p",
+          url:
+            Format_1440p[0].url ||
+            Format_1440p[1].url ||
+            Format_1440p[2].url ||
+            Format_1440p,
+        };
+      else if (Format_2160p.filter((w) => w.width).length)
+        return {
+          type: "lowest-possible",
+          resolution: "240p",
+          url:
+            Format_2160p[0].url ||
+            Format_2160p[1].url ||
+            Format_2160p[2].url ||
+            Format_2160p,
         };
       else throw new Error("Wrong Quality Provided.");
     } catch (error) {
