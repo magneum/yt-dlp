@@ -258,36 +258,6 @@ export async function DownloadAudio_SortedQuality(rover) {
             message: "INFO: stream starting.",
           };
         } else throw new Error("SORRY: Quality Not Found.");
-      } else if (rover.quality === "medium-possible") {
-        if (low) {
-          FFmpegSave(
-            low[0].url || low[1].url || low[2].url || low.url || null,
-            downloadpath,
-            "-medium_possible",
-            rover.title
-          );
-          return {
-            header: "◎ ву mågneum ◎",
-            status: true,
-            quality: "medium-possible",
-            downloadpath: downloadpath,
-            message: "INFO: stream starting.",
-          };
-        } else if (!low && ultralow) {
-          FFmpegSave(
-            ultralow[0].url || ultralow[1].url || ultralow.url || null,
-            downloadpath,
-            "-medium_possible",
-            rover.title
-          );
-          return {
-            header: "◎ ву mågneum ◎",
-            status: true,
-            quality: "medium-possible",
-            downloadpath: downloadpath,
-            message: "INFO: stream starting.",
-          };
-        } else throw new Error("SORRY: Quality Not Found.");
       } else if (rover.quality === "lowest-possible") {
         FFmpegSave(
           ultralow[0].url || ultralow[1].url || ultralow.url || null,
@@ -300,6 +270,34 @@ export async function DownloadAudio_SortedQuality(rover) {
             header: "◎ ву mågneum ◎",
             status: true,
             quality: "lowest-possible",
+            downloadpath: downloadpath,
+            message: "INFO: stream starting.",
+          };
+        } else if (low) {
+          FFmpegSave(
+            low[0].url || low[1].url || low[2].url || low.url || null,
+            downloadpath,
+            "-lowest_possible",
+            rover.title
+          );
+          return {
+            header: "◎ ву mågneum ◎",
+            status: true,
+            quality: "medium-possible",
+            downloadpath: downloadpath,
+            message: "INFO: stream starting.",
+          };
+        } else if (medium) {
+          FFmpegSave(
+            medium[0].url || medium[1].url || medium.url || null,
+            downloadpath,
+            "-best_possible",
+            rover.title
+          );
+          return {
+            header: "◎ ву mågneum ◎",
+            status: true,
+            quality: "-lowest_possible",
             downloadpath: downloadpath,
             message: "INFO: stream starting.",
           };

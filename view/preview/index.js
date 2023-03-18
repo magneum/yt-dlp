@@ -147,7 +147,7 @@ ytdlp
     url: "https://youtu.be/TpdapO9QGRo", // required
     title: "song-title", // optional
     sort: "medium", // required
-    path: "mågneum", // optional
+    folder: "folder_save", // optional
   })
   .then((data) =>
     console.log(chalk.bgGreen("DownloadAudio_CustomQuality:"), data)
@@ -161,7 +161,7 @@ ytdlp
       url: "https://youtu.be/TpdapO9QGRo", // required
       title: "song-title", // optional
       sort: "medium", // required
-      path: "mågneum", //optional
+      folder: "folder_save", //optional
     })
     .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
   console.log(chalk.bgGreen("DownloadAudio_CustomQuality:"), data);
@@ -171,7 +171,7 @@ ytdlp
 import * as ytdlp from "yt-dlp";
 /**
  * @param {url} url -> "youtube-video-link"
- * @param {string} sort -> "best-possible" || "medium-possible" || "lowest-possible"
+ * @param {string} sort -> "best-possible" || "lowest-possible"
  * @param {download-folder-name} @arg {optional} -> auto created if not exists or specified
  */
 
@@ -181,7 +181,7 @@ ytdlp
     url: "https://youtu.be/TpdapO9QGRo", // required
     title: "song-title", // optional
     sort: "medium", // required
-    path: "mågneum", // optional
+    folder: "folder_save", // optional
   })
   .then((data) =>
     console.log(chalk.bgGreen("DownloadAudio_SortedQuality:"), data)
@@ -194,7 +194,7 @@ ytdlp
     .DownloadAudio_SortedQuality({
       url: "https://youtu.be/VCiDeT16t6U",
       sort: "medium",
-      path: "mågneum",
+      folder: "mågneum",
     })
     .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
   console.log(chalk.bgGreen("DownloadAudio_SortedQuality:"), data);

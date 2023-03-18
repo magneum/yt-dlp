@@ -15,15 +15,7 @@ YT-DLP Provide Many Useful Functions For Audios And Videos Both.
 
 <h1 align="center"><b>🖊️ Dependencies</b></h1>
 
-> [@magneum-api](https://bit.ly/magneum) <br/>
-> [@yt-dlp](https://github.com/yt-dlp/yt-dlp) <br/>
-> [@ffmpeg-installer/ffmpeg](https://github.com/kribblo/node-ffmpeg-installer#readme) <br/>
-> [@ffprobe-installer/ffprobe](https://github.com/SavageCore/node-ffprobe-installer#readme) <br/>
-> [@dotenv](https://github.com/motdotla/dotenv#readme) <br/>
-> [@fluent-ffmpeg](https://github.com/fluent-ffmpeg/node-fluent-ffmpeg#readme) <br/>
-> [@node-fetch](https://github.com/yt-dlp/yt-dlp) <br/>
-> [@progress-estimator](https://github.com/bvaughn/progress-estimator#readme) <br/>
-> [@spinnies](https://github.com/jcarpanelli/spinnies#readme) <br/>
+> [@magneum-api](https://bit.ly/magneum) <br/> > [@yt-dlp](https://github.com/yt-dlp/yt-dlp) <br/> > [@ffmpeg-installer/ffmpeg](https://github.com/kribblo/node-ffmpeg-installer#readme) <br/> > [@ffprobe-installer/ffprobe](https://github.com/SavageCore/node-ffprobe-installer#readme) <br/> > [@dotenv](https://github.com/motdotla/dotenv#readme) <br/> > [@fluent-ffmpeg](https://github.com/fluent-ffmpeg/node-fluent-ffmpeg#readme) <br/> > [@node-fetch](https://github.com/yt-dlp/yt-dlp) <br/> > [@progress-estimator](https://github.com/bvaughn/progress-estimator#readme) <br/> > [@spinnies](https://github.com/jcarpanelli/spinnies#readme) <br/>
 > Python, ffmpeg and ffprobe are highly recommended <br/>
 > Python versions 3.7+ (CPython and PyPy) are supported. Other versions and implementations may or may not work correctly.
 
@@ -84,11 +76,12 @@ YT-DLP Provide Many Useful Functions For Audios And Videos Both.
 import { VideoData_CustomResolution } from "yt-dlp";
 import chalk from "chalk";
 
-let resolution = "2160p";
-const url = "https://youtu.be/TpdapO9QGRo";
-
 // Promise method
-VideoData_CustomResolution(url, resolution)
+ytdlp
+  .VideoData_CustomResolution({
+    url: "https://youtu.be/TpdapO9QGRo", // required
+    resolution: "2160p", // required
+  })
   .then((data) =>
     console.log(chalk.bgGreen("VideoData_CustomResolution:"), data)
   )
@@ -96,9 +89,10 @@ VideoData_CustomResolution(url, resolution)
 
 // async/await method
 (async () => {
-  const data = await VideoData_CustomResolution(url, resolution).catch((e) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message))
-  );
+  const data = await VideoData_CustomResolution({
+    url: "https://youtu.be/TpdapO9QGRo", // required
+    resolution: "2160p", // required
+  }).catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
   console.log(chalk.bgGreen("VideoData_CustomResolution:"), data);
 })();
 ```
@@ -168,19 +162,21 @@ Done in 2.65s.
 import { VideoData_SortedResolution } from "yt-dlp";
 import chalk from "chalk";
 
-let quality = "highest";
-const url = "https://youtu.be/TpdapO9QGRo";
-
 // Promise method
-VideoData_SortedResolution(url, quality)
+ytdlp
+  .VideoData_SortedResolution({
+    url: "https://youtu.be/TpdapO9QGRo", // required
+    quality: "highest", // required
+  })
   .then((data) => console.log(chalk.bgGreen("INFOVIDEO_SORTED:"), data))
   .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
 
 // async/await method
 (async () => {
-  const data = await VideoData_SortedResolution(url, quality).catch((e) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message))
-  );
+  const data = await VideoData_SortedResolution({
+    url: "https://youtu.be/TpdapO9QGRo", // required
+    quality: "highest", // required
+  }).catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
   console.log(chalk.bgGreen("INFOVIDEO_SORTED:"), data);
 })();
 ```
@@ -248,19 +244,21 @@ Done in 2.64s.
 import { AudioData_SortedAuto } from "yt-dlp";
 import chalk from "chalk";
 
-let quality = "highest-possible";
-const url = "https://youtu.be/TpdapO9QGRo";
-
 // Promise method
-AudioData_SortedAuto(url, quality)
+ytdlp
+  .AudioData_SortedAuto({
+    url: "https://youtu.be/TpdapO9QGRo", // required
+    quality: "best-possible", // required
+  })
   .then((data) => console.log(chalk.bgGreen("INFOAUDIO_SORTED:"), data))
   .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
 
 // async/await method
 (async () => {
-  const data = await AudioData_SortedAuto(url, quality).catch((e) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message))
-  );
+  const data = await AudioData_SortedAuto({
+    url: "https://youtu.be/TpdapO9QGRo", // required
+    quality: "best-possible", // required
+  }).catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
   console.log(chalk.bgGreen("INFOAUDIO_SORTED:"), data);
 })();
 ```
@@ -330,19 +328,21 @@ Done in 2.62s.
 import { AudioData_CustomQuality } from "yt-dlp";
 import chalk from "chalk";
 
-let sort = "medium";
-const url = "https://youtu.be/TpdapO9QGRo";
-
 // Promise method
-AudioData_CustomQuality(url, sort)
+ytdlp
+  .AudioData_CustomQuality({
+    url: "https://youtu.be/TpdapO9QGRo", // required
+    sort: "medium", // required
+  })
   .then((data) => console.log(chalk.bgGreen("AudioData_CustomQuality:"), data))
   .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
 
 // async/await method
 (async () => {
-  const data = await AudioData_CustomQuality(url, sort).catch((e) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message))
-  );
+  const data = await AudioData_CustomQuality({
+    url: "https://youtu.be/TpdapO9QGRo", // required
+    sort: "medium", // required
+  }).catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
   console.log(chalk.bgGreen("AudioData_CustomQuality:"), data);
 })();
 ```
@@ -374,6 +374,162 @@ resolution: 'audio only',
 url: 'https://(server-generated-random-link).com'
 }
 Done in 2.68s.
+```
+
+</p>
+</details>
+<!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
+
+<br>
+<h1 align="center">
+<b>📢 DownloadAudio_CustomQuality()
+</b>
+</h1>
+
+> Cupidatat adipisicing ex reprehenderit nisi ea sunt fugiat deserunt enim magna.<br />
+> Id excepteur excepteur ea nisi aliqua minim sunt.
+
+<br />
+<details open>
+<summary><b>🗝️ @parameters/@arguments</b></summary>
+<p>
+
+```js
+/**
+ * @param {string} title -> "file-name"
+ * @param {url} url -> "youtube-video-link"
+ * @param {string} sort -> "high" || "medium" || "low"
+ * @param {folder-name} @arg {optional} -> auto created if not exists or specified
+ */
+```
+
+</p>
+</details>
+
+<details>
+<summary><b>❓Example & Usage</b></summary>
+<p>
+
+```js
+import { DownloadAudio_CustomQuality } from "yt-dlp";
+import chalk from "chalk";
+
+// Promise method
+ytdlp
+  .DownloadAudio_CustomQuality({
+    url: "https://youtu.be/TpdapO9QGRo", // required
+    title: "song-title", // optional
+    sort: "medium", // required
+    folder: "folder_save", // optional
+  })
+  .then((data) =>
+    console.log(chalk.bgGreen("DownloadAudio_CustomQuality:"), data)
+  )
+  .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
+
+// async/await method
+(async () => {
+  const data = await ytdlp
+    .DownloadAudio_CustomQuality({
+      url: "https://youtu.be/TpdapO9QGRo", // required
+      title: "song-title", // optional
+      sort: "medium", // required
+      folder: "mågneum", //optional
+    })
+    .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
+  console.log(chalk.bgGreen("DownloadAudio_CustomQuality:"), data);
+})();
+```
+
+</p>
+</details>
+
+<details>
+<summary><b>🎊Output Layout Example</b></summary>
+<p>
+
+### Output Layout
+
+```js
+
+```
+
+</p>
+</details>
+<!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
+
+<br>
+<h1 align="center">
+<b>📢 DownloadAudio_SortedQuality()
+</b>
+</h1>
+
+> Cupidatat adipisicing ex reprehenderit nisi ea sunt fugiat deserunt enim magna.<br />
+> Id excepteur excepteur ea nisi aliqua minim sunt.
+
+<br />
+<details open>
+<summary><b>🗝️ @parameters/@arguments</b></summary>
+<p>
+
+```js
+/**
+ * @param {string} title -> "file-name"
+ * @param {url} url -> "youtube-video-link"
+ * @param {string} sort -> "best-possible" || "lowest-possible"
+ * @param {folder-name} @arg {optional} -> auto created if not exists or specified
+ */
+```
+
+</p>
+</details>
+
+<details>
+<summary><b>❓Example & Usage</b></summary>
+<p>
+
+```js
+import { DownloadAudio_SortedQuality } from "yt-dlp";
+import chalk from "chalk";
+
+// Promise method
+ytdlp
+  .DownloadAudio_SortedQuality({
+    url: "https://youtu.be/TpdapO9QGRo", // required
+    title: "song-title", // optional
+    sort: "medium", // required
+    folder: "folder_save", // optional
+  })
+  .then((data) =>
+    console.log(chalk.bgGreen("DownloadAudio_SortedQuality:"), data)
+  )
+  .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
+
+// async/await method
+(async () => {
+  const data = await ytdlp
+    .DownloadAudio_SortedQuality({
+      url: "https://youtu.be/TpdapO9QGRo", // required
+      title: "song-title", // optional
+      sort: "medium", // required
+      folder: "folder_save", // optional
+    })
+    .catch((e) => console.log(chalk.bgRed("ERROR: "), chalk.gray(e.message)));
+  console.log(chalk.bgGreen("DownloadAudio_SortedQuality:"), data);
+})();
+```
+
+</p>
+</details>
+
+<details>
+<summary><b>🎊Output Layout Example</b></summary>
+<p>
+
+### Output Layout
+
+```js
+
 ```
 
 </p>
@@ -455,22 +611,24 @@ Search(url, async (data) => console.log(data));
 <!-- "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎" -->
 
 <br><br>
+
 <h1 align="center"><b>⚠️ Disclaimer</b></h1>
 
 ```
 ╔⧉༻ ❝ ⚡ ⒸYT-DLP ⚡ ❞
-║ Is A Python+ Javascript Youtube Audio Video Scrapper And Downloader Client 
+║ Is A Python+ Javascript Youtube Audio Video Scrapper And Downloader Client
 ║ 🐞𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫𝐬: +918436686758, +917430922909
 ╚════════════╝
 
 YT-DLP Was Made For Easier Scrapping And Downloading Youtube Audios & Videos.
 If You Fork This Repo And Edit Plugins, It's Your Concern For Further Updates.
-Forking Repo Is Fine. 
+Forking Repo Is Fine.
 But If You Edit Something We Will Not Provide Any Help.
 In Short, Fork At Your Own Risk.
 ```
 
 <br><br>
+
 <h1 align="center"><b>🚨 Legal</b></h1>
 
 ```
