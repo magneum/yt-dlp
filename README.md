@@ -78,7 +78,7 @@ import chalk from "chalk";
 
 // Promise method
 YTDLP.videoData_customQuality({
-  url: "https://youtu.be/TpdapO9QGRo", // required
+  url: "https://youtu.be/3VZFpwlXKpg", // required
   resolution: "2160p", // required
 })
   .then((data) => console.log(chalk.bgGreen("videoData_customQuality:"), data))
@@ -89,7 +89,7 @@ YTDLP.videoData_customQuality({
 // async/await method
 (async () => {
   const data = await YTDLP.videoData_customQuality({
-    url: "https://youtu.be/TpdapO9QGRo", // required
+    url: "https://youtu.be/3VZFpwlXKpg", // required
     resolution: "2160p", // required
   }).catch((error) =>
     console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
@@ -165,7 +165,7 @@ import chalk from "chalk";
 
 // Promise method
 YTDLP.videoData_autoSorted({
-  url: "https://youtu.be/TpdapO9QGRo", // required
+  url: "https://youtu.be/3VZFpwlXKpg", // required
   quality: "highest-possible", // required
 })
   .then((data) => console.log(chalk.bgGreen("INFOVIDEO_SORTED:"), data))
@@ -176,7 +176,7 @@ YTDLP.videoData_autoSorted({
 // async/await method
 (async () => {
   const data = await YTDLP.videoData_autoSorted({
-    url: "https://youtu.be/TpdapO9QGRo", // required
+    url: "https://youtu.be/3VZFpwlXKpg", // required
     quality: "highest-possible", // required
   }).catch((error) =>
     console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
@@ -250,7 +250,7 @@ import chalk from "chalk";
 
 // Promise method
 YTDLP.audioData_autoSorted({
-  url: "https://youtu.be/TpdapO9QGRo", // required
+  url: "https://youtu.be/3VZFpwlXKpg", // required
   quality: "highest-possible", // required
 })
   .then((data) => console.log(chalk.bgGreen("INFOAUDIO_SORTED:"), data))
@@ -261,7 +261,7 @@ YTDLP.audioData_autoSorted({
 // async/await method
 (async () => {
   const data = await YTDLP.audioData_autoSorted({
-    url: "https://youtu.be/TpdapO9QGRo", // required
+    url: "https://youtu.be/3VZFpwlXKpg", // required
     quality: "highest-possible", // required
   }).catch((error) =>
     console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
@@ -337,7 +337,7 @@ import chalk from "chalk";
 
 // Promise method
 YTDLP.audioData_customQuality({
-  url: "https://youtu.be/TpdapO9QGRo", // required
+  url: "https://youtu.be/3VZFpwlXKpg", // required
   sort: "medium", // required
 })
   .then((data) => console.log(chalk.bgGreen("audioData_customQuality:"), data))
@@ -348,7 +348,7 @@ YTDLP.audioData_customQuality({
 // async/await method
 (async () => {
   const data = await YTDLP.audioData_customQuality({
-    url: "https://youtu.be/TpdapO9QGRo", // required
+    url: "https://youtu.be/3VZFpwlXKpg", // required
     sort: "medium", // required
   }).catch((error) =>
     console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
@@ -426,7 +426,7 @@ import chalk from "chalk";
 
 // Promise method
 YTDLP.dloadAudio_customQuality({
-  url: "https://youtu.be/TpdapO9QGRo", // required
+  url: "https://youtu.be/3VZFpwlXKpg", // required
   title: "song-title", // optional
   sort: "medium", // required
   folder: "mågneum", // optional
@@ -439,7 +439,7 @@ YTDLP.dloadAudio_customQuality({
 // async/await method
 (async () => {
   const data = await YTDLP.dloadAudio_customQuality({
-    url: "https://youtu.be/TpdapO9QGRo", // required
+    url: "https://youtu.be/3VZFpwlXKpg", // required
     title: "song-title", // optional
     sort: "medium", // required
     folder: "mågneum", //optional
@@ -503,7 +503,7 @@ import chalk from "chalk";
 
 // Promise method
 YTDLP.dloadAudio_autoSorted({
-  url: "https://youtu.be/TpdapO9QGRo", // required
+  url: "https://youtu.be/3VZFpwlXKpg", // required
   title: "song-title", // optional
   sort: "medium", // required
   folder: "mågneum", // optional
@@ -516,7 +516,7 @@ YTDLP.dloadAudio_autoSorted({
 // async/await method
 (async () => {
   const data = await YTDLP.dloadAudio_autoSorted({
-    url: "https://youtu.be/TpdapO9QGRo", // required
+    url: "https://youtu.be/3VZFpwlXKpg", // required
     title: "song-title", // optional
     sort: "medium", // required
     folder: "mågneum", // optional

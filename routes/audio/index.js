@@ -83,25 +83,67 @@ export async function audioData_customQuality(rover) {
             res.resolution === "audio only")
       );
 
-      if (rover.sort === "high") {
+      if (rover.sort === "high")
         return {
           type: "high",
-          resolution: "audio only",
+          resolution: "audio-only",
+          filesize:
+            medium[0].filesize || medium[1].filesize || medium.filesize || null,
+          audiochannels:
+            medium[0].audio_channels ||
+            medium[1].audio_channels ||
+            medium.audio_channels ||
+            null,
+          extensions: medium[0].ext || medium[1].ext || medium.ext || null,
+          acodec: medium[0].acodec || medium[1].acodec || medium.acodec || null,
           url: medium[0].url || medium[1].url || medium.url || null,
         };
-      } else if (rover.sort === "medium") {
+      else if (rover.sort === "medium")
         return {
           type: "medium",
-          resolution: "audio only",
+          resolution: "audio-only",
+          filesize:
+            low[0].filesize ||
+            low[1].filesize ||
+            low[2].filesize ||
+            low.filesize ||
+            null,
+          audiochannels:
+            low[0].audio_channels ||
+            low[1].audio_channels ||
+            low[2].audio_channels ||
+            low.audio_channels ||
+            null,
+          extensions: low[0].ext || low[1].ext || low[2].ext || low.ext || null,
+          acodec:
+            low[0].acodec ||
+            low[1].acodec ||
+            low[2].acodec ||
+            low.acodec ||
+            null,
           url: low[0].url || low[1].url || low[2].url || low.url || null,
         };
-      } else if (rover.sort === "low") {
+      else if (rover.sort === "low")
         return {
           type: "low",
-          resolution: "audio only",
+          resolution: "audio-only",
+          filesize:
+            ultralow[0].filesize ||
+            ultralow[1].filesize ||
+            ultralow.filesize ||
+            null,
+          audiochannels:
+            ultralow[0].audio_channels ||
+            ultralow[1].audio_channels ||
+            ultralow.audio_channels ||
+            null,
+          extensions:
+            ultralow[0].ext || ultralow[1].ext || ultralow.ext || null,
+          acodec:
+            ultralow[0].acodec || ultralow[1].acodec || ultralow.acodec || null,
           url: ultralow[0].url || ultralow[1].url || ultralow.url || null,
         };
-      } else
+      else
         throw new Error("Sorry this video doesn't have the Quality requested.");
     } catch (error) {
       return error.message;
@@ -160,7 +202,7 @@ export async function audioData_autoSorted(rover) {
         if (medium)
           return {
             quality: "highest-possible",
-            resolution: "audio only",
+            resolution: "audio-only",
             filesize:
               medium[0].filesize ||
               medium[1].filesize ||
@@ -176,10 +218,10 @@ export async function audioData_autoSorted(rover) {
               medium[0].acodec || medium[1].acodec || medium.acodec || null,
             url: medium[0].url || medium[1].url || medium.url || null,
           };
-        else if (low)
+        else if (!medium && low)
           return {
             quality: "highest-possible",
-            resolution: "audio only",
+            resolution: "audio-only",
             filesize:
               low[0].filesize ||
               low[1].filesize ||
@@ -202,10 +244,10 @@ export async function audioData_autoSorted(rover) {
               null,
             url: low[0].url || low[1].url || low[2].url || low.url || null,
           };
-        else if (ultralow)
+        else if (!medium && !low && ultralow)
           return {
             quality: "highest-possible",
-            resolution: "audio only",
+            resolution: "audio-only",
             filesize:
               ultralow[0].filesize ||
               ultralow[1].filesize ||
@@ -233,7 +275,7 @@ export async function audioData_autoSorted(rover) {
         if (ultralow)
           return {
             quality: "lowest-possible",
-            resolution: "audio only",
+            resolution: "audio-only",
             filesize:
               ultralow[0].filesize ||
               ultralow[1].filesize ||
@@ -256,7 +298,7 @@ export async function audioData_autoSorted(rover) {
         else if (low)
           return {
             quality: "lowest-possible",
-            resolution: "audio only",
+            resolution: "audio-only",
             filesize:
               low[0].filesize ||
               low[1].filesize ||
@@ -282,7 +324,7 @@ export async function audioData_autoSorted(rover) {
         else if (medium)
           return {
             quality: "lowest-possible",
-            resolution: "audio only",
+            resolution: "audio-only",
             filesize:
               medium[0].filesize ||
               medium[1].filesize ||

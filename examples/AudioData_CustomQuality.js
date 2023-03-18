@@ -28,30 +28,78 @@
 
 "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎";
 import chalk from "chalk";
-import * as YTDLP from "yt-dlp";
+import Fetch from "node-fetch";
+import * as YTDLP from "../index.js";
 
 /**
  * @param {url} url -> "youtube-video-link"
- * @param {string} sort -> "medium" || "low" || "ultralow"
+ * @param {string} sort -> "high" || "medium" || "low"
  */
 
-// Promise method
-YTDLP.audioData_customQuality({
-  url: "https://youtu.be/TpdapO9QGRo", // required
-  sort: "medium", // required
-})
-  .then((data) => console.log(chalk.bgGreen("audioData_customQuality:"), data))
-  .catch((error) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
-  );
+// To Get YouTube Video Simple Metadata
+let songname = "4k audio dolby";
+const FetchOpts = {
+  method: "get",
+  headers: {
+    accept: "*/*",
+    "accept-language": "en-US,en;q=0.9",
+    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+    "user-agent": [
+      "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 YaBrowser/19.10.3.281 Yowser/2.5 Safari/537.36",
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.53",
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36 Edg/99.0.1150.30",
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36",
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36",
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36",
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36",
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36",
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36",
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36",
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36",
+    ],
+  },
+};
+Fetch(
+  "https://magneum.vercel.app/api/youtube_sr?q=" + songname,
+  FetchOpts
+).then(async (response) => {
+  const data = await response.json();
+  console.log(data);
 
-// async/await method
-(async () => {
-  const data = await YTDLP.audioData_customQuality({
-    url: "https://youtu.be/TpdapO9QGRo", // required
-    sort: "medium", // required
-  }).catch((error) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
-  );
-  console.log(chalk.bgGreen("audioData_customQuality:"), data);
-})();
+  // Promise method
+  YTDLP.audioData_customQuality({
+    url: data.youtube_search[0].LINK, // required
+    sort: "high", // required
+  })
+    .then((res) => {
+      console.log(chalk.bgGreen("AUDIODATA_CUSTOMQUALITY [PROMISE]:"));
+      console.log(chalk.cyan("Type:"), chalk.green(res.type));
+      console.log(chalk.cyan("Resolution:"), chalk.green(res.resolution));
+      console.log(chalk.cyan("Filesize:"), chalk.green(res.filesize));
+      console.log(chalk.cyan("Audiochannels:"), chalk.green(res.audiochannels));
+      console.log(chalk.cyan("Extensions:"), chalk.green(res.extensions));
+      console.log(chalk.cyan("Audiocodec:"), chalk.green(res.acodec));
+      console.log(chalk.cyan("Url:"), chalk.green(res.url));
+    })
+    .catch((error) =>
+      console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
+    );
+
+  // async/await method
+  (async () => {
+    const res = await YTDLP.audioData_customQuality({
+      url: data.youtube_search[0].LINK, // required
+      sort: "medium", // required
+    }).catch((error) =>
+      console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
+    );
+    console.log(chalk.bgGreen("AUDIODATA_CUSTOMQUALITY  [ASYNC/AWAIT]:"));
+    console.log(chalk.cyan("Type:"), chalk.green(res.type));
+    console.log(chalk.cyan("Resolution:"), chalk.green(res.resolution));
+    console.log(chalk.cyan("Filesize:"), chalk.green(res.filesize));
+    console.log(chalk.cyan("Audiochannels:"), chalk.green(res.audiochannels));
+    console.log(chalk.cyan("Extensions:"), chalk.green(res.extensions));
+    console.log(chalk.cyan("Audiocodec:"), chalk.green(res.acodec));
+    console.log(chalk.cyan("Url:"), chalk.green(res.url));
+  })();
+});

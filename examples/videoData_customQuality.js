@@ -37,7 +37,7 @@ import * as YTDLP from "yt-dlp";
 
 // Promise method
 YTDLP.videoData_customQuality({
-  url: "https://youtu.be/TpdapO9QGRo", // required
+  url: "https://youtu.be/3VZFpwlXKpg", // required
   resolution: "2160p", // required
 })
   .then((data) => console.log(chalk.bgGreen("videoData_customQuality:"), data))
@@ -48,7 +48,7 @@ YTDLP.videoData_customQuality({
 // async/await method
 (async () => {
   const data = await YTDLP.videoData_customQuality({
-    url: "https://youtu.be/TpdapO9QGRo", // required
+    url: "https://youtu.be/3VZFpwlXKpg", // required
     resolution: "2160p", // required
   }).catch((error) =>
     console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))

@@ -37,7 +37,7 @@ import * as YTDLP from "yt-dlp";
 
 // Promise method
 YTDLP.dloadAudio_customQuality({
-  url: "https://youtu.be/TpdapO9QGRo", // required
+  url: "https://youtu.be/3VZFpwlXKpg", // required
   title: "song-title", // optional
   sort: "medium", // required
   folder: "mågneum", // optional
@@ -50,7 +50,7 @@ YTDLP.dloadAudio_customQuality({
 // async/await method
 (async () => {
   const data = await YTDLP.dloadAudio_customQuality({
-    url: "https://youtu.be/TpdapO9QGRo", // required
+    url: "https://youtu.be/3VZFpwlXKpg", // required
     title: "song-title", // optional
     sort: "medium", // required
     folder: "mågneum", //optional
