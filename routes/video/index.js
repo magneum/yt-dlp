@@ -399,7 +399,7 @@ export async function videoData_autoSorted(rover) {
       else if (Format_360p.filter((w) => w.width).length)
         return {
           type: "lowest-possible",
-          resolution: "240p",
+          resolution: "360p",
           url:
             Format_360p[0].url ||
             Format_360p[1].url ||
@@ -409,7 +409,7 @@ export async function videoData_autoSorted(rover) {
       else if (Format_480p.filter((w) => w.width).length)
         return {
           type: "lowest-possible",
-          resolution: "240p",
+          resolution: "480p",
           url:
             Format_480p[0].url ||
             Format_480p[1].url ||
@@ -419,7 +419,7 @@ export async function videoData_autoSorted(rover) {
       else if (Format_720p.filter((w) => w.width).length)
         return {
           type: "lowest-possible",
-          resolution: "240p",
+          resolution: "720p",
           url:
             Format_720p[0].url ||
             Format_720p[1].url ||
@@ -429,7 +429,7 @@ export async function videoData_autoSorted(rover) {
       else if (Format_1080p.filter((w) => w.width).length)
         return {
           type: "lowest-possible",
-          resolution: "240p",
+          resolution: "1080p",
           url:
             Format_1080p[0].url ||
             Format_1080p[1].url ||
@@ -439,7 +439,7 @@ export async function videoData_autoSorted(rover) {
       else if (Format_1440p.filter((w) => w.width).length)
         return {
           type: "lowest-possible",
-          resolution: "240p",
+          resolution: "1440p",
           url:
             Format_1440p[0].url ||
             Format_1440p[1].url ||
@@ -449,7 +449,7 @@ export async function videoData_autoSorted(rover) {
       else if (Format_2160p.filter((w) => w.width).length)
         return {
           type: "lowest-possible",
-          resolution: "240p",
+          resolution: "2160p",
           url:
             Format_2160p[0].url ||
             Format_2160p[1].url ||

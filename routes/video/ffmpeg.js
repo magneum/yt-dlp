@@ -27,3 +27,326 @@
 // furnished to do so, subject to the following conditions:
 
 "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎";
+import fs from "fs";
+import FFmpeg from "fluent-ffmpeg";
+import ExecJson from "youtube-dl-exec";
+import FFmpegPath from "@ffmpeg-installer/ffmpeg";
+import ProgressEstimator from "progress-estimator";
+import FFmpegProbe from "@ffprobe-installer/ffprobe";
+const ProgressEst = ProgressEstimator();
+function regExTestYT(str) {
+  var exp = new RegExp(/(youtu\.be|youtube\.com)/);
+  return exp.test(str);
+}
+function printProgress(progress) {
+  process.stdout.clearLine();
+  process.stdout.cursorTo(0);
+  process.stdout.write(progress + "%");
+}
+function FFmpegSave(vLink, aLink, savepath, qual, title) {
+  FFmpeg()
+    .format("mp4")
+    .addInput(aLink)
+    .addInput(vLink)
+    .videoCodec("libx264")
+    .withAudioCodec("aac")
+    .setFfmpegPath(FFmpegPath.path)
+    .setFfprobePath(FFmpegProbe.path)
+    .outputOptions(["-movflags", "frag_keyframe + empty_moov"])
+    .saveToFile(savepath + title + qual + ".mp3", { end: true })
+    .on("error", (error) => console.error("ERROR: " + error.message))
+    .outputOptions(["-map 0:v", "-map 1:a", "-shortest", "-c:v copy"])
+    .on("progress", (progress) => printProgress(progress.percent.toFixed(2)))
+    .on("end", () => console.log("\nINFO: stream sent to client successfully."))
+    .run();
+}
+export async function dloadVideo_customQuality(rover) {
+  rover.resolution || "1080p";
+  rover.url || "not-a-youtube-link";
+  if (!regExTestYT(rover.url)) {
+    throw new Error("YouTube Link not found.Refer to docs for usage examples.");
+  } else
+    try {
+      let downloadpath;
+      if (!rover.folder) {
+        if (!fs.existsSync("mågneum")) fs.mkdirSync("mågneum");
+        downloadpath = "./mågneum/";
+      } else {
+        if (!fs.existsSync(rover.folder)) fs.mkdirSync(rover.folder);
+        downloadpath = "./" + rover.folder + "/";
+      }
+      var Execjson = ExecJson(rover.url, {
+        noWarnings: true,
+        dumpSingleJson: true,
+        preferFreeFormats: true,
+        noCheckCertificates: true,
+        addHeader: ["referer:youtube.com", "user-agent:googlebot"],
+      }).catch(() => {
+        throw new Error("Sorry some error occured.Try again!");
+      });
+      const jsonmeta = await ProgressEst(Execjson, "Obtaining: " + " ");
+
+      let audio;
+
+      const maud = jsonmeta.formats.filter(
+        (res) =>
+          (res.format_id === "140" &&
+            res.format_note === "medium" &&
+            res.resolution === "audio only") ||
+          (res.format_id === "251" &&
+            res.format_note === "medium" &&
+            res.resolution === "audio only")
+      );
+      const laud = jsonmeta.formats.filter(
+        (res) =>
+          (res.format_id === "139" &&
+            res.format_note === "low" &&
+            res.resolution === "audio only") ||
+          (res.format_id === "249" &&
+            res.format_note === "low" &&
+            res.resolution === "audio only") ||
+          (res.format_id === "250" &&
+            res.format_note === "low" &&
+            res.resolution === "audio only")
+      );
+      const uaud = jsonmeta.formats.filter(
+        (res) =>
+          (res.format_id === "599" &&
+            res.format_note === "ultralow" &&
+            res.resolution === "audio only") ||
+          (res.format_id === "600" &&
+            res.format_note === "ultralow" &&
+            res.resolution === "audio only")
+      );
+
+      if (maud) audio = maud[0].url || maud[1].url || maud.url || null;
+      else if (laud)
+        audio = laud[0].url || laud[1].url || laud[2].url || laud.url || null;
+      else if (uaud) audio = uaud[0].url || uaud[1].url || uaud.url || null;
+      else
+        throw new Error("Current video doesn't have any audio+video support.");
+
+      var Format_2160p = jsonmeta.formats.filter(
+        (res) =>
+          (res.format_id === "401" && res.format_note === "2160p") ||
+          (res.format_id === "313" && res.format_note === "2160p")
+      );
+      var Format_1440p = jsonmeta.formats.filter(
+        (res) =>
+          (res.format_id === "400" && res.format_note === "1440p") ||
+          (res.format_id === "271" && res.format_note === "1440p")
+      );
+
+      var Format_1080p = jsonmeta.formats.filter(
+        (res) =>
+          (res.format_id === "399" && res.format_note === "1080p") ||
+          (res.format_id === "137" && res.format_note === "1080p") ||
+          (res.format_id === "248" && res.format_note === "1080p")
+      );
+
+      var Format_720p = jsonmeta.formats.filter(
+        (res) =>
+          (res.format_id === "247" && res.format_note === "720p") ||
+          (res.format_id === "398" && res.format_note === "720p") ||
+          (res.format_id === "136" && res.format_note === "720p") ||
+          (res.format_id === "22" && res.format_note === "720p")
+      );
+      var Format_480p = jsonmeta.formats.filter(
+        (res) =>
+          (res.format_id === "397" && res.format_note === "480p") ||
+          (res.format_id === "135" && res.format_note === "480p") ||
+          (res.format_id === "244" && res.format_note === "480p")
+      );
+      var Format_360p = jsonmeta.formats.filter(
+        (res) =>
+          (res.format_id === "396" && res.format_note === "360p") ||
+          (res.format_id === "134" && res.format_note === "360p") ||
+          (res.format_id === "18" && res.format_note === "360p") ||
+          (res.format_id === "243" && res.format_note === "360p")
+      );
+      var Format_240p = jsonmeta.formats.filter(
+        (res) =>
+          (res.format_id === "395" && res.format_note === "240p") ||
+          (res.format_id === "133" && res.format_note === "240p") ||
+          (res.format_id === "242" && res.format_note === "240p")
+      );
+      var Format_144p = jsonmeta.formats.filter(
+        (res) =>
+          (res.format_id === "17" && res.format_note === "144p") ||
+          (res.format_id === "597" && res.format_note === "144p") ||
+          (res.format_id === "598" && res.format_note === "144p") ||
+          (res.format_id === "394" && res.format_note === "144p") ||
+          (res.format_id === "160" && res.format_note === "144p") ||
+          (res.format_id === "278" && res.format_note === "144p")
+      );
+
+      if (rover.resolution === "2160p") {
+        if (Format_2160p.width) {
+          FFmpegSave(
+            medium[0].url || medium[1].url || medium.url || null,
+            audio,
+            downloadpath,
+            "-2160p",
+            rover.title
+          );
+          return {
+            type: "2160p",
+            url: Format_2160p[0].url || Format_2160p[1].url || Format_2160p.url,
+          };
+        } else
+          throw new Error(
+            "Sorry this video doesn't have the Quality requested."
+          );
+      } else if (rover.resolution === "1440p") {
+        if (Format_1440p) {
+          FFmpegSave(
+            medium[0].url || medium[1].url || medium.url || null,
+            audio,
+            downloadpath,
+            "-1440p",
+            rover.title
+          );
+          return {
+            type: "1440p",
+            url: Format_1440p[0].url || Format_1440p[1].url || Format_1440p.url,
+          };
+        } else
+          throw new Error(
+            "Sorry this video doesn't have the Quality requested."
+          );
+      } else if (rover.resolution === "1080p") {
+        if (Format_1080p.width) {
+          FFmpegSave(
+            medium[0].url || medium[1].url || medium.url || null,
+            audio,
+            downloadpath,
+            "-1080p",
+            rover.title
+          );
+          return {
+            type: "1080p",
+            url:
+              Format_1080p[0].url ||
+              Format_1080p[1].url ||
+              Format_1080p[2].url ||
+              Format_1080p.url,
+          };
+        } else
+          throw new Error(
+            "Sorry this video doesn't have the Quality requested."
+          );
+      } else if (rover.resolution === "720p") {
+        if (Format_720p.width) {
+          FFmpegSave(
+            medium[0].url || medium[1].url || medium.url || null,
+            audio,
+            downloadpath,
+            "-720p",
+            rover.title
+          );
+          return {
+            type: "720p",
+            url:
+              Format_720p[0].url ||
+              Format_720p[1].url ||
+              Format_720p[2].url ||
+              Format_720p[3].url ||
+              Format_720p.url,
+          };
+        } else
+          throw new Error(
+            "Sorry this video doesn't have the Quality requested."
+          );
+      } else if (rover.resolution === "480p") {
+        if (Format_480p.width) {
+          FFmpegSave(
+            medium[0].url || medium[1].url || medium.url || null,
+            audio,
+            downloadpath,
+            "-480p",
+            rover.title
+          );
+          return {
+            type: "480p",
+            url:
+              Format_480p[0].url ||
+              Format_480p[1].url ||
+              Format_480p[2].url ||
+              Format_480p.url,
+          };
+        } else
+          throw new Error(
+            "Sorry this video doesn't have the Quality requested."
+          );
+      } else if (rover.resolution === "360p") {
+        if (Format_360p.width) {
+          FFmpegSave(
+            medium[0].url || medium[1].url || medium.url || null,
+            audio,
+            downloadpath,
+            "-360p",
+            rover.title
+          );
+          return {
+            type: "360p",
+            url:
+              Format_360p[0].url ||
+              Format_360p[1].url ||
+              Format_360p[2].url ||
+              Format_360p[3].url ||
+              Format_360p.url,
+          };
+        } else
+          throw new Error(
+            "Sorry this video doesn't have the Quality requested."
+          );
+      } else if (rover.resolution === "240p") {
+        if (Format_240p.width) {
+          FFmpegSave(
+            medium[0].url || medium[1].url || medium.url || null,
+            audio,
+            downloadpath,
+            "-240p",
+            rover.title
+          );
+          return {
+            type: "240p",
+            url:
+              Format_240p[0].url ||
+              Format_240p[1].url ||
+              Format_240p[2].url ||
+              Format_240p,
+          };
+        } else
+          throw new Error(
+            "Sorry this video doesn't have the Quality requested."
+          );
+      } else if (rover.resolution === "144p") {
+        if (Format_144p.width) {
+          FFmpegSave(
+            medium[0].url || medium[1].url || medium.url || null,
+            audio,
+            downloadpath,
+            "-144p",
+            rover.title
+          );
+          return {
+            type: "144p",
+            url:
+              Format_144p[0].url ||
+              Format_144p[1].url ||
+              Format_144p[2].url ||
+              Format_144p[3].url ||
+              Format_144p[4].url ||
+              Format_144p[5].url ||
+              Format_144p.url,
+          };
+        } else
+          throw new Error(
+            "Sorry this video doesn't have the Quality requested."
+          );
+      } else throw new Error("Wrong Quality Provided.");
+    } catch (error) {
+      return error.message;
+    }
+}
