@@ -429,7 +429,7 @@ YTDLP.dloadAudio_customQuality({
   url: "https://youtu.be/TpdapO9QGRo", // required
   title: "song-title", // optional
   sort: "medium", // required
-  folder: "folder_save", // optional
+  folder: "mågneum", // optional
 })
   .then((data) => console.log(chalk.bgGreen("dloadAudio_customQuality:"), data))
   .catch((error) =>
@@ -506,7 +506,7 @@ YTDLP.dloadAudio_autoSorted({
   url: "https://youtu.be/TpdapO9QGRo", // required
   title: "song-title", // optional
   sort: "medium", // required
-  folder: "folder_save", // optional
+  folder: "mågneum", // optional
 })
   .then((data) => console.log(chalk.bgGreen("dloadAudio_autoSorted:"), data))
   .catch((error) =>
@@ -519,7 +519,7 @@ YTDLP.dloadAudio_autoSorted({
     url: "https://youtu.be/TpdapO9QGRo", // required
     title: "song-title", // optional
     sort: "medium", // required
-    folder: "folder_save", // optional
+    folder: "mågneum", // optional
   }).catch((error) =>
     console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
   );

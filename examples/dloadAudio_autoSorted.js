@@ -40,7 +40,7 @@ YTDLP.dloadAudio_autoSorted({
   url: "https://youtu.be/TpdapO9QGRo", // required
   title: "song-title", // optional
   sort: "medium", // required
-  folder: "folder_save", // optional
+  folder: "mågneum", // optional
 })
   .then((data) => console.log(chalk.bgGreen("dloadAudio_autoSorted:"), data))
   .catch((error) =>
