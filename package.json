@@ -8,8 +8,7 @@
     "preinstall": "echo '[RUNNING PREINSTALL]' && pip install -r src/requirements.txt && npm run updeps",
     "updeps": "echo '[UPDATING DEPENDENCIES]' && npx npm-check-updates -u",
     "clean": "echo '[REMOVING NODE MODULES]' && rm -rf node_modules",
-    "dev-preview": "echo '[RUNNING DEV]' && node view/preview/index.js",
-    "dev-test": "echo '[RUNNING DEV]' && node view/test/index.js",
+    "dev-test": "echo '[RUNNING DEV]' && node test/index.js",
     "release": "standard-version -a"
   },
   "dependencies": {

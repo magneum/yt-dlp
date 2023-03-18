@@ -28,7 +28,7 @@
 
 "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎";
 import chalk from "chalk";
-import * as YTDLP from "../../index.js";
+import * as YTDLP from "../index.js";
 
 (async () => {
   await YTDLP.audioData_customQuality({
