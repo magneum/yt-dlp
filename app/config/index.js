@@ -18,6 +18,7 @@ export default {
   no_yturl: "Not-A-Youtube-Link",
   wrong_quality: "Wrong Quality Provided.",
   Execjson_error: "Sorry Some Error Occured.\nTry Again!",
+  no_audio: "Current video doesn't have any audio+video support.",
   no_quality: "Sorry this video doesn't have the Quality requested.",
   video_no_quality: "Sorry this video doesn't have the Quality requested.",
   audioData_customQuality_no_url:

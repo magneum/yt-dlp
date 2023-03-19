@@ -7,7 +7,8 @@
   "scripts": {
     "release": "standard-version -a && git push --follow-tags origin main",
     "postinstall": "pip install -r public/src/requirements.txt",
-    "test": "clear && node --no-warnings test",
+    "testaudio": "clear && node --no-warnings test/audio.js",
+    "testvideo": "clear && node --no-warnings test/video.js",
     "update": "npx npm-check-updates -u",
     "clean": "rm -rf node_modules",
     "post": "npm publish"
