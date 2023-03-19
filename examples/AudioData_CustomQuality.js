@@ -29,7 +29,7 @@
 "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎";
 import chalk from "chalk";
 import Fetch from "node-fetch";
-import * as YTDLP from "../index.js";
+import * as YTDLP from "yt-dlp";
 
 /**
  * @param {url} url -> "youtube-video-link"

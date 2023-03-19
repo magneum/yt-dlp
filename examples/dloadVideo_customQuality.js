@@ -28,7 +28,7 @@
 
 "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎";
 import chalk from "chalk";
-import * as YTDLP from "../index.js";
+import * as YTDLP from "yt-dlp";
 
 YTDLP.dloadVideo_customQuality({
   url: "https://youtu.be/3VZFpwlXKpg", // required
