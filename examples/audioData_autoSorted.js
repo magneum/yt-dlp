@@ -58,31 +58,31 @@ Fetch(
     url: data.youtube_search[0].LINK, // required
     quality: "highest-possible", // required
   })
-    .then((res) => {
+    .then((r) => {
       console.log(c.bgGreen("AUDIODATA_AUTOSORTED [PROMISE]:"));
-      console.log(c.cyan("Quality:"), c.green(res.quality));
-      console.log(c.cyan("Resolution:"), c.green(res.resolution));
-      console.log(c.cyan("Filesize:"), c.green(res.filesize));
-      console.log(c.cyan("Audiochannels:"), c.green(res.audiochannels));
-      console.log(c.cyan("Extensions:"), c.green(res.extensions));
-      console.log(c.cyan("Audiocodec:"), c.green(res.acodec));
-      console.log(c.cyan("Url:"), c.green(res.url));
+      console.log(c.cyan("Quality:"), c.green(r.quality));
+      console.log(c.cyan("Resolution:"), c.green(r.resolution));
+      console.log(c.cyan("Filesize:"), c.green(r.filesize));
+      console.log(c.cyan("Audiochannels:"), c.green(r.audiochannels));
+      console.log(c.cyan("Extensions:"), c.green(r.extensions));
+      console.log(c.cyan("Audiocodec:"), c.green(r.acodec));
+      console.log(c.cyan("Url:"), c.green(r.url));
     })
     .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
 
   // async/await method
   (async () => {
-    const res = await YTDLP.audioData_autoSorted({
+    const r = await YTDLP.audioData_autoSorted({
       url: data.youtube_search[0].LINK, // required
       quality: "highest-possible", // required
     }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
     console.log(c.bgGreen("AUDIODATA_AUTOSORTED [PROMISE]:"));
-    console.log(c.cyan("Quality:"), c.green(res.quality));
-    console.log(c.cyan("Resolution:"), c.green(res.resolution));
-    console.log(c.cyan("Filesize:"), c.green(res.filesize));
-    console.log(c.cyan("Audiochannels:"), c.green(res.audiochannels));
-    console.log(c.cyan("Extensions:"), c.green(res.extensions));
-    console.log(c.cyan("Audiocodec:"), c.green(res.acodec));
-    console.log(c.cyan("Url:"), c.green(res.url));
+    console.log(c.cyan("Quality:"), c.green(r.quality));
+    console.log(c.cyan("Resolution:"), c.green(r.resolution));
+    console.log(c.cyan("Filesize:"), c.green(r.filesize));
+    console.log(c.cyan("Audiochannels:"), c.green(r.audiochannels));
+    console.log(c.cyan("Extensions:"), c.green(r.extensions));
+    console.log(c.cyan("Audiocodec:"), c.green(r.acodec));
+    console.log(c.cyan("Url:"), c.green(r.url));
   })();
 });

@@ -58,23 +58,23 @@ Fetch(
     url: "https://youtu.be/3VZFpwlXKpg", // required
     quality: "highest-possible", // required
   })
-    .then((res) => {
+    .then((r) => {
       console.log(c.bgGreen("VIDEODATA_AUTOSORTED [PROMISE]:"));
-      console.log(c.cyan("Type:"), c.green(res.type));
-      console.log(c.cyan("Resolution:"), c.green(res.resolution));
-      console.log(c.cyan("Url:"), c.green(res.url));
+      console.log(c.cyan("Type:"), c.green(r.type));
+      console.log(c.cyan("Resolution:"), c.green(r.resolution));
+      console.log(c.cyan("Url:"), c.green(r.url));
     })
     .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
 
   // async/await method
   (async () => {
-    const res = await YTDLP.videoData_autoSorted({
+    const r = await YTDLP.videoData_autoSorted({
       url: "https://youtu.be/3VZFpwlXKpg", // required
       quality: "highest-possible", // required
     }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
     console.log(c.bgGreen("VIDEODATA_AUTOSORTED [ASYNC/AWAIT]:"));
-    console.log(c.cyan("Type:"), c.green(res.type));
-    console.log(c.cyan("Resolution:"), c.green(res.resolution));
-    console.log(c.cyan("Url:"), c.green(res.url));
+    console.log(c.cyan("Type:"), c.green(r.type));
+    console.log(c.cyan("Resolution:"), c.green(r.resolution));
+    console.log(c.cyan("Url:"), c.green(r.url));
   })();
 });

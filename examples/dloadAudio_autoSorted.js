@@ -61,29 +61,29 @@ Fetch(
     folder: "mågneum", // optional
     sort: "highest", // required
   })
-    .then((res) => {
+    .then((r) => {
       console.log(c.bgGreen("DLOADAUDIO_AUTOSORTED [PROMISE]:"));
-      console.log(c.cyan("Header:"), c.green(res.header));
-      console.log(c.cyan("Status:"), c.green(res.status));
-      console.log(c.cyan("Quality:"), c.green(res.quality));
-      console.log(c.cyan("Downloadpath:"), c.green(res.downloadpath));
-      console.log(c.cyan("Message:"), c.green(res.message));
+      console.log(c.cyan("Header:"), c.green(r.header));
+      console.log(c.cyan("Status:"), c.green(r.status));
+      console.log(c.cyan("Quality:"), c.green(r.quality));
+      console.log(c.cyan("Downloadpath:"), c.green(r.downloadpath));
+      console.log(c.cyan("Message:"), c.green(r.message));
     })
     .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
 
   // async/await method
   (async () => {
-    const res = await YTDLP.dloadAudio_autoSorted({
+    const r = await YTDLP.dloadAudio_autoSorted({
       title: data.youtube_search[0].TITLE, // optional
       url: data.youtube_search[0].LINK, // required
       folder: "mågneum", // optional
       sort: "highest", // required
     }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
     console.log(c.bgGreen("DLOADAUDIO_AUTOSORTED [ASYNC/AWAIT]:"));
-    console.log(c.cyan("Header:"), c.green(res.header));
-    console.log(c.cyan("Status:"), c.green(res.status));
-    console.log(c.cyan("Quality:"), c.green(res.quality));
-    console.log(c.cyan("Downloadpath:"), c.green(res.downloadpath));
-    console.log(c.cyan("Message:"), c.green(res.message));
+    console.log(c.cyan("Header:"), c.green(r.header));
+    console.log(c.cyan("Status:"), c.green(r.status));
+    console.log(c.cyan("Quality:"), c.green(r.quality));
+    console.log(c.cyan("Downloadpath:"), c.green(r.downloadpath));
+    console.log(c.cyan("Message:"), c.green(r.message));
   })();
 });

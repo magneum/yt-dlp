@@ -55,19 +55,19 @@ Fetch(
     folder: "mågneum", // optional
     quality: "1080p", // required
   })
-    .then((res) =>
-      console.log(c.bgGreen("DLOADVIDEO_CUSTOMQUALITY: [PROMISE]"), res)
+    .then((r) =>
+      console.log(c.bgGreen("DLOADVIDEO_CUSTOMQUALITY: [PROMISE]"), r)
     )
     .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
 
   // async/await method
   (async () => {
-    const res = await YTDLP.dloadVideo_customQuality({
+    const r = await YTDLP.dloadVideo_customQuality({
       title: data.youtube_search[0].TITLE, // optional
       url: data.youtube_search[0].LINK, // required
       folder: "mågneum", // optional
       quality: "1080p", // required
     }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
-    console.log(c.bgGreen("DLOADVIDEO_CUSTOMQUALITY [ASYNC/AWAIT]:"), res);
+    console.log(c.bgGreen("DLOADVIDEO_CUSTOMQUALITY [ASYNC/AWAIT]:"), r);
   })();
 });

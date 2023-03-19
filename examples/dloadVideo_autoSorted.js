@@ -55,19 +55,17 @@ Fetch(
     title: "song-title", // optional
     folder: "mågneum", // optional
   })
-    .then((res) =>
-      console.log(c.bgGreen("DLOADVIDEO_AUTOSORTED [PROMISE]:"), res)
-    )
+    .then((r) => console.log(c.bgGreen("DLOADVIDEO_AUTOSORTED [PROMISE]:"), r))
     .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
 
   // async/await method
   (async () => {
-    const res = await YTDLP.dloadVideo_autoSorted({
+    const r = await YTDLP.dloadVideo_autoSorted({
       title: data.youtube_search[0].TITLE, // optional
       url: data.youtube_search[0].LINK, // required
       title: "song-title", // optional
       folder: "mågneum", // optional
     }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
-    console.log(c.bgGreen("DLOADVIDEO_AUTOSORTED [ASYNC/AWAIT]:"), res);
+    console.log(c.bgGreen("DLOADVIDEO_AUTOSORTED [ASYNC/AWAIT]:"), r);
   })();
 });
