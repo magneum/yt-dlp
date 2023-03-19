@@ -1,15 +1,16 @@
 {
   "name": "yt-dlp",
   "type": "module",
-  "main": "index.js",
-  "version": "0.0.2",
+  "version": "0.0.3",
+  "main": "app/index.js",
   "description": "yt-dlp - Python+ Javascript Youtube Audio Video Scrapper And Downloader Client",
   "scripts": {
     "release": "echo '\n\n[GIT PUBLISH]' && standard-version -a && git push --follow-tags origin main",
-    "preinstall": "echo '\n\n[RUNNING PREINSTALL]' && pip install -r src/requirements.txt",
+    "preinstall": "echo '\n\n[RUNNING PREINSTALL]' && pip install -r public/src/requirements.txt",
     "update": "echo '\n\n[UPDATING DEPENDENCIES]' && npx npm-check-updates -u",
     "clean": "echo '\n\n[REMOVING NODE MODULES]' && rm -rf node_modules",
-    "nrelease": "echo '\n\n[NPM PUBLISH]' &&  && npm publish"
+    "nrelease": "echo '\n\n[NPM PUBLISH]' && npm publish",
+    "test": "clear && node --no-warnings test"
   },
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "latest",
@@ -17,23 +18,25 @@
     "@types/fluent-ffmpeg": "latest",
     "chalk": "latest",
     "conventional-github-releaser": "latest",
+    "express": "latest",
     "fluent-ffmpeg": "latest",
     "git-authors-cli": "latest",
+    "http": "latest",
     "nano-staged": "latest",
     "node-fetch": "latest",
     "npm-check-updates": "latest",
-    "progress-estimator": "latest",
+    "progress-estimator": "^0.3.0",
     "standard": "latest",
     "standard-version": "latest",
-    "youtube-dl-exec": "latest",
+    "youtube-dl-exec": "^2.4.0",
     "yt-dlp-exec": "latest"
   },
   "devDependencies": {
     "bin-version-check": "~5.0.0",
-    "dargs": "~8.1.0",
+    "dargs": "latest",
     "dotenv": "latest",
-    "execa": "~7.1.1",
-    "is-unix": "~2.0.7",
+    "execa": "latest",
+    "is-unix": "latest",
     "spinnies": "latest",
     "winston": "latest"
   },
