@@ -17,26 +17,27 @@
     "@ffprobe-installer/ffprobe": "latest",
     "@types/fluent-ffmpeg": "latest",
     "chalk": "latest",
-    "fluent-ffmpeg": "latest",
-    "node-fetch": "latest",
     "conventional-github-releaser": "latest",
+    "fluent-ffmpeg": "latest",
     "git-authors-cli": "latest",
     "nano-staged": "latest",
+    "node-fetch": "latest",
     "npm-check-updates": "latest",
     "progress-estimator": "latest",
-    "yt-dlp-exec": "latest",
     "standard": "latest",
+    "standard-version": "latest",
     "youtube-dl-exec": "latest",
-    "standard-version": "latest"
+    "yt-dlp": "latest",
+    "yt-dlp-exec": "latest"
   },
   "devDependencies": {
-    "dotenv": "latest",
-    "spinnies": "latest",
-    "winston": "latest",
     "bin-version-check": "~5.0.0",
     "dargs": "~8.1.0",
+    "dotenv": "latest",
     "execa": "~7.1.1",
-    "is-unix": "~2.0.7"
+    "is-unix": "~2.0.7",
+    "spinnies": "latest",
+    "winston": "latest"
   },
   "repository": {
     "type": "git",
