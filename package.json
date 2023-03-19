@@ -2,7 +2,7 @@
   "name": "yt-dlp",
   "type": "module",
   "main": "index.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "yt-dlp - Python+ Javascript Youtube Audio Video Scrapper And Downloader Client",
   "scripts": {
     "release": "echo '[GIT PUBLISH]' && standard-version -a && git push --follow-tags origin main && npm publish",
