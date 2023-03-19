@@ -283,7 +283,7 @@ YTDLP.audioData_autoSorted({
 // Promise method output
 ✓ Obtaining:   2.3 secs
 {
-quality: 'best-possible',
+quality: 'highest-possible',
 resolution: 'audio only',
 url: 'https://(server-generated-random-link).com'
 }
@@ -292,7 +292,7 @@ Done in 2.62s.
 // async/await method output
 ✓ Obtaining:   2.4 secs
 {
-quality: 'best-possible',
+quality: 'highest-possible',
 resolution: 'audio only',
 url: 'https://(server-generated-random-link).com'
 }
@@ -485,7 +485,7 @@ YTDLP.dloadAudio_customQuality({
 /**
  * @param {string} title -> "file-name"
  * @param {url} url -> "youtube-video-link"
- * @param {string} sort -> "best-possible" || "lowest-possible"
+ * @param {string} sort -> "highest-possible" || "lowest-possible"
  * @param {folder-name} @arg {optional} -> auto created if not exists or specified
  */
 ```

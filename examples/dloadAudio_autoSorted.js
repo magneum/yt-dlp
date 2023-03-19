@@ -31,7 +31,7 @@ import chalk from "chalk";
 import * as YTDLP from "yt-dlp";
 /**
  * @param {url} url -> "youtube-video-link"
- * @param {string} sort -> "best-possible" || "lowest-possible"
+ * @param {string} sort -> "highest-possible" || "lowest-possible"
  * @param {download-folder-name} @arg {optional} -> auto created if not exists or specified
  */
 

@@ -27,24 +27,16 @@
 // furnished to do so, subject to the following conditions:
 
 "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎";
+import chalk from "chalk";
+import * as YTDLP from "../index.js";
 
-import Scrapper from "./routes/web/index.js";
-import { audioData_autoSorted } from "./routes/audio/index.js";
-import { audioData_customQuality } from "./routes/audio/index.js";
-import { videoData_autoSorted } from "./routes/video/index.js";
-import { videoData_customQuality } from "./routes/video/index.js";
-import { dloadAudio_customQuality } from "./routes/audio/ffmpeg.js";
-import { dloadAudio_autoSorted } from "./routes/audio/ffmpeg.js";
-import { dloadVideo_customQuality } from "./routes/video/ffmpeg.js";
-import { dloadVideo_autoSorted } from "./routes/video/ffmpeg.js";
-export {
-  audioData_autoSorted,
-  audioData_customQuality,
-  videoData_autoSorted,
-  videoData_customQuality,
-  dloadAudio_customQuality,
-  dloadAudio_autoSorted,
-  dloadVideo_customQuality,
-  dloadVideo_autoSorted,
-  Scrapper,
-};
+YTDLP.dloadVideo_customQuality({
+  url: "https://youtu.be/3VZFpwlXKpg", // required
+  title: "song-title", // optional
+  resolution: "1080p", // required
+  folder: "mågneum", // optional
+})
+  .then((data) => console.log(chalk.bgGreen("DLOADVIDEO_CUSTOMQUALITY:"), data))
+  .catch((error) =>
+    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
+  );

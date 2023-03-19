@@ -159,7 +159,7 @@ export async function dloadAudio_customQuality(rover) {
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 export async function dloadAudio_autoSorted(rover) {
   rover.url = rover.url || "not-a-youtube-link";
-  rover.quality = rover.quality || "best-possible";
+  rover.quality = rover.quality || "highest-possible";
   rover.title = rover.title || "random-title-" + Math.random();
   if (!regExTestYT(rover.url)) {
     throw new Error("YouTube Link not found.Refer to docs for usage examples.");
@@ -214,18 +214,18 @@ export async function dloadAudio_autoSorted(rover) {
             res.resolution === "audio only")
       );
 
-      if (rover.quality === "best-possible") {
+      if (rover.quality === "highest-possible") {
         if (medium) {
           FFmpegSave(
             medium[0].url || medium[1].url || medium.url || null,
             downloadpath,
-            "-best_possible",
+            "-highest-possible",
             rover.title
           );
           return {
             header: "◎ ву mågneum ◎",
             status: true,
-            quality: "best-possible",
+            quality: "highest-possible",
             downloadpath: downloadpath,
             message: "INFO: stream starting.",
           };
@@ -233,13 +233,13 @@ export async function dloadAudio_autoSorted(rover) {
           FFmpegSave(
             low[0].url || low[1].url || low[2].url || low.url || null,
             downloadpath,
-            "-best_possible",
+            "-highest-possible",
             rover.title
           );
           return {
             header: "◎ ву mågneum ◎",
             status: true,
-            quality: "best-possible",
+            quality: "highest-possible",
             downloadpath: downloadpath,
             message: "INFO: stream starting.",
           };
@@ -247,13 +247,13 @@ export async function dloadAudio_autoSorted(rover) {
           FFmpegSave(
             ultralow[0].url || ultralow[1].url || ultralow.url || null,
             downloadpath,
-            "-best_possible",
+            "-highest-possible",
             rover.title
           );
           return {
             header: "◎ ву mågneum ◎",
             status: true,
-            quality: "best-possible",
+            quality: "highest-possible",
             downloadpath: downloadpath,
             message: "INFO: stream starting.",
           };
@@ -291,7 +291,7 @@ export async function dloadAudio_autoSorted(rover) {
           FFmpegSave(
             medium[0].url || medium[1].url || medium.url || null,
             downloadpath,
-            "-best_possible",
+            "-highest-possible",
             rover.title
           );
           return {
