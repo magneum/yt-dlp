@@ -5,10 +5,11 @@
   "version": "0.0.2",
   "description": "yt-dlp - Python+ Javascript Youtube Audio Video Scrapper And Downloader Client",
   "scripts": {
-    "release": "echo '[GIT PUBLISH]' && standard-version -a && git push --follow-tags origin main && npm publish",
     "preinstall": "echo '[RUNNING PREINSTALL]' && pip install -r src/requirements.txt && npm run update",
+    "release": "echo '[GIT PUBLISH]' && standard-version -a && git push --follow-tags origin main",
     "update": "echo '[UPDATING DEPENDENCIES]' && npx npm-check-updates -u",
     "clean": "echo '[REMOVING NODE MODULES]' && rm -rf node_modules",
+    "nrelease": "echo '[NPM PUBLISH]' &&  && npm publish",
     "view": "echo '[RUNNING DEV]' && node view/index.js"
   },
   "dependencies": {
