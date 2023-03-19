@@ -96,7 +96,15 @@ import Fetch from "node-fetch";
 <p>
 
 ```
-
+✓ FETCHING....
+  2.2 secs
+[PROMISE]: audio.dl_Custom_Quality_Data()
+Resolution: 2160p
+Downloadpath: ./mågneum/
+Message: INFO: stream starting.
+AudioUrl: https://rr6---sn-gwpa-jj06.googlevideo.com/videoplayback?
+Url: https://rr6---sn-gwpa-jj06.googlevideo.com/videoplayback?
+  Done in 14.79s.
 ```
 
 </p>

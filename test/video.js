@@ -28,61 +28,61 @@ Fetch("https://magneum.vercel.app/api/youtube_sr?q=" + songname, {
 }).then(async function (response) {
   const api_data = await response.json();
 
-  ytdlp.video
-    .Auto_Sorted_Data({
-      yturl: api_data.youtube_search[0].LINK, // required
-      quality: "highest-possible", // required
-    })
-    .then((r) => {
-      console.log(
-        c.bgGreen("[PROMISE]:"),
-        c.bgGrey("video.Auto_Sorted_Data()")
-      );
-      console.log(c.red("Filesize:"), c.gray(r.filesize));
-      console.log(c.red("Extensions:"), c.gray(r.extensions));
-      console.log(c.red("Videocodec:"), c.gray(r.vcodec));
-      console.log(c.red("Resolution:"), c.gray(r.resolution));
-      console.log(c.red("Url:"), c.gray(r.url));
-    })
-    .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+  // ytdlp.video
+  // .Auto_Sorted_Data({
+  // yturl: api_data.youtube_search[0].LINK, // required
+  // quality: "highest-possible", // required
+  // })
+  // .then((r) => {
+  // console.log(
+  // c.bgGreen("[PROMISE]:"),
+  // c.bgGrey("video.Auto_Sorted_Data()")
+  // );
+  // console.log(c.red("Filesize:"), c.gray(r.filesize));
+  // console.log(c.red("Extensions:"), c.gray(r.extensions));
+  // console.log(c.red("Videocodec:"), c.gray(r.vcodec));
+  // console.log(c.red("Resolution:"), c.gray(r.resolution));
+  // console.log(c.red("Url:"), c.gray(r.url));
+  // })
+  // .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
 
-  ytdlp.video
-    .Custom_Quality_Data({
-      yturl: api_data.youtube_search[0].LINK, // required
-      resolution: "2160p", // required
-    })
-    .then((r) => {
-      console.log(
-        c.bgGreen("[PROMISE]:"),
-        c.bgGrey("video.Custom_Quality_Data()")
-      );
-      console.log(c.red("Filesize:"), c.gray(r.filesize));
-      console.log(c.red("Extensions:"), c.gray(r.extensions));
-      console.log(c.red("Videocodec:"), c.gray(r.vcodec));
-      console.log(c.red("Resolution:"), c.gray(r.resolution));
-      console.log(c.red("Url:"), c.gray(r.url));
-    })
-    .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+  // ytdlp.video
+  // .Custom_Quality_Data({
+  // yturl: api_data.youtube_search[0].LINK, // required
+  // resolution: "2160p", // required
+  // })
+  // .then((r) => {
+  // console.log(
+  // c.bgGreen("[PROMISE]:"),
+  // c.bgGrey("video.Custom_Quality_Data()")
+  // );
+  // console.log(c.red("Filesize:"), c.gray(r.filesize));
+  // console.log(c.red("Extensions:"), c.gray(r.extensions));
+  // console.log(c.red("Videocodec:"), c.gray(r.vcodec));
+  // console.log(c.red("Resolution:"), c.gray(r.resolution));
+  // console.log(c.red("Url:"), c.gray(r.url));
+  // })
+  // .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
 
-  ytdlp.video
-    .dl_Auto_Sorted_Data({
-      title: api_data.youtube_search[0].TITLE, // optional
-      yturl: api_data.youtube_search[0].LINK, // required
-      sort: "highest-possible", // required
-      folder: "mågneum", // optional
-    })
-    .then((r) => {
-      console.log(
-        c.bgGreen("[PROMISE]:"),
-        c.bgGrey("audio.dl_Auto_Sorted_Data()")
-      );
-      console.log(c.cyan("Type:"), c.gray(r.type));
-      console.log(c.cyan("Downloadpath:"), c.gray(r.downloadpath));
-      console.log(c.cyan("Message:"), c.gray(r.message));
-      console.log(c.cyan("AudioUrl:"), c.gray(r.audiourl));
-      console.log(c.cyan("Url:"), c.gray(r.url));
-    })
-    .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+  // ytdlp.video
+  // .dl_Auto_Sorted_Data({
+  // title: api_data.youtube_search[0].TITLE, // optional
+  // yturl: api_data.youtube_search[0].LINK, // required
+  // sort: "highest-possible", // required
+  // folder: "mågneum", // optional
+  // })
+  // .then((r) => {
+  // console.log(
+  // c.bgGreen("[PROMISE]:"),
+  // c.bgGrey("audio.dl_Auto_Sorted_Data()")
+  // );
+  // console.log(c.cyan("Type:"), c.gray(r.type));
+  // console.log(c.cyan("Downloadpath:"), c.gray(r.downloadpath));
+  // console.log(c.cyan("Message:"), c.gray(r.message));
+  // console.log(c.cyan("AudioUrl:"), c.gray(r.audiourl));
+  // console.log(c.cyan("Url:"), c.gray(r.url));
+  // })
+  // .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
 
   ytdlp.video
     .dl_Custom_Quality_Data({
