@@ -9,8 +9,7 @@
     "preinstall": "echo '\n\n[RUNNING PREINSTALL]' && pip install -r src/requirements.txt",
     "update": "echo '\n\n[UPDATING DEPENDENCIES]' && npx npm-check-updates -u",
     "clean": "echo '\n\n[REMOVING NODE MODULES]' && rm -rf node_modules",
-    "nrelease": "echo '\n\n[NPM PUBLISH]' &&  && npm publish",
-    "view": "echo '\n\n[RUNNING DEV]' && node view/index.js"
+    "nrelease": "echo '\n\n[NPM PUBLISH]' &&  && npm publish"
   },
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "latest",
