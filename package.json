@@ -1,16 +1,16 @@
 {
   "name": "yt-dlp",
   "type": "module",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "app/index.js",
   "description": "yt-dlp - Python+ Javascript Youtube Audio Video Scrapper And Downloader Client",
   "scripts": {
-    "release": "echo '\n\n[GIT PUBLISH]' && standard-version -a && git push --follow-tags origin main",
-    "preinstall": "echo '\n\n[RUNNING PREINSTALL]' && pip install -r public/src/requirements.txt",
-    "update": "echo '\n\n[UPDATING DEPENDENCIES]' && npx npm-check-updates -u",
-    "clean": "echo '\n\n[REMOVING NODE MODULES]' && rm -rf node_modules",
-    "nrelease": "echo '\n\n[NPM PUBLISH]' && npm publish",
-    "test": "clear && node --no-warnings test"
+    "release": "standard-version -a && git push --follow-tags origin main",
+    "postinstall": "pip install -r public/src/requirements.txt",
+    "test": "clear && node --no-warnings test",
+    "update": "npx npm-check-updates -u",
+    "clean": "rm -rf node_modules",
+    "post": "npm publish"
   },
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "latest",
@@ -29,7 +29,8 @@
     "standard": "latest",
     "standard-version": "latest",
     "youtube-dl-exec": "^2.4.0",
-    "yt-dlp-exec": "latest"
+    "yt-dlp-exec": "latest",
+    "yt-dlp": "latest"
   },
   "devDependencies": {
     "bin-version-check": "~5.0.0",
