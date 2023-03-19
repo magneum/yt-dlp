@@ -13,6 +13,6 @@ declare module "yt-dlp" {
     quality: number;
     vcodec: number;
   };
-  const ytdlp: (url: string) => Promise<responses>;
+  const ytdlp: (app: object) => Promise<responses>;
   export default ytdlp;
 }
