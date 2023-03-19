@@ -6,11 +6,11 @@
   "description": "yt-dlp - Python+ Javascript Youtube Audio Video Scrapper And Downloader Client",
   "scripts": {
     "release": "standard-version -a && git push --follow-tags origin main",
+    "clean": "rm -rf node_modules && rm -rf yarn.lock package-lock.json",
     "postinstall": "pip install -r public/src/requirements.txt",
     "testaudio": "clear && node --no-warnings test/audio.js",
     "testvideo": "clear && node --no-warnings test/video.js",
     "update": "npx npm-check-updates -u",
-    "clean": "rm -rf node_modules",
     "post": "npm publish"
   },
   "dependencies": {
