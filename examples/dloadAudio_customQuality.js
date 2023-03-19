@@ -27,7 +27,7 @@
 // furnished to do so, subject to the following conditions:
 
 "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎";
-import chalk from "chalk";
+import c from "chalk";
 import * as YTDLP from "yt-dlp";
 /**
  * @param {url} url -> "youtube-video-link"
@@ -42,10 +42,8 @@ YTDLP.dloadAudio_customQuality({
   sort: "medium", // required
   folder: "mågneum", // optional
 })
-  .then((data) => console.log(chalk.bgGreen("dloadAudio_customQuality:"), data))
-  .catch((error) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
-  );
+  .then((data) => console.log(c.bgGreen("dloadAudio_customQuality:"), data))
+  .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
 
 // async/await method
 (async () => {
@@ -54,8 +52,6 @@ YTDLP.dloadAudio_customQuality({
     title: "song-title", // optional
     sort: "medium", // required
     folder: "mågneum", //optional
-  }).catch((error) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
-  );
-  console.log(chalk.bgGreen("dloadAudio_customQuality:"), data);
+  }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+  console.log(c.bgGreen("dloadAudio_customQuality:"), data);
 })();

@@ -27,34 +27,63 @@
 // furnished to do so, subject to the following conditions:
 
 "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎";
-import chalk from "chalk";
+import c from "chalk";
+import Fetch from "node-fetch";
 import * as YTDLP from "yt-dlp";
+
 /**
  * @param {url} url -> "youtube-video-link"
  * @param {string} sort -> "highest-possible" || "lowest-possible"
  * @param {download-folder-name} @arg {optional} -> auto created if not exists or specified
  */
 
-// Promise method
-YTDLP.dloadAudio_autoSorted({
-  url: "https://youtu.be/3VZFpwlXKpg", // required
-  title: "song-title", // optional
-  sort: "medium", // required
-  folder: "mågneum", // optional
-})
-  .then((data) => console.log(chalk.bgGreen("dloadAudio_autoSorted:"), data))
-  .catch((error) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
-  );
+// To Get YouTube Video Simple Metadata
+let songname = "4k audio dolby";
+const FetchOpts = {
+  method: "get",
+  headers: {
+    accept: "*/*",
+    "accept-language": "en-US,en;q=0.9",
+    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+  },
+};
+Fetch(
+  "https://magneum.vercel.app/api/youtube_sr?q=" + songname,
+  FetchOpts
+).then(async (response) => {
+  const data = await response.json();
+  console.log(data);
 
-// async/await method
-(async () => {
-  const data = await YTDLP.dloadAudio_autoSorted({
-    url: "https://youtu.be/3VZFpwlXKpg",
-    sort: "medium",
-    folder: "mågneum",
-  }).catch((error) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
-  );
-  console.log(chalk.bgGreen("dloadAudio_autoSorted:"), data);
-})();
+  // Promise method
+  YTDLP.dloadAudio_autoSorted({
+    url: data.youtube_search[0].LINK, // required
+    title: "song-title", // optional
+    folder: "mågneum", // optional
+    sort: "highest", // required
+  })
+    .then((res) => {
+      console.log(c.bgGreen("DLOADAUDIO_AUTOSORTED [PROMISE]:"));
+      console.log(c.cyan("Header:"), c.green(res.header));
+      console.log(c.cyan("Status:"), c.green(res.status));
+      console.log(c.cyan("Quality:"), c.green(res.quality));
+      console.log(c.cyan("Downloadpath:"), c.green(res.downloadpath));
+      console.log(c.cyan("Message:"), c.green(res.message));
+    })
+    .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+
+  // async/await method
+  (async () => {
+    const res = await YTDLP.dloadAudio_autoSorted({
+      url: data.youtube_search[0].LINK, // required
+      title: "song-title", // optional
+      folder: "mågneum", // optional
+      sort: "highest", // required
+    }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+    console.log(c.bgGreen("DLOADAUDIO_AUTOSORTED [PROMISE]:"));
+    console.log(c.cyan("Header:"), c.green(res.header));
+    console.log(c.cyan("Status:"), c.green(res.status));
+    console.log(c.cyan("Quality:"), c.green(res.quality));
+    console.log(c.cyan("Downloadpath:"), c.green(res.downloadpath));
+    console.log(c.cyan("Message:"), c.green(res.message));
+  })();
+});

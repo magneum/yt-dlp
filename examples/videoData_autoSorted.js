@@ -27,8 +27,9 @@
 // furnished to do so, subject to the following conditions:
 
 "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎";
-import chalk from "chalk";
+import c from "chalk";
 import * as YTDLP from "yt-dlp";
+
 /**
  * @param {url} url -> "youtube-video-link"
  * @param {string} resolution -> "highest-possible" || "lowest-possible"
@@ -39,18 +40,14 @@ YTDLP.videoData_autoSorted({
   url: "https://youtu.be/3VZFpwlXKpg", // required
   quality: "highest-possible", // required
 })
-  .then((data) => console.log(chalk.bgGreen("INFOVIDEO_SORTED:"), data))
-  .catch((error) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
-  );
+  .then((data) => console.log(c.bgGreen("INFOVIDEO_SORTED:"), data))
+  .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
 
 // async/await method
 (async () => {
   const data = await YTDLP.videoData_autoSorted({
     url: "https://youtu.be/3VZFpwlXKpg", // required
     quality: "highest-possible", // required
-  }).catch((error) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
-  );
-  console.log(chalk.bgGreen("INFOVIDEO_SORTED:"), data);
+  }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+  console.log(c.bgGreen("INFOVIDEO_SORTED:"), data);
 })();

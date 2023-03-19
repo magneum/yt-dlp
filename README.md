@@ -74,27 +74,23 @@ YT-DLP Provide Many Useful Functions For Audios And Videos Both.
 
 ```js
 import { videoData_customQuality } from "yt-dlp";
-import chalk from "chalk";
+import c from "chalk";
 
 // Promise method
 YTDLP.videoData_customQuality({
   url: "https://youtu.be/3VZFpwlXKpg", // required
   resolution: "2160p", // required
 })
-  .then((data) => console.log(chalk.bgGreen("videoData_customQuality:"), data))
-  .catch((error) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
-  );
+  .then((data) => console.log(c.bgGreen("videoData_customQuality:"), data))
+  .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
 
 // async/await method
 (async () => {
   const data = await YTDLP.videoData_customQuality({
     url: "https://youtu.be/3VZFpwlXKpg", // required
     resolution: "2160p", // required
-  }).catch((error) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
-  );
-  console.log(chalk.bgGreen("videoData_customQuality:"), data);
+  }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+  console.log(c.bgGreen("videoData_customQuality:"), data);
 })();
 ```
 
@@ -161,27 +157,23 @@ Done in 2.65s.
 
 ```js
 import { videoData_autoSorted } from "yt-dlp";
-import chalk from "chalk";
+import c from "chalk";
 
 // Promise method
 YTDLP.videoData_autoSorted({
   url: "https://youtu.be/3VZFpwlXKpg", // required
   quality: "highest-possible", // required
 })
-  .then((data) => console.log(chalk.bgGreen("INFOVIDEO_SORTED:"), data))
-  .catch((error) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
-  );
+  .then((data) => console.log(c.bgGreen("INFOVIDEO_SORTED:"), data))
+  .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
 
 // async/await method
 (async () => {
   const data = await YTDLP.videoData_autoSorted({
     url: "https://youtu.be/3VZFpwlXKpg", // required
     quality: "highest-possible", // required
-  }).catch((error) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
-  );
-  console.log(chalk.bgGreen("INFOVIDEO_SORTED:"), data);
+  }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+  console.log(c.bgGreen("INFOVIDEO_SORTED:"), data);
 })();
 ```
 
@@ -246,27 +238,23 @@ Done in 2.64s.
 
 ```js
 import { audioData_autoSorted } from "yt-dlp";
-import chalk from "chalk";
+import c from "chalk";
 
 // Promise method
 YTDLP.audioData_autoSorted({
   url: "https://youtu.be/3VZFpwlXKpg", // required
   quality: "highest-possible", // required
 })
-  .then((data) => console.log(chalk.bgGreen("INFOAUDIO_SORTED:"), data))
-  .catch((error) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
-  );
+  .then((data) => console.log(c.bgGreen("INFOAUDIO_SORTED:"), data))
+  .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
 
 // async/await method
 (async () => {
   const data = await YTDLP.audioData_autoSorted({
     url: "https://youtu.be/3VZFpwlXKpg", // required
     quality: "highest-possible", // required
-  }).catch((error) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
-  );
-  console.log(chalk.bgGreen("INFOAUDIO_SORTED:"), data);
+  }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+  console.log(c.bgGreen("INFOAUDIO_SORTED:"), data);
 })();
 ```
 
@@ -333,27 +321,23 @@ Done in 2.62s.
 
 ```js
 import { audioData_customQuality } from "yt-dlp";
-import chalk from "chalk";
+import c from "chalk";
 
 // Promise method
 YTDLP.audioData_customQuality({
   url: "https://youtu.be/3VZFpwlXKpg", // required
   sort: "medium", // required
 })
-  .then((data) => console.log(chalk.bgGreen("audioData_customQuality:"), data))
-  .catch((error) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
-  );
+  .then((data) => console.log(c.bgGreen("audioData_customQuality:"), data))
+  .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
 
 // async/await method
 (async () => {
   const data = await YTDLP.audioData_customQuality({
     url: "https://youtu.be/3VZFpwlXKpg", // required
     sort: "medium", // required
-  }).catch((error) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
-  );
-  console.log(chalk.bgGreen("audioData_customQuality:"), data);
+  }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+  console.log(c.bgGreen("audioData_customQuality:"), data);
 })();
 ```
 
@@ -422,7 +406,7 @@ Done in 2.68s.
 
 ```js
 import { dloadAudio_customQuality } from "yt-dlp";
-import chalk from "chalk";
+import c from "chalk";
 
 // Promise method
 YTDLP.dloadAudio_customQuality({
@@ -431,10 +415,8 @@ YTDLP.dloadAudio_customQuality({
   sort: "medium", // required
   folder: "mågneum", // optional
 })
-  .then((data) => console.log(chalk.bgGreen("dloadAudio_customQuality:"), data))
-  .catch((error) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
-  );
+  .then((data) => console.log(c.bgGreen("dloadAudio_customQuality:"), data))
+  .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
 
 // async/await method
 (async () => {
@@ -443,10 +425,8 @@ YTDLP.dloadAudio_customQuality({
     title: "song-title", // optional
     sort: "medium", // required
     folder: "mågneum", //optional
-  }).catch((error) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
-  );
-  console.log(chalk.bgGreen("dloadAudio_customQuality:"), data);
+  }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+  console.log(c.bgGreen("dloadAudio_customQuality:"), data);
 })();
 ```
 
@@ -499,7 +479,7 @@ YTDLP.dloadAudio_customQuality({
 
 ```js
 import { dloadAudio_autoSorted } from "yt-dlp";
-import chalk from "chalk";
+import c from "chalk";
 
 // Promise method
 YTDLP.dloadAudio_autoSorted({
@@ -508,10 +488,8 @@ YTDLP.dloadAudio_autoSorted({
   sort: "medium", // required
   folder: "mågneum", // optional
 })
-  .then((data) => console.log(chalk.bgGreen("dloadAudio_autoSorted:"), data))
-  .catch((error) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
-  );
+  .then((data) => console.log(c.bgGreen("dloadAudio_autoSorted:"), data))
+  .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
 
 // async/await method
 (async () => {
@@ -520,10 +498,8 @@ YTDLP.dloadAudio_autoSorted({
     title: "song-title", // optional
     sort: "medium", // required
     folder: "mågneum", // optional
-  }).catch((error) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
-  );
-  console.log(chalk.bgGreen("dloadAudio_autoSorted:"), data);
+  }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+  console.log(c.bgGreen("dloadAudio_autoSorted:"), data);
 })();
 ```
 
@@ -564,7 +540,7 @@ Search()
 
 ```js
 import { Search } from "yt-dlp";
-import chalk from "chalk";
+import c from "chalk";
 
 let url = "https://youtu.be/PVjiKRfKpPI?list=RDPVjiKRfKpPI";
 Search(url, async function (data) {

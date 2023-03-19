@@ -27,7 +27,7 @@
 // furnished to do so, subject to the following conditions:
 
 "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎";
-import chalk from "chalk";
+import c from "chalk";
 import * as YTDLP from "yt-dlp";
 
 YTDLP.dloadVideo_customQuality({
@@ -36,7 +36,5 @@ YTDLP.dloadVideo_customQuality({
   quality: "1080p", // required
   folder: "mågneum", // optional
 })
-  .then((data) => console.log(chalk.bgGreen("DLOADVIDEO_CUSTOMQUALITY:"), data))
-  .catch((error) =>
-    console.log(chalk.bgRed("ERROR: "), chalk.gray(error.message))
-  );
+  .then((data) => console.log(c.bgGreen("DLOADVIDEO_CUSTOMQUALITY:"), data))
+  .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
