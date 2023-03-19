@@ -58,15 +58,23 @@ Fetch(
     url: "https://youtu.be/3VZFpwlXKpg", // required
     quality: "highest-possible", // required
   })
-    .then((data) => console.log(c.bgGreen("INFOVIDEO_SORTED:"), data))
+    .then((res) => {
+      console.log(c.bgGreen("VIDEODATA_AUTOSORTED [PROMISE]:"));
+      console.log(c.cyan("Type:"), c.green(res.type));
+      console.log(c.cyan("Resolution:"), c.green(res.resolution));
+      console.log(c.cyan("Url:"), c.green(res.url));
+    })
     .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
 
   // async/await method
   (async () => {
-    const data = await YTDLP.videoData_autoSorted({
+    const res = await YTDLP.videoData_autoSorted({
       url: "https://youtu.be/3VZFpwlXKpg", // required
       quality: "highest-possible", // required
     }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
-    console.log(c.bgGreen("INFOVIDEO_SORTED:"), data);
+    console.log(c.bgGreen("VIDEODATA_AUTOSORTED [ASYNC/AWAIT]:"));
+    console.log(c.cyan("Type:"), c.green(res.type));
+    console.log(c.cyan("Resolution:"), c.green(res.resolution));
+    console.log(c.cyan("Url:"), c.green(res.url));
   })();
 });

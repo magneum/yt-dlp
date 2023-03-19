@@ -55,7 +55,9 @@ Fetch(
     folder: "mågneum", // optional
     quality: "1080p", // required
   })
-    .then((res) => console.log(c.bgGreen("DLOADVIDEO_CUSTOMQUALITY:"), res))
+    .then((res) =>
+      console.log(c.bgGreen("DLOADVIDEO_CUSTOMQUALITY: [PROMISE]"), res)
+    )
     .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
 
   // async/await method
@@ -66,6 +68,6 @@ Fetch(
       folder: "mågneum", // optional
       quality: "1080p", // required
     }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
-    console.log(c.bgGreen("DLOADVIDEO_CUSTOMQUALITY:"), res);
+    console.log(c.bgGreen("DLOADVIDEO_CUSTOMQUALITY [ASYNC/AWAIT]:"), res);
   })();
 });

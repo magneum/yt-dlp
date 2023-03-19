@@ -59,9 +59,16 @@ Fetch(
     title: data.youtube_search[0].TITLE, // optional
     url: data.youtube_search[0].LINK, // required
     folder: "mågneum", // optional
-    sort: "medium", // required
+    sort: "high", // required
   })
-    .then((res) => console.log(c.bgGreen("dloadAudio_customQuality:"), res))
+    .then((res) => {
+      console.log(c.bgGreen("DLOADAUDIO_CUSTOMQUALITY [PROMISE]:"));
+      console.log(c.cyan("Header:"), c.green(res.header));
+      console.log(c.cyan("Status:"), c.green(res.status));
+      console.log(c.cyan("Quality:"), c.green(res.quality));
+      console.log(c.cyan("Downloadpath:"), c.green(res.downloadpath));
+      console.log(c.cyan("Message:"), c.green(res.message));
+    })
     .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
 
   // async/await method
@@ -70,8 +77,13 @@ Fetch(
       title: data.youtube_search[0].TITLE, // optional
       url: data.youtube_search[0].LINK, // required
       folder: "mågneum", //optional
-      sort: "medium", // required
+      sort: "high", // required
     }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
-    console.log(c.bgGreen("dloadAudio_customQuality:"), res);
+    console.log(c.bgGreen("DLOADAUDIO_CUSTOMQUALITY [ASYNC/AWAIT]:"));
+    console.log(c.cyan("Header:"), c.green(res.header));
+    console.log(c.cyan("Status:"), c.green(res.status));
+    console.log(c.cyan("Quality:"), c.green(res.quality));
+    console.log(c.cyan("Downloadpath:"), c.green(res.downloadpath));
+    console.log(c.cyan("Message:"), c.green(res.message));
   })();
 });

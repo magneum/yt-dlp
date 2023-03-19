@@ -79,7 +79,7 @@ Fetch(
       folder: "mågneum", // optional
       sort: "highest", // required
     }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
-    console.log(c.bgGreen("DLOADAUDIO_AUTOSORTED [PROMISE]:"));
+    console.log(c.bgGreen("DLOADAUDIO_AUTOSORTED [ASYNC/AWAIT]:"));
     console.log(c.cyan("Header:"), c.green(res.header));
     console.log(c.cyan("Status:"), c.green(res.status));
     console.log(c.cyan("Quality:"), c.green(res.quality));

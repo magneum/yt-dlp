@@ -55,7 +55,9 @@ Fetch(
     title: "song-title", // optional
     folder: "mågneum", // optional
   })
-    .then((res) => console.log(c.bgGreen("DLOADVIDEO_AUTOSORTED:"), res))
+    .then((res) =>
+      console.log(c.bgGreen("DLOADVIDEO_AUTOSORTED [PROMISE]:"), res)
+    )
     .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
 
   // async/await method
@@ -66,6 +68,6 @@ Fetch(
       title: "song-title", // optional
       folder: "mågneum", // optional
     }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
-    console.log(c.bgGreen("DLOADVIDEO_AUTOSORTED:"), res);
+    console.log(c.bgGreen("DLOADVIDEO_AUTOSORTED [ASYNC/AWAIT]:"), res);
   })();
 });
