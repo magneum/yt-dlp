@@ -61,7 +61,7 @@ function FFmpegSave(vLink, aLink, savepath, qual, title) {
     .run();
 }
 export async function dloadVideo_customQuality(rover) {
-  rover.resolution || "1080p";
+  rover.quality || "1080p";
   rover.url || "not-a-youtube-link";
   if (!regExTestYT(rover.url)) {
     throw new Error("YouTube Link not found.Refer to docs for usage examples.");
@@ -180,10 +180,10 @@ export async function dloadVideo_customQuality(rover) {
           (res.format_id === "278" && res.format_note === "144p")
       );
 
-      if (rover.resolution === "2160p") {
+      if (rover.quality === "2160p") {
         if (Format_2160p) {
           FFmpegSave(
-            medium[0].url || medium[1].url || medium.url || null,
+            Format_2160p[0].url || Format_2160p[1].url || Format_2160p.url,
             audio,
             downloadpath,
             "-2160p",
@@ -198,7 +198,7 @@ export async function dloadVideo_customQuality(rover) {
           throw new Error(
             "Sorry this video doesn't have the Quality requested."
           );
-      } else if (rover.resolution === "1440p") {
+      } else if (rover.quality === "1440p") {
         if (Format_1440p) {
           FFmpegSave(
             Format_1440p[0].url || Format_1440p[1].url || Format_1440p.url,
@@ -216,7 +216,7 @@ export async function dloadVideo_customQuality(rover) {
           throw new Error(
             "Sorry this video doesn't have the Quality requested."
           );
-      } else if (rover.resolution === "1080p") {
+      } else if (rover.quality === "1080p") {
         if (Format_1080p) {
           FFmpegSave(
             Format_1080p[0].url ||
@@ -241,7 +241,7 @@ export async function dloadVideo_customQuality(rover) {
           throw new Error(
             "Sorry this video doesn't have the Quality requested."
           );
-      } else if (rover.resolution === "720p") {
+      } else if (rover.quality === "720p") {
         if (Format_720p) {
           FFmpegSave(
             Format_720p[0].url ||
@@ -268,7 +268,7 @@ export async function dloadVideo_customQuality(rover) {
           throw new Error(
             "Sorry this video doesn't have the Quality requested."
           );
-      } else if (rover.resolution === "480p") {
+      } else if (rover.quality === "480p") {
         if (Format_480p) {
           FFmpegSave(
             Format_480p[0].url ||
@@ -293,7 +293,7 @@ export async function dloadVideo_customQuality(rover) {
           throw new Error(
             "Sorry this video doesn't have the Quality requested."
           );
-      } else if (rover.resolution === "360p") {
+      } else if (rover.quality === "360p") {
         if (Format_360p) {
           FFmpegSave(
             Format_360p[0].url ||
@@ -320,7 +320,7 @@ export async function dloadVideo_customQuality(rover) {
           throw new Error(
             "Sorry this video doesn't have the Quality requested."
           );
-      } else if (rover.resolution === "240p") {
+      } else if (rover.quality === "240p") {
         if (Format_240p) {
           FFmpegSave(
             Format_240p[0].url ||
@@ -345,7 +345,7 @@ export async function dloadVideo_customQuality(rover) {
           throw new Error(
             "Sorry this video doesn't have the Quality requested."
           );
-      } else if (rover.resolution === "144p") {
+      } else if (rover.quality === "144p") {
         if (Format_144p) {
           FFmpegSave(
             Format_144p[0].url ||
@@ -505,7 +505,7 @@ export async function dloadVideo_autoSorted(rover) {
       if (rover.quality === "highest-possible") {
         if (Format_2160p) {
           FFmpegSave(
-            medium[0].url || medium[1].url || medium.url || null,
+            Format_2160p[0].url || Format_2160p[1].url || Format_2160p.url,
             audio,
             downloadpath,
             "-2160p",
@@ -824,7 +824,7 @@ export async function dloadVideo_autoSorted(rover) {
         }
         if (Format_2160p) {
           FFmpegSave(
-            medium[0].url || medium[1].url || medium.url || null,
+            Format_2160p[0].url || Format_2160p[1].url || Format_2160p.url,
             audio,
             downloadpath,
             "-2160p",

@@ -30,10 +30,10 @@
 import chalk from "chalk";
 import * as YTDLP from "../index.js";
 
-YTDLP.dloadVideo_customQuality({
+YTDLP.dloadVideo_autoSorted({
   url: "https://youtu.be/3VZFpwlXKpg", // required
+  quality: "lowest-possible", // required
   title: "song-title", // optional
-  quality: "1080p", // required
   folder: "mågneum", // optional
 })
   .then((data) => console.log(chalk.bgGreen("DLOADVIDEO_CUSTOMQUALITY:"), data))
