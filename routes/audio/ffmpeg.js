@@ -54,6 +54,16 @@ function FFmpegSave(link, savepath, qual, title) {
     .on("end", () => console.log("\nINFO: stream sent to client successfully."))
     .run();
 }
+function shorten(url) {
+  https.get(
+    "https://tinyurl.com/api-create.php?url=" + encodeURIComponent(url),
+    (res) => {
+      res.on("data", (chunk) => {
+        return chunk.toString();
+      });
+    }
+  );
+}
 
 export async function dloadAudio_customQuality(rover) {
   rover.sort = rover.sort || "medium";

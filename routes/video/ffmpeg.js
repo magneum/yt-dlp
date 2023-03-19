@@ -60,9 +60,20 @@ function FFmpegSave(vLink, aLink, savepath, qual, title) {
     .on("end", () => console.log("INFO: stream sent to client successfully."))
     .run();
 }
+function shorten(url) {
+  https.get(
+    "https://tinyurl.com/api-create.php?url=" + encodeURIComponent(url),
+    (res) => {
+      res.on("data", (chunk) => {
+        return chunk.toString();
+      });
+    }
+  );
+}
+
 export async function dloadVideo_customQuality(rover) {
-  rover.quality || "1080p";
-  rover.url || "not-a-youtube-link";
+  rover.quality = rover.quality || "1080p";
+  rover.url = rover.url || "not-a-youtube-link";
   if (!regExTestYT(rover.url)) {
     throw new Error("YouTube Link not found.Refer to docs for usage examples.");
   } else

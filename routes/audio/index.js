@@ -34,10 +34,20 @@ function regExTestYT(str) {
   var exp = new RegExp(/(youtu\.be|youtube\.com)/);
   return exp.test(str);
 }
+function shorten(url) {
+  https.get(
+    "https://tinyurl.com/api-create.php?url=" + encodeURIComponent(url),
+    (res) => {
+      res.on("data", (chunk) => {
+        return chunk.toString();
+      });
+    }
+  );
+}
 
 export async function audioData_customQuality(rover) {
-  rover.sort || "high";
-  rover.url || "not-a-youtube-link";
+  rover.sort = rover.sort || "high";
+  rover.url = rover.url || "not-a-youtube-link";
   if (!regExTestYT(rover.url)) {
     throw new Error("YouTube Link not found.Refer to docs for usage examples.");
   } else

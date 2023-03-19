@@ -34,6 +34,16 @@ function regExTestYT(str) {
   var exp = new RegExp(/(youtu\.be|youtube\.com)/);
   return exp.test(str);
 }
+function shorten(url) {
+  https.get(
+    "https://tinyurl.com/api-create.php?url=" + encodeURIComponent(url),
+    (res) => {
+      res.on("data", (chunk) => {
+        return chunk.toString();
+      });
+    }
+  );
+}
 
 export async function videoData_customQuality(rover) {
   rover.resolution || "1080p";
