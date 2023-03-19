@@ -30,8 +30,7 @@
     "standard": "latest",
     "standard-version": "latest",
     "youtube-dl-exec": "^2.4.0",
-    "yt-dlp-exec": "latest",
-    "yt-dlp": "latest"
+    "yt-dlp-exec": "latest"
   },
   "devDependencies": {
     "bin-version-check": "~5.0.0",
