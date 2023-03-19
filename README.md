@@ -11,7 +11,7 @@ YT-DLP Provide Many Useful Functions For Audios And Videos Both.
 <br></br>
 
 <p align="center">
-  <video src="https://github.com/magneum/yt-dlp/blob/main/public/yt-dlp-crop.mp4" height="500" width="500" style="border-radius:5%"></video><br>
+  <video src="https://user-images.githubusercontent.com/87024922/226188737-a7abe050-851b-492a-9b4b-0d827638093f.mp4" height="500" width="500" style="border-radius:5%"></video><br>
   <i><b>[ "audio", video", youtube", "python", "javascript", "binary", "nodejs", "yt-dlp", "yt-dlp-wrapper", "youtube-downloader" ]</b></i>
 </p>
 
