@@ -13,6 +13,7 @@
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
 "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎";
+import fs from "fs";
 import utils from "../../utils/index.js";
 import config from "../../config/index.js";
 
@@ -288,7 +289,252 @@ async function Auto_Sorted_Data(app) {
   } else throw new Error(config.wrong_quality);
 }
 
-export { Custom_Quality_Data, Auto_Sorted_Data };
+async function dl_Auto_Sorted_Data(app) {
+  app.url = app.url || config.no_yturl;
+  app.sort = app.sort || "highest-possible";
+  app.title = app.title || "random-title-" + Math.random();
+  if (!utils.regexpyt(app.yturl)) {
+    throw new Error(config.audioData_customQuality_no_url);
+  } else {
+    let downloadpath;
+    if (!app.folder) {
+      if (!fs.existsSync("mågneum")) fs.mkdirSync("mågneum");
+      downloadpath = "./mågneum/";
+    } else {
+      if (!fs.existsSync(app.folder)) fs.mkdirSync(app.folder);
+      downloadpath = "./" + app.folder + "/";
+    }
+    var promise = utils
+      .probdl(app.yturl, {
+        noWarnings: true,
+        dumpSingleJson: true,
+        preferFreeFormats: true,
+        noCheckCertificates: true,
+        addHeader: ["referer:youtube.com", "user-agent:googlebot"],
+      })
+      .catch(() => {
+        throw new Error(config.ExecJson);
+      });
+    const jsonmeta = await utils.logger(promise, "FETCHING....\n");
+    const medium = jsonmeta.formats.filter(
+      (res) =>
+        (res.format_id === "140" &&
+          res.format_note === "medium" &&
+          res.resolution === "audio only") ||
+        (res.format_id === "251" &&
+          res.format_note === "medium" &&
+          res.resolution === "audio only")
+    );
+    const low = jsonmeta.formats.filter(
+      (res) =>
+        (res.format_id === "139" &&
+          res.format_note === "low" &&
+          res.resolution === "audio only") ||
+        (res.format_id === "249" &&
+          res.format_note === "low" &&
+          res.resolution === "audio only") ||
+        (res.format_id === "250" &&
+          res.format_note === "low" &&
+          res.resolution === "audio only")
+    );
+    const ultralow = jsonmeta.formats.filter(
+      (res) =>
+        (res.format_id === "599" &&
+          res.format_note === "ultralow" &&
+          res.resolution === "audio only") ||
+        (res.format_id === "600" &&
+          res.format_note === "ultralow" &&
+          res.resolution === "audio only")
+    );
+
+    if (app.sort === "highest-possible") {
+      if (medium) {
+        utils.FFmpegSaveAudio(
+          medium[0].url || medium[1].url || medium.url || null,
+          downloadpath,
+          "-highest-possible",
+          app.title
+        );
+        return {
+          quality: "highest-possible",
+          downloadpath: downloadpath,
+          message: "INFO: stream starting.",
+        };
+      }
+      if (!medium && low) {
+        utils.FFmpegSaveAudio(
+          low[0].url || low[1].url || low[2].url || low.url || null,
+          downloadpath,
+          "-highest-possible",
+          app.title
+        );
+        return {
+          quality: "highest-possible",
+          downloadpath: downloadpath,
+          message: "INFO: stream starting.",
+        };
+      }
+      if (!medium && !low && ultralow) {
+        utils.FFmpegSaveAudio(
+          ultralow[0].url || ultralow[1].url || ultralow.url || null,
+          downloadpath,
+          "-highest-possible",
+          app.title
+        );
+        return {
+          quality: "highest-possible",
+          downloadpath: downloadpath,
+          message: "INFO: stream starting.",
+        };
+      } else throw new Error(config.no_quality);
+    } else if (app.sort === "lowest-possible") {
+      utils.FFmpegSaveAudio(
+        ultralow[0].url || ultralow[1].url || ultralow.url || null,
+        downloadpath,
+        "-lowest_possible",
+        app.title
+      );
+      if (ultralow) {
+        return {
+          quality: "lowest-possible",
+          downloadpath: downloadpath,
+          message: "INFO: stream starting.",
+        };
+      } else if (low) {
+        utils.FFmpegSaveAudio(
+          low[0].url || low[1].url || low[2].url || low.url || null,
+          downloadpath,
+          "-lowest_possible",
+          app.title
+        );
+        return {
+          quality: "medium-possible",
+          downloadpath: downloadpath,
+          message: "INFO: stream starting.",
+        };
+      } else if (medium) {
+        utils.FFmpegSaveAudio(
+          medium[0].url || medium[1].url || medium.url || null,
+          downloadpath,
+          "-highest-possible",
+          app.title
+        );
+        return {
+          quality: "-lowest_possible",
+          downloadpath: downloadpath,
+          message: "INFO: stream starting.",
+        };
+      } else throw new Error(config.no_quality);
+    } else throw new Error(config.wrong_quality);
+  }
+}
+async function dl_Custom_Quality_Data(app) {
+  app.sort = app.sort || "medium";
+  app.url = app.url || config.no_yturl;
+  app.title = app.title || "random-title-" + Math.random();
+  if (!utils.regexpyt(app.yturl)) {
+    throw new Error(config.audioData_customQuality_no_url);
+  } else {
+    let downloadpath;
+    if (!app.folder) {
+      if (!fs.existsSync("mågneum")) fs.mkdirSync("mågneum");
+      downloadpath = "./mågneum/";
+    } else {
+      if (!fs.existsSync(app.folder)) fs.mkdirSync(app.folder);
+      downloadpath = "./" + app.folder + "/";
+    }
+    var promise = utils
+      .probdl(app.yturl, {
+        noWarnings: true,
+        dumpSingleJson: true,
+        preferFreeFormats: true,
+        noCheckCertificates: true,
+        addHeader: ["referer:youtube.com", "user-agent:googlebot"],
+      })
+      .catch(() => {
+        throw new Error(config.ExecJson);
+      });
+    const jsonmeta = await utils.logger(promise, "FETCHING....\n");
+    const medium = jsonmeta.formats.filter(
+      (res) =>
+        (res.format_id === "140" &&
+          res.format_note === "medium" &&
+          res.resolution === "audio only") ||
+        (res.format_id === "251" &&
+          res.format_note === "medium" &&
+          res.resolution === "audio only")
+    );
+    const low = jsonmeta.formats.filter(
+      (res) =>
+        (res.format_id === "139" &&
+          res.format_note === "low" &&
+          res.resolution === "audio only") ||
+        (res.format_id === "249" &&
+          res.format_note === "low" &&
+          res.resolution === "audio only") ||
+        (res.format_id === "250" &&
+          res.format_note === "low" &&
+          res.resolution === "audio only")
+    );
+    const ultralow = jsonmeta.formats.filter(
+      (res) =>
+        (res.format_id === "599" &&
+          res.format_note === "ultralow" &&
+          res.resolution === "audio only") ||
+        (res.format_id === "600" &&
+          res.format_note === "ultralow" &&
+          res.resolution === "audio only")
+    );
+
+    if (app.sort === "high") {
+      if (medium) {
+        utils.FFmpegSaveAudio(
+          medium[0].url || medium[1].url || medium.url || null,
+          downloadpath,
+          "-high",
+          app.title
+        );
+        return {
+          downloadpath: downloadpath,
+          message: "INFO: stream starting.",
+        };
+      } else throw new Error(config.no_quality);
+    } else if (app.sort === "medium") {
+      if (low) {
+        utils.FFmpegSaveAudio(
+          low[0].url || low[1].url || low[2].url || low.url || null,
+          downloadpath,
+          "-medium",
+          app.title
+        );
+        return {
+          downloadpath: downloadpath,
+          message: "INFO: stream starting.",
+        };
+      } else throw new Error(config.no_quality);
+    } else if (app.sort === "low") {
+      if (ultralow) {
+        utils.FFmpegSaveAudio(
+          ultralow[0].url || ultralow[1].url || ultralow.url || null,
+          downloadpath,
+          "-low",
+          app.title
+        );
+        return {
+          downloadpath: downloadpath,
+          message: "INFO: stream starting.",
+        };
+      } else throw new Error(config.no_quality);
+    } else throw new Error(config.wrong_quality);
+  }
+}
+
+export {
+  Custom_Quality_Data,
+  Auto_Sorted_Data,
+  dl_Auto_Sorted_Data,
+  dl_Custom_Quality_Data,
+};
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 // ╔⧉༻ ❝ ⚡ ⒸYT-DLP ⚡ ❞
 // ║ Is A Python+ Javascript Youtube Audio Video Scrapper And Downloader Client

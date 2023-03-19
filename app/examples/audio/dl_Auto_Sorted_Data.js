@@ -13,71 +13,56 @@
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
 "◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎";
-import FFmpeg from "fluent-ffmpeg";
-import probdl from "youtube-dl-exec";
-import FFmpegPath from "@ffmpeg-installer/ffmpeg";
-import ProgressEstimator from "progress-estimator";
-import FFmpegProbe from "@ffprobe-installer/ffprobe";
-const logger = ProgressEstimator();
+import c from "chalk";
+import { ytdlp } from "ytdlp";
+import Fetch from "node-fetch";
 
-function printProgress(progress) {
-  process.stdout.clearLine();
-  process.stdout.cursorTo(0);
-  process.stdout.write(progress + "%");
-}
+// To Get YouTube Video Simple Metadata
+let songname = "4k audio dolby";
+Fetch("https://magneum.vercel.app/api/youtube_sr?q=" + songname, {
+  method: "get",
+  headers: {
+    accept: "*/*",
+    "accept-language": "en-US,en;q=0.9",
+    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+  },
+}).then(async function (response) {
+  const api_data = await response.json();
+  // console.log(api_data);
 
-export default {
-  probdl: probdl,
-  logger: logger,
-  FFmpeg: FFmpeg,
-  FFmpegPath: FFmpegPath,
-  FFmpegProbe: FFmpegProbe,
-  printProgress: printProgress,
-  FFmpegSaveAudio: function (link, savepath, qual, title) {
-    FFmpeg(link)
-      .format("mp3")
-      .setFfmpegPath(FFmpegPath.path)
-      .setFfprobePath(FFmpegProbe.path)
-      .saveToFile(savepath + title + qual + ".mp3", { end: true })
-      .on("error", (error) => console.error("ERROR: " + error.message))
-      .on("progress", (progress) => printProgress(progress.percent.toFixed(2)))
-      .on("end", () =>
-        console.log("\nINFO: stream sent to client successfully.")
-      )
-      .run();
-  },
-  FFmpegSaveVideo: function (vLink, aLink, savepath, qual, title) {
-    FFmpeg()
-      .setFfmpegPath(FFmpegPath.path)
-      .setFfprobePath(FFmpegProbe.path)
-      .addInput(vLink)
-      .addInput(aLink)
-      .outputOptions(["-map 0:v", "-map 1:a", "-shortest", "-c:v copy"])
-      .videoCodec("libx264")
-      .withAudioCodec("aac")
-      .format("mp4")
-      .outputOptions(["-movflags", "frag_keyframe + empty_moov"])
-      .saveToFile(savepath + title + qual + ".mp3", { end: true })
-      .on("error", (error) => console.error("ERROR: " + error.message))
-      .on("progress", (progress) => printProgress(progress.percent.toFixed(2)))
-      .on("end", () => console.log("INFO: stream sent to client successfully."))
-      .run();
-  },
-  shorten: function (url) {
-    https.get(
-      "https://tinyurl.com/api-create.php?url=" + encodeURIComponent(url),
-      (res) => {
-        res.on("data", (chunk) => {
-          return chunk.toString();
-        });
-      }
-    );
-  },
-  regexpyt: function (url) {
-    var exp = new RegExp(/(youtu\.be|youtube\.com)/);
-    return exp.test(url);
-  },
-};
+  // Promise method
+  ytdlp.audio
+    .dl_Auto_Sorted_Data({
+      title: api_data.youtube_search[0].TITLE, // optional
+      yturl: api_data.youtube_search[0].LINK, // required
+      sort: "highest-possible", // required
+      folder: "mågneum", // optional
+    })
+    .then((r) => {
+      console.log(
+        c.bgGreen("[PROMISE]:"),
+        c.bgGrey("audio.dl_Auto_Sorted_Data()")
+      );
+      console.log(c.cyan("Downloadpath:"), c.gray(r.downloadpath));
+      console.log(c.cyan("Message:"), c.gray(r.message));
+    })
+    .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+
+  // async/await method
+  (async () => {
+    const r = await ytdlp.audio
+      .Auto_Sorted_Data({
+        title: api_data.youtube_search[0].TITLE, // optional
+        yturl: api_data.youtube_search[0].LINK, // required
+        sort: "highest-possible", // required
+        folder: "mågneum", // optional
+      })
+      .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+    console.log(c.bgGreen("[ASYNC]:"), c.bgGrey("audio.dl_Auto_Sorted_Data()"));
+    console.log(c.cyan("Downloadpath:"), c.gray(r.downloadpath));
+    console.log(c.cyan("Message:"), c.gray(r.message));
+  })();
+});
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 // ╔⧉༻ ❝ ⚡ ⒸYT-DLP ⚡ ❞
 // ║ Is A Python+ Javascript Youtube Audio Video Scrapper And Downloader Client

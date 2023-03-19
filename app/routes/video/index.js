@@ -652,8 +652,15 @@ async function Auto_Sorted_Data(app) {
     } else throw new Error(config.video_no_quality);
   } else throw new Error(config.wrong_quality);
 }
+async function dl_Auto_Sorted_Data(app) {}
+async function dl_Custom_Quality_Data(app) {}
 
-export { Custom_Quality_Data, Auto_Sorted_Data };
+export {
+  Custom_Quality_Data,
+  Auto_Sorted_Data,
+  dl_Auto_Sorted_Data,
+  dl_Custom_Quality_Data,
+};
 ("◎☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱[ ву mågneum ]☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱☱◎");
 // ╔⧉༻ ❝ ⚡ ⒸYT-DLP ⚡ ❞
 // ║ Is A Python+ Javascript Youtube Audio Video Scrapper And Downloader Client
