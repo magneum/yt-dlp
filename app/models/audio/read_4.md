@@ -1,6 +1,6 @@
 <br>
 <h1 align="center">
-<b>📢 audio.Custom_Quality_Data()
+<b>📢 audio.dl_Custom_Quality_Data()
 </b>
 </h1>
 
@@ -16,6 +16,7 @@
 /**
  * @param {yturl} yturl -> "youtube-video-link"
  * @param {string} sort -> "high" || "medium" || "low"
+ * @param {folder} @arg {optional} -> auto created if not exists or specified
  */
 ```
 
@@ -32,22 +33,19 @@ import { ytdlp } from "ytdlp";
 import Fetch from "node-fetch";
 
 ytdlp.audio
-  .Custom_Quality_Data({
-    yturl: "https://youtu.be/mVGWRaSFbEs", // required
-    quality: "high", // required
+  .dl_Custom_Quality_Data({
+    title: api_data.youtube_search[0].TITLE, // optional
+    yturl: api_data.youtube_search[0].LINK, // required
+    folder: "mågneum", // optional
+    sort: "high", // required
   })
   .then((r) => {
     console.log(
       c.bgGreen("[PROMISE]:"),
-      c.bgGrey("audio.Custom_Quality_Data()")
+      c.bgGrey("audio.dl_Custom_Quality_Data()")
     );
-    console.log(c.blue("Type:"), c.gray(r.type));
-    console.log(c.blue("Resolution:"), c.gray(r.resolution));
-    console.log(c.blue("Filesize:"), c.gray(r.filesize));
-    console.log(c.blue("Audiochannels:"), c.gray(r.audiochannels));
-    console.log(c.blue("Extensions:"), c.gray(r.extensions));
-    console.log(c.blue("Audiocodec:"), c.gray(r.acodec));
-    console.log(c.blue("Url:"), c.gray(r.url));
+    console.log(c.cyan("Downloadpath:"), c.gray(r.downloadpath));
+    console.log(c.cyan("Message:"), c.gray(r.message));
   })
   .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
 ```
@@ -66,19 +64,19 @@ import Fetch from "node-fetch";
 
 (async () => {
   const r = await ytdlp.audio
-    .Custom_Quality_Data({
-      yturl: "https://youtu.be/mVGWRaSFbEs", // required
-      quality: "high", // required
+    .dl_Custom_Quality_Data({
+      title: api_data.youtube_search[0].TITLE, // optional
+      yturl: api_data.youtube_search[0].LINK, // required
+      folder: "mågneum", // optional
+      sort: "high", // required
     })
     .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
-  console.log(c.bgGreen("[ASYNC]:"), c.bgGrey("audio.Custom_Quality_Data()"));
-  console.log(c.blue("Type:"), c.gray(r.type));
-  console.log(c.blue("Resolution:"), c.gray(r.resolution));
-  console.log(c.blue("Filesize:"), c.gray(r.filesize));
-  console.log(c.blue("Audiochannels:"), c.gray(r.audiochannels));
-  console.log(c.blue("Extensions:"), c.gray(r.extensions));
-  console.log(c.blue("Audiocodec:"), c.gray(r.acodec));
-  console.log(c.blue("Url:"), c.gray(r.url));
+  console.log(
+    c.bgGreen("[ASYNC]:"),
+    c.bgGrey("ausio.dl_Custom_Quality_Data()")
+  );
+  console.log(c.cyan("Downloadpath:"), c.gray(r.downloadpath));
+  console.log(c.cyan("Message:"), c.gray(r.message));
 })();
 ```
 
@@ -91,28 +89,22 @@ import Fetch from "node-fetch";
 
 ```
 ✓ FETCHING....
-  2.3 secs
-[PROMISE]: Custom_Quality_Data()
-Type: high
-Resolution: audio-only
-Filesize: 3063725
-Audiochannels: 2
-Extensions: m4a
-Audiocodec: mp4a.40.2
-Url: https://rr6---sn-gwpa-jj06.googlevideo.com/videoplayback?
-  Done in 5.49s.
+  2.4 secs
+[PROMISE]: audio.dl_Custom_Quality_Data()
+Downloadpath: ./mågneum/
+Message: INFO: stream starting.
+100.01%
+INFO: stream sent to client successfully.
+  Done in 15.72s.
 
 ✓ FETCHING....
-  2.3 secs
-[ASYNC]: Custom_Quality_Data()
-Type: high
-Resolution: audio-only
-Filesize: 3063725
-Audiochannels: 2
-Extensions: m4a
-Audiocodec: mp4a.40.2
-Url: https://rr6---sn-gwpa-jj06.googlevideo.com/videoplayback?
-  Done in 5.49s.
+  2.4 secs
+[ASYNC]: audio.dl_Custom_Quality_Data()
+Downloadpath: ./mågneum/
+Message: INFO: stream starting.
+100.01%
+INFO: stream sent to client successfully.
+  Done in 15.72s.
 ```
 
 </p>
