@@ -31,11 +31,41 @@ import c from "chalk";
 import Fetch from "node-fetch";
 import * as YTDLP from "yt-dlp";
 
-YTDLP.dloadVideo_autoSorted({
-  title: data.youtube_search[0].TITLE, // optional
-  url: data.youtube_search[0].LINK, // required
-  title: "song-title", // optional
-  folder: "mågneum", // optional
-})
-  .then((data) => console.log(c.bgGreen("DLOADVIDEO_CUSTOMQUALITY:"), data))
-  .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+// To Get YouTube Video Simple Metadata
+let songname = "4k audio dolby";
+const FetchOpts = {
+  method: "get",
+  headers: {
+    accept: "*/*",
+    "accept-language": "en-US,en;q=0.9",
+    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+  },
+};
+Fetch(
+  "https://magneum.vercel.app/api/youtube_sr?q=" + songname,
+  FetchOpts
+).then(async (response) => {
+  const data = await response.json();
+  console.log(data);
+
+  // Promise method
+  YTDLP.dloadVideo_autoSorted({
+    title: data.youtube_search[0].TITLE, // optional
+    url: data.youtube_search[0].LINK, // required
+    title: "song-title", // optional
+    folder: "mågneum", // optional
+  })
+    .then((res) => console.log(c.bgGreen("DLOADVIDEO_AUTOSORTED:"), res))
+    .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+
+  // async/await method
+  (async () => {
+    const res = await YTDLP.dloadVideo_autoSorted({
+      title: data.youtube_search[0].TITLE, // optional
+      url: data.youtube_search[0].LINK, // required
+      title: "song-title", // optional
+      folder: "mågneum", // optional
+    }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+    console.log(c.bgGreen("DLOADVIDEO_AUTOSORTED:"), res);
+  })();
+});

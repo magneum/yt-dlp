@@ -36,19 +36,37 @@ import * as YTDLP from "yt-dlp";
  * @param {string} resolution -> "2160p" || "1440p" || "1080p" || "720p" || "480p" || "360p" || "240p" || "144p"
  */
 
-// Promise method
-YTDLP.videoData_customQuality({
-  url: "https://youtu.be/3VZFpwlXKpg", // required
-  resolution: "2160p", // required
-})
-  .then((data) => console.log(c.bgGreen("videoData_customQuality:"), data))
-  .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+// To Get YouTube Video Simple Metadata
+let songname = "4k audio dolby";
+const FetchOpts = {
+  method: "get",
+  headers: {
+    accept: "*/*",
+    "accept-language": "en-US,en;q=0.9",
+    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+  },
+};
+Fetch(
+  "https://magneum.vercel.app/api/youtube_sr?q=" + songname,
+  FetchOpts
+).then(async (response) => {
+  const data = await response.json();
+  console.log(data);
 
-// async/await method
-(async () => {
-  const data = await YTDLP.videoData_customQuality({
+  // Promise method
+  YTDLP.videoData_customQuality({
     url: "https://youtu.be/3VZFpwlXKpg", // required
     resolution: "2160p", // required
-  }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
-  console.log(c.bgGreen("videoData_customQuality:"), data);
-})();
+  })
+    .then((data) => console.log(c.bgGreen("videoData_customQuality:"), data))
+    .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+
+  // async/await method
+  (async () => {
+    const data = await YTDLP.videoData_customQuality({
+      url: "https://youtu.be/3VZFpwlXKpg", // required
+      resolution: "2160p", // required
+    }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+    console.log(c.bgGreen("videoData_customQuality:"), data);
+  })();
+});

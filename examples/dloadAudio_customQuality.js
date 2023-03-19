@@ -37,23 +37,41 @@ import * as YTDLP from "yt-dlp";
  * @param {download-folder-name} @arg {optional} -> auto created if not exists or specified
  */
 
-// Promise method
-YTDLP.dloadAudio_customQuality({
-  title: data.youtube_search[0].TITLE, // optional
-  url: data.youtube_search[0].LINK, // required
-  folder: "mågneum", // optional
-  sort: "medium", // required
-})
-  .then((data) => console.log(c.bgGreen("dloadAudio_customQuality:"), data))
-  .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+// To Get YouTube Video Simple Metadata
+let songname = "4k audio dolby";
+const FetchOpts = {
+  method: "get",
+  headers: {
+    accept: "*/*",
+    "accept-language": "en-US,en;q=0.9",
+    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+  },
+};
+Fetch(
+  "https://magneum.vercel.app/api/youtube_sr?q=" + songname,
+  FetchOpts
+).then(async (response) => {
+  const data = await response.json();
+  console.log(data);
 
-// async/await method
-(async () => {
-  const data = await YTDLP.dloadAudio_customQuality({
+  // Promise method
+  YTDLP.dloadAudio_customQuality({
     title: data.youtube_search[0].TITLE, // optional
     url: data.youtube_search[0].LINK, // required
-    folder: "mågneum", //optional
+    folder: "mågneum", // optional
     sort: "medium", // required
-  }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
-  console.log(c.bgGreen("dloadAudio_customQuality:"), data);
-})();
+  })
+    .then((res) => console.log(c.bgGreen("dloadAudio_customQuality:"), res))
+    .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+
+  // async/await method
+  (async () => {
+    const res = await YTDLP.dloadAudio_customQuality({
+      title: data.youtube_search[0].TITLE, // optional
+      url: data.youtube_search[0].LINK, // required
+      folder: "mågneum", //optional
+      sort: "medium", // required
+    }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+    console.log(c.bgGreen("dloadAudio_customQuality:"), res);
+  })();
+});

@@ -36,19 +36,37 @@ import * as YTDLP from "yt-dlp";
  * @param {string} resolution -> "highest-possible" || "lowest-possible"
  */
 
-// Promise method
-YTDLP.videoData_autoSorted({
-  url: "https://youtu.be/3VZFpwlXKpg", // required
-  quality: "highest-possible", // required
-})
-  .then((data) => console.log(c.bgGreen("INFOVIDEO_SORTED:"), data))
-  .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+// To Get YouTube Video Simple Metadata
+let songname = "4k audio dolby";
+const FetchOpts = {
+  method: "get",
+  headers: {
+    accept: "*/*",
+    "accept-language": "en-US,en;q=0.9",
+    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+  },
+};
+Fetch(
+  "https://magneum.vercel.app/api/youtube_sr?q=" + songname,
+  FetchOpts
+).then(async (response) => {
+  const data = await response.json();
+  console.log(data);
 
-// async/await method
-(async () => {
-  const data = await YTDLP.videoData_autoSorted({
+  // Promise method
+  YTDLP.videoData_autoSorted({
     url: "https://youtu.be/3VZFpwlXKpg", // required
     quality: "highest-possible", // required
-  }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
-  console.log(c.bgGreen("INFOVIDEO_SORTED:"), data);
-})();
+  })
+    .then((data) => console.log(c.bgGreen("INFOVIDEO_SORTED:"), data))
+    .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+
+  // async/await method
+  (async () => {
+    const data = await YTDLP.videoData_autoSorted({
+      url: "https://youtu.be/3VZFpwlXKpg", // required
+      quality: "highest-possible", // required
+    }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
+    console.log(c.bgGreen("INFOVIDEO_SORTED:"), data);
+  })();
+});
