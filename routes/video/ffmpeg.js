@@ -34,7 +34,7 @@ import FFmpegPath from "@ffmpeg-installer/ffmpeg";
 import ProgressEstimator from "progress-estimator";
 import FFmpegProbe from "@ffprobe-installer/ffprobe";
 const ProgressEst = ProgressEstimator();
-function regExTestYT(str) {
+function regexpyt(str) {
   var exp = new RegExp(/(youtu\.be|youtube\.com)/);
   return exp.test(str);
 }
@@ -74,7 +74,7 @@ function shorten(url) {
 export async function dloadVideo_customQuality(rover) {
   rover.quality = rover.quality || "1080p";
   rover.url = rover.url || "not-a-youtube-link";
-  if (!regExTestYT(rover.url)) {
+  if (!regexpyt(rover.url)) {
     throw new Error("YouTube Link not found.Refer to docs for usage examples.");
   } else
     try {
@@ -397,7 +397,7 @@ export async function dloadVideo_autoSorted(rover) {
   rover.url = rover.url || "not-a-youtube-link";
   rover.quality = rover.quality || "highest-possible";
   rover.title = rover.title || "random-title-" + Math.random();
-  if (!regExTestYT(rover.url)) {
+  if (!regexpyt(rover.url)) {
     throw new Error("YouTube Link not found.Refer to docs for usage examples.");
   } else
     try {

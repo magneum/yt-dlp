@@ -30,7 +30,7 @@
 import ExecJson from "youtube-dl-exec";
 import ProgressEstimator from "progress-estimator";
 const ProgressEst = ProgressEstimator();
-function regExTestYT(str) {
+function regexpyt(str) {
   var exp = new RegExp(/(youtu\.be|youtube\.com)/);
   return exp.test(str);
 }
@@ -48,7 +48,7 @@ function shorten(url) {
 export async function audioData_customQuality(rover) {
   rover.sort = rover.sort || "high";
   rover.url = rover.url || "not-a-youtube-link";
-  if (!regExTestYT(rover.url)) {
+  if (!regexpyt(rover.url)) {
     throw new Error("YouTube Link not found.Refer to docs for usage examples.");
   } else
     try {
@@ -163,7 +163,7 @@ export async function audioData_customQuality(rover) {
 export async function audioData_autoSorted(rover) {
   rover.url = rover.url || "not-a-youtube-link";
   rover.quality = rover.quality || "highest-possible";
-  if (!regExTestYT(rover.url)) {
+  if (!regexpyt(rover.url)) {
     throw new Error("YouTube Link not found.Refer to docs for usage examples.");
   } else
     try {
