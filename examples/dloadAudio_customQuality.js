@@ -37,10 +37,10 @@ import * as YTDLP from "yt-dlp";
 
 // Promise method
 YTDLP.dloadAudio_customQuality({
-  url: "https://youtu.be/3VZFpwlXKpg", // required
-  title: "song-title", // optional
-  sort: "medium", // required
+  title: data.youtube_search[0].TITLE, // optional
+  url: data.youtube_search[0].LINK, // required
   folder: "mågneum", // optional
+  sort: "medium", // required
 })
   .then((data) => console.log(c.bgGreen("dloadAudio_customQuality:"), data))
   .catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
@@ -48,10 +48,10 @@ YTDLP.dloadAudio_customQuality({
 // async/await method
 (async () => {
   const data = await YTDLP.dloadAudio_customQuality({
-    url: "https://youtu.be/3VZFpwlXKpg", // required
-    title: "song-title", // optional
-    sort: "medium", // required
+    title: data.youtube_search[0].TITLE, // optional
+    url: data.youtube_search[0].LINK, // required
     folder: "mågneum", //optional
+    sort: "medium", // required
   }).catch((error) => console.log(c.bgRed("ERROR: "), c.gray(error.message)));
   console.log(c.bgGreen("dloadAudio_customQuality:"), data);
 })();

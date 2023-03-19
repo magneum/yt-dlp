@@ -31,8 +31,8 @@ import c from "chalk";
 import * as YTDLP from "yt-dlp";
 
 YTDLP.dloadVideo_autoSorted({
-  url: "https://youtu.be/3VZFpwlXKpg", // required
-  quality: "lowest-possible", // required
+  title: data.youtube_search[0].TITLE, // optional
+  url: data.youtube_search[0].LINK, // required
   title: "song-title", // optional
   folder: "mågneum", // optional
 })

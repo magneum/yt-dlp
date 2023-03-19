@@ -31,8 +31,8 @@ import c from "chalk";
 import * as YTDLP from "yt-dlp";
 
 YTDLP.dloadVideo_customQuality({
-  url: "https://youtu.be/3VZFpwlXKpg", // required
-  title: "song-title", // optional
+  title: data.youtube_search[0].TITLE, // optional
+  url: data.youtube_search[0].LINK, // required
   quality: "1080p", // required
   folder: "mågneum", // optional
 })
