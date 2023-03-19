@@ -86,7 +86,7 @@ import Fetch from "node-fetch";
 <summary><b>🎊Output Layout Example</b></summary>
 <p>
 
-```json
+```
 ✓ FETCHING....
   2.6 secs
 [PROMISE]: Auto_Sorted_Data()

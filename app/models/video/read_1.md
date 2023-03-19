@@ -88,7 +88,7 @@ import Fetch from "node-fetch";
 <summary><b>🎊Output Layout Example</b></summary>
 <p>
 
-```json
+```
 ✓ FETCHING....
   2.8 secs
 [PROMISE]: video.Custom_Quality_Data()

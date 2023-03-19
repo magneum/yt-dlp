@@ -89,7 +89,7 @@ import Fetch from "node-fetch";
 <summary><b>🎊Output Layout Example</b></summary>
 <p>
 
-```json
+```
 ✓ FETCHING....
   2.3 secs
 [PROMISE]: Custom_Quality_Data()

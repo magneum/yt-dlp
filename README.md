@@ -163,7 +163,7 @@ import Fetch from "node-fetch";
 <summary><b>🎊Output Layout Example</b></summary>
 <p>
 
-```json
+```
 ✓ FETCHING....
   2.8 secs
 [PROMISE]: video.Custom_Quality_Data()
@@ -274,7 +274,7 @@ import Fetch from "node-fetch";
 <summary><b>🎊Output Layout Example</b></summary>
 <p>
 
-```json
+```
 ✓ FETCHING....
   2.3 secs
 [PROMISE]: video.Auto_Sorted_Data()
@@ -388,7 +388,7 @@ import Fetch from "node-fetch";
 <summary><b>🎊Output Layout Example</b></summary>
 <p>
 
-```json
+```
 ✓ FETCHING....
   2.6 secs
 [PROMISE]: Auto_Sorted_Data()
@@ -510,7 +510,7 @@ import Fetch from "node-fetch";
 <summary><b>🎊Output Layout Example</b></summary>
 <p>
 
-```json
+```
 ✓ FETCHING....
   2.3 secs
 [PROMISE]: Custom_Quality_Data()
