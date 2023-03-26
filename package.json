@@ -27,7 +27,9 @@
     "nano-staged": "latest",
     "node-fetch": "latest",
     "npm-check-updates": "latest",
+    "openai": "^3.2.1",
     "progress-estimator": "^0.3.0",
+    "readline": "^1.3.0",
     "standard": "latest",
     "standard-version": "latest",
     "youtube-dl-exec": "^2.4.0",
@@ -36,7 +38,7 @@
   "devDependencies": {
     "bin-version-check": "~5.0.0",
     "dargs": "latest",
-    "dotenv": "latest",
+    "dotenv": "^16.0.3",
     "execa": "latest",
     "is-unix": "latest",
     "spinnies": "latest",
